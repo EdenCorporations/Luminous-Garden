@@ -28,12 +28,18 @@ export function Footer() {
           >
             Contact
           </Link>
-          <span className="text-xs font-mono text-gray-500 hover:text-gold transition-colors cursor-pointer">
+          <Link
+            href="/privacy"
+            className="text-xs font-mono text-gray-500 hover:text-gold transition-colors"
+          >
             Privacy
-          </span>
-          <span className="text-xs font-mono text-gray-500 hover:text-gold transition-colors cursor-pointer">
+          </Link>
+          <Link
+            href="/terms"
+            className="text-xs font-mono text-gray-500 hover:text-gold transition-colors"
+          >
             Terms
-          </span>
+          </Link>
         </div>
       </div>
     </footer>

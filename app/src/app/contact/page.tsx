@@ -1,14 +1,42 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Fingerprint, Building, AtSign } from "lucide-react";
+import { ArrowRight, Fingerprint, Building, AtSign, CheckCircle2, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const [budget, setBudget] = useState(50);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [formData, setFormData] = useState({
+    name: "",
+    org: "",
+    email: "",
+    message: "",
+  });
 
-  const budgetDisplay =
-    budget >= 500 ? `$${budget}k+` : `$${budget}k`;
+  const budgetDisplay = budget >= 500 ? `$${budget}k+` : `$${budget}k`;
   const budgetPercent = ((budget - 10) / (500 - 10)) * 100;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    const subject = encodeURIComponent(
+      `[EdenCORP] New Inquiry from ${formData.name || "Unknown"} — ${budgetDisplay}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nOrganization: ${formData.org}\nEmail: ${formData.email}\nBudget: ${budgetDisplay}\n\nMessage:\n${formData.message}`
+    );
+
+    // Open mailto link
+    window.location.href = `mailto:founder@edencorp.org?subject=${subject}&body=${body}`;
+
+    // Show success state after a brief delay
+    setTimeout(() => setStatus("sent"), 500);
+  };
+
+  const updateField = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   return (
     <main className="flex-grow flex items-center justify-center relative pt-28 pb-20 px-4 overflow-hidden">
@@ -55,7 +83,7 @@ export default function ContactPage() {
           <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/50" />
           <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/50" />
 
-          <form className="space-y-8">
+          <form className="space-y-8" onSubmit={handleSubmit}>
             {/* Identity Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="group/input relative">
@@ -70,6 +98,9 @@ export default function ContactPage() {
                   id="identity"
                   placeholder="Enter identification"
                   type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => updateField("name", e.target.value)}
                 />
                 <Fingerprint className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
               </div>
@@ -85,6 +116,8 @@ export default function ContactPage() {
                   id="org"
                   placeholder="Entity name"
                   type="text"
+                  value={formData.org}
+                  onChange={(e) => updateField("org", e.target.value)}
                 />
                 <Building className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
               </div>
@@ -103,6 +136,9 @@ export default function ContactPage() {
                 id="email"
                 placeholder="user@domain.com"
                 type="email"
+                required
+                value={formData.email}
+                onChange={(e) => updateField("email", e.target.value)}
               />
               <AtSign className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
             </div>
@@ -153,23 +189,45 @@ export default function ContactPage() {
                 id="message"
                 placeholder="Describe ecosystem requirements..."
                 rows={3}
+                required
+                value={formData.message}
+                onChange={(e) => updateField("message", e.target.value)}
               />
             </div>
 
             {/* Action */}
             <div className="pt-4">
-              <button
-                className="group relative w-full h-12 bg-gold hover:bg-[#ffe033] text-black font-display font-bold text-sm uppercase tracking-[0.05em] rounded-sm flex items-center justify-center overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:shadow-[0_0_30px_rgba(255,215,0,0.4)]"
-                type="button"
-              >
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-                <span className="relative z-10 flex items-center gap-2">
-                  Initiate Sequence
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </button>
+              {status === "sent" ? (
+                <div className="w-full h-12 border border-green-500/30 bg-green-500/10 rounded-sm flex items-center justify-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-400" />
+                  <span className="text-green-400 font-mono text-sm font-bold uppercase tracking-wider">
+                    Sequence Initiated
+                  </span>
+                </div>
+              ) : (
+                <button
+                  className="group relative w-full h-12 bg-gold hover:bg-[#ffe033] text-black font-display font-bold text-sm uppercase tracking-[0.05em] rounded-sm flex items-center justify-center overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:shadow-[0_0_30px_rgba(255,215,0,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  type="submit"
+                  disabled={status === "sending"}
+                >
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    {status === "sending" ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Transmitting...
+                      </>
+                    ) : (
+                      <>
+                        Initiate Sequence
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </>
+                    )}
+                  </span>
+                </button>
+              )}
               <p className="text-center mt-4 text-[10px] text-slate-600 font-mono">
-                ENCRYPTION LEVEL: MILITARY GRADE // DATA SECURE
+                DIRECT LINE: FOUNDER@EDENCORP.ORG // DATA SECURE
               </p>
             </div>
           </form>

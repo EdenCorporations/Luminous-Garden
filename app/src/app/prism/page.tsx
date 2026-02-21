@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight, TrendingUp, Terminal } from "lucide-react";
 
 export default function PrismPage() {
@@ -116,10 +117,13 @@ export default function PrismPage() {
                   then generates a personalized career roadmap. Directly improves
                   placement statistics.
                 </p>
-                <button className="flex items-center gap-2 text-gold font-mono text-xs font-bold uppercase tracking-wider hover:text-white transition-colors">
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-2 text-gold font-mono text-xs font-bold uppercase tracking-wider hover:text-white transition-colors no-underline"
+                >
                   Learn More{" "}
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
