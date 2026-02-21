@@ -25,7 +25,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Every garden begins with a single seed. At EdenCORP, we&apos;re
-            building the future of campus technology — starting with PRISM.
+            building the future of automation — across every industry imaginable.
           </p>
           <div className="mt-12 flex justify-center">
             <div className="relative group">
@@ -58,8 +58,9 @@ export default function AboutPage() {
                     </span>
                     <h3 className="text-2xl font-bold mb-3">The Seed</h3>
                     <p className="text-slate-400 leading-relaxed">
-                      EdenCORP founded with a mission to revolutionize campus
-                      ecosystems through scalable, AI-driven infrastructure.
+                      EdenCORP founded with a mission to automate any industry
+                      through scalable, AI-driven infrastructure. If it can be
+                      automated, we&apos;ll find a way.
                     </p>
                   </div>
                 </div>
@@ -83,7 +84,7 @@ export default function AboutPage() {
                     <h3 className="text-2xl font-bold mb-3">PRISM Sprout</h3>
                     <p className="text-slate-400 leading-relaxed">
                       Building and launching PRISM — a serverless, AI-powered
-                      student success engine for higher education.
+                      automation engine deployed across multiple industries.
                     </p>
                   </div>
                 </div>
@@ -100,8 +101,9 @@ export default function AboutPage() {
                       The Canopy
                     </h3>
                     <p className="text-slate-400 leading-relaxed">
-                      Expanding the ecosystem with new products and
-                      partnerships. The orchard is just beginning to grow.
+                      Expanding the ecosystem with new products across
+                      healthcare, logistics, finance, and beyond. The orchard is
+                      just beginning to grow.
                     </p>
                   </div>
                 </div>
@@ -131,7 +133,7 @@ export default function AboutPage() {
               {
                 icon: Leaf,
                 title: "Cultivate",
-                desc: "We focus on organic growth patterns, ensuring every implementation scales naturally within its environment.",
+                desc: "We focus on organic growth patterns, ensuring every automation scales naturally within its environment.",
               },
               {
                 icon: Cog,
@@ -141,7 +143,7 @@ export default function AboutPage() {
               {
                 icon: Lock,
                 title: "Security",
-                desc: "Your data is sacrosanct. Our infrastructure ensures complete data sovereignty and institutional compliance.",
+                desc: "Your data is sacrosanct. Our infrastructure ensures complete data sovereignty and regulatory compliance.",
               },
             ].map((item) => (
               <div
@@ -166,8 +168,8 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gold/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
             <div className="relative z-10 grid md:grid-cols-3 gap-12 md:gap-0">
               {[
-                { value: "5K+", label: "CONCURRENT USERS TARGET" },
-                { value: "95%", label: "PLACEMENT RATE GOAL" },
+                { value: "50K+", label: "CONCURRENT CONNECTIONS TARGET" },
+                { value: "95%", label: "AUTOMATION EFFICIENCY GOAL" },
                 { value: "0", label: "DOWNTIME TOLERANCE" },
               ].map((stat, i) => (
                 <div

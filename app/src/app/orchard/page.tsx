@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   GraduationCap,
+  Cpu,
   ArrowRight,
   GitBranch,
   Sun,
@@ -16,8 +17,8 @@ import {
 
 const categories = [
   "All Products",
-  "Education",
   "AI Suite",
+  "Workflow",
   "Infrastructure",
   "Security",
   "Analytics",
@@ -49,8 +50,8 @@ export default function OrchardPage() {
                 The Orchard
               </h2>
               <p className="text-gray-400 text-lg md:text-xl font-light max-w-xl">
-                Our suite of AI-driven solutions. Browse our product catalog —
-                starting with PRISM, the next-gen campus ecosystem.
+                Our suite of AI-driven automation solutions. Browse the catalog —
+                starting with PRISM, our flagship campus intelligence engine.
               </p>
             </div>
             {/* Search */}
@@ -123,9 +124,9 @@ export default function OrchardPage() {
                     PRISM
                   </h3>
                   <p className="text-sm text-gray-400 font-body leading-relaxed mb-4 line-clamp-2">
-                    The next-gen campus ecosystem. AI-driven student success
-                    engine with elastic serverless infrastructure, AI tutoring,
-                    and placement intelligence.
+                    Next-gen campus ecosystem. AI-driven student success
+                    engine with elastic serverless infrastructure, intelligent
+                    tutoring, and placement intelligence.
                   </p>
                   <div className="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
                     <div className="flex flex-col">
@@ -149,11 +150,11 @@ export default function OrchardPage() {
 
           {/* Coming Soon Cards */}
           {[
-            { icon: GitBranch, label: "account_tree" },
-            { icon: Sun, label: "wb_sunny" },
-            { icon: Shield, label: "shield_lock" },
-            { icon: Network, label: "hub" },
-            { icon: CircleDashed, label: "blur_on" },
+            { icon: GitBranch, label: "NEXUS", desc: "Supply chain & logistics automation" },
+            { icon: Sun, label: "SOLACE", desc: "Healthcare workflow optimization" },
+            { icon: Shield, label: "AEGIS", desc: "Enterprise security intelligence" },
+            { icon: Network, label: "MESH", desc: "Multi-system integration fabric" },
+            { icon: CircleDashed, label: "PULSE", desc: "Real-time analytics & monitoring" },
           ].map((item, i) => (
             <article
               key={i}
@@ -177,10 +178,10 @@ export default function OrchardPage() {
                 </div>
                 <div className="mt-auto">
                   <h3 className="text-2xl font-display font-bold text-white/40 mb-2">
-                    Coming Soon
+                    {item.label}
                   </h3>
                   <p className="text-sm text-white/20 font-body leading-relaxed mb-4 line-clamp-2">
-                    New products are being cultivated. Stay tuned for updates.
+                    {item.desc}
                   </p>
                   <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-2">
                     <div className="flex flex-col">

@@ -42,8 +42,8 @@ export function HeroSection() {
 
         {/* Description */}
         <p className="font-body text-gray-400 text-lg md:text-xl max-w-lg mx-auto mb-10 font-light leading-relaxed">
-          Cultivating intelligence for the post-digital age. Where algorithms
-          breathe and data blooms.
+          Automating every industry, one system at a time. We find the friction
+          and engineer it away.
         </p>
 
         {/* CTA */}
@@ -60,11 +60,11 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 opacity-50">
         <span className="font-mono text-[10px] tracking-widest uppercase">
           Scroll to Cultivate
         </span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
+        <div className="w-[1px] h-8 bg-gradient-to-b from-gold to-transparent" />
       </div>
     </section>
   );

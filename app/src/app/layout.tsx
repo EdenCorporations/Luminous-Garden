@@ -26,7 +26,7 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: "EdenCORP — Luminous Garden",
   description:
-    "Cultivating intelligence for the post-digital age. AI-powered campus infrastructure starting with PRISM.",
+    "Automating every industry, one system at a time. AI-powered automation infrastructure by EdenCORP.",
 };
 
 export default function RootLayout({
