@@ -1,33 +1,47 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { ArrowRight, Fingerprint, Building, AtSign, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { ArrowRight, Fingerprint, Building, AtSign, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [budget, setBudget] = useState(50);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const formRef = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    org: "",
+    email: "",
+    message: "",
+  });
 
   const budgetDisplay = budget >= 500 ? `$${budget}k+` : `$${budget}k`;
   const budgetPercent = ((budget - 10) / (500 - 10)) * 100;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formRef.current) return;
     setStatus("sending");
 
     try {
-      await emailjs.sendForm(
+      await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          organization: formData.org,
+          budget: budgetDisplay,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
       setStatus("sent");
     } catch {
       setStatus("error");
     }
+  };
+
+  const updateField = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -75,7 +89,7 @@ export default function ContactPage() {
           <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/50" />
           <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/50" />
 
-          <form ref={formRef} className="space-y-8" onSubmit={handleSubmit}>
+          <form className="space-y-8" onSubmit={handleSubmit}>
             {/* Identity Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="group/input relative">
@@ -88,10 +102,11 @@ export default function ContactPage() {
                 <input
                   className="w-full bg-transparent border-b border-slate-700 text-white font-mono placeholder-slate-700 py-2 focus:outline-none focus:border-gold focus:bg-gold/5 transition-all duration-300"
                   id="identity"
-                  name="from_name"
                   placeholder="Enter identification"
                   type="text"
                   required
+                  value={formData.name}
+                  onChange={(e) => updateField("name", e.target.value)}
                 />
                 <Fingerprint className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
               </div>
@@ -105,9 +120,10 @@ export default function ContactPage() {
                 <input
                   className="w-full bg-transparent border-b border-slate-700 text-white font-mono placeholder-slate-700 py-2 focus:outline-none focus:border-gold focus:bg-gold/5 transition-all duration-300"
                   id="org"
-                  name="organization"
                   placeholder="Entity name"
                   type="text"
+                  value={formData.org}
+                  onChange={(e) => updateField("org", e.target.value)}
                 />
                 <Building className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
               </div>
@@ -124,10 +140,11 @@ export default function ContactPage() {
               <input
                 className="w-full bg-transparent border-b border-slate-700 text-white font-mono placeholder-slate-700 py-2 focus:outline-none focus:border-gold focus:bg-gold/5 transition-all duration-300"
                 id="email"
-                name="reply_to"
                 placeholder="user@domain.com"
                 type="email"
                 required
+                value={formData.email}
+                onChange={(e) => updateField("email", e.target.value)}
               />
               <AtSign className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
             </div>
@@ -150,7 +167,6 @@ export default function ContactPage() {
                 />
                 <input
                   className="w-full z-10"
-                  name="budget"
                   max={500}
                   min={10}
                   step={10}
@@ -166,9 +182,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Hidden budget display value for EmailJS template */}
-            <input type="hidden" name="budget_display" value={budgetDisplay} />
-
             {/* Transmission Data */}
             <div className="group/input relative">
               <label
@@ -180,10 +193,11 @@ export default function ContactPage() {
               <textarea
                 className="w-full bg-transparent border-b border-slate-700 text-white font-mono placeholder-slate-700 py-2 focus:outline-none focus:border-gold focus:bg-gold/5 transition-all duration-300 resize-none"
                 id="message"
-                name="message"
                 placeholder="Describe ecosystem requirements..."
                 rows={3}
                 required
+                value={formData.message}
+                onChange={(e) => updateField("message", e.target.value)}
               />
             </div>
 
@@ -197,19 +211,19 @@ export default function ContactPage() {
                   </span>
                 </div>
               ) : status === "error" ? (
-                <div>
-                  <div className="w-full h-12 border border-red-500/30 bg-red-500/10 rounded-sm flex items-center justify-center gap-2 mb-2">
+                <div className="space-y-3">
+                  <div className="w-full h-12 border border-red-500/30 bg-red-500/10 rounded-sm flex items-center justify-center gap-2">
                     <AlertCircle className="w-4 h-4 text-red-400" />
                     <span className="text-red-400 font-mono text-sm font-bold uppercase tracking-wider">
                       Transmission Failed
                     </span>
                   </div>
                   <button
+                    className="w-full text-center text-xs text-gold font-mono hover:text-white transition-colors"
                     type="button"
                     onClick={() => setStatus("idle")}
-                    className="w-full text-center text-xs font-mono text-slate-500 hover:text-gold transition-colors"
                   >
-                    Retry
+                    RETRY SEQUENCE
                   </button>
                 </div>
               ) : (
