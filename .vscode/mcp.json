@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "stitch": {
+      "type": "http",
+      "url": "https://stitch.googleapis.com/mcp",
+      "headers": {
+        "X-Goog-Api-Key": "AQ.Ab8RN6JFWduzZ5P5V23NMOxXSdJlbYa005Uz6az6oOV8r7Ttow"
+      }
+    }
+  }
+}
