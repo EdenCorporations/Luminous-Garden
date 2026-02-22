@@ -17,7 +17,7 @@ export function ProblemSection() {
               value={40}
               suffix="%"
               duration={2.5}
-              className="!text-left"
+              className="!text-left text-[8rem] sm:text-[10rem] md:text-[12rem] leading-none"
             />
           </div>
           <p className="font-mono text-xs text-text-tertiary uppercase tracking-[0.15em] mt-4 text-center md:text-left">
