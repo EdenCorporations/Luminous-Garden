@@ -3,6 +3,7 @@ import { Instrument_Serif, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LayoutClient } from "@/components/LayoutClient";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -44,6 +45,7 @@ export default function RootLayout({
       >
         <LayoutClient>{children}</LayoutClient>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
