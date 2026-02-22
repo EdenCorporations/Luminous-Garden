@@ -6,7 +6,6 @@ The official EdenCORP website. Built with Next.js 16, Tailwind CSS v4, and deplo
 
 - **Next.js 16** — App Router, Turbopack
 - **Tailwind CSS v4** — `@theme inline` design tokens
-- **shadcn/ui** — Badge, Button, Card components
 - **Lucide React** — Icon library
 - **EmailJS** — Client-side email delivery
 
