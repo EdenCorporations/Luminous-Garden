@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
 import { ParticleField } from "@/components/ParticleField";
 import { TextScramble } from "@/components/TextScramble";
 import { MagneticButton } from "@/components/MagneticButton";
