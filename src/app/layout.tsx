@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Serif, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LayoutClient } from "@/components/LayoutClient";
+import { Analytics } from "@vercel/analytics/next";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${instrumentSerif.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
         <LayoutClient>{children}</LayoutClient>
+        <Analytics />
       </body>
     </html>
   );
