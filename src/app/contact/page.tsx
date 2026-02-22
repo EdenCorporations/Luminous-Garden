@@ -6,6 +6,8 @@ import { ArrowRight, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/ScrollReveal";
 import { TextScramble } from "@/components/TextScramble";
+import { ParticleField } from "@/components/ParticleField";
+import { MagneticButton } from "@/components/MagneticButton";
 
 export default function ContactPage() {
   const [budget, setBudget] = useState(50);
@@ -49,13 +51,19 @@ export default function ContactPage() {
 
   return (
     <main className="flex-1 flex items-center justify-center relative pt-28 pb-20 px-4 overflow-hidden">
+      {/* Interactive particle background */}
+      <ParticleField
+        particleCount={40}
+        connectionDistance={100}
+        className="opacity-30"
+      />
+
       {/* Subtle ember glow */}
       <div
-        className="absolute w-[500px] h-[500px] rounded-full pointer-events-none z-0 top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute inset-0 z-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(200, 75, 49, 0.04) 0%, transparent 70%)",
-          filter: "blur(60px)",
+            "radial-gradient(ellipse 50% 40% at 50% 40%, rgba(200,75,49,0.05) 0%, transparent 70%)",
         }}
       />
 
@@ -229,6 +237,7 @@ export default function ContactPage() {
                       </button>
                     </motion.div>
                   ) : (
+                    <MagneticButton strength={0.15} className="w-full">
                     <motion.button
                       key="submit"
                       initial={{ opacity: 0, y: 10 }}
@@ -254,6 +263,7 @@ export default function ContactPage() {
                         )}
                       </span>
                     </motion.button>
+                    </MagneticButton>
                   )}
                 </AnimatePresence>
                 <p className="text-center mt-4 text-[10px] text-text-tertiary font-mono tracking-wider">

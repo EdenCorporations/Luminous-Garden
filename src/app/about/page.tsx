@@ -13,6 +13,8 @@ import { Reveal, StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { InfiniteMarquee } from "@/components/InfiniteMarquee";
 import { TextScramble } from "@/components/TextScramble";
+import { ParticleField } from "@/components/ParticleField";
+import { MagneticButton } from "@/components/MagneticButton";
 import { motion } from "motion/react";
 
 const CAPABILITIES = [
@@ -80,6 +82,12 @@ export default function AboutPage() {
     <main className="flex-1">
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center justify-center pt-20 overflow-hidden">
+        {/* Particle background */}
+        <ParticleField
+          particleCount={40}
+          connectionDistance={100}
+          className="opacity-40"
+        />
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
@@ -122,8 +130,14 @@ export default function AboutPage() {
           </Reveal>
 
           <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-border" />
+            {/* Vertical line — animated on scroll */}
+            <motion.div
+              className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-border origin-top"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            />
 
             <div className="space-y-16">
               {TIMELINE.map((item, i) => (
@@ -255,7 +269,7 @@ export default function AboutPage() {
       <div className="rule w-full max-w-5xl mx-auto" />
 
       {/* Team */}
-      <section className="py-24 pb-32">
+      <section className="py-24 pb-16">
         <div className="max-w-5xl mx-auto px-6">
           <Reveal className="mb-16">
             <h2 className="font-display text-3xl md:text-4xl italic text-text text-center">
@@ -311,6 +325,25 @@ export default function AboutPage() {
           </StaggerReveal>
         </div>
       </section>
+
+      {/* CTA */}
+      <Reveal className="py-16 pb-32 text-center">
+        <div className="rule w-full max-w-md mx-auto mb-12" />
+        <p className="text-text-secondary font-light text-lg mb-6">
+          Want to be part of the origin story?
+        </p>
+        <MagneticButton strength={0.25}>
+          <a
+            href="/contact"
+            className="group inline-flex items-center justify-center px-8 py-4 bg-transparent border border-ember/40 hover:border-ember hover:bg-ember/5 text-text rounded-sm transition-all duration-300 no-underline ember-glow"
+          >
+            <span className="font-body font-medium text-sm tracking-[0.1em] uppercase flex items-center gap-3">
+              Get in Touch
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-ember group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </MagneticButton>
+      </Reveal>
     </main>
   );
 }
