@@ -4,16 +4,16 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { ParticleField } from "@/components/ParticleField";
+import { TextScramble } from "@/components/TextScramble";
+import { MagneticButton } from "@/components/MagneticButton";
+import { SplitText } from "@/components/SplitText";
 
 /** Returns a motion value for parallax based on scroll position */
 function useParallax(speed: number) {
   const { scrollY } = useScroll();
   return useTransform(scrollY, [0, 1000], [0, 1000 * speed]);
 }
-import { ParticleField } from "@/components/ParticleField";
-import { TextScramble } from "@/components/TextScramble";
-import { MagneticButton } from "@/components/MagneticButton";
-import { SplitText } from "@/components/SplitText";
 
 const container = {
   hidden: {},
