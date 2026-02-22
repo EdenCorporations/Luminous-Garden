@@ -82,6 +82,7 @@ export function SplitText({
                 },
               }}
               style={{ transformOrigin: "bottom" }}
+              aria-hidden="true"
             >
               {char}
             </motion.span>
