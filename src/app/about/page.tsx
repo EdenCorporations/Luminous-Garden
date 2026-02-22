@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="reveal relative min-h-screen flex items-center justify-center pt-20 bg-[radial-gradient(circle_at_top_right,rgba(0,102,255,0.08),transparent_40%)]">
+      <section className="reveal relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(0,102,255,0.08),transparent_40%)]">
         <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[120px]" />
         </div>
