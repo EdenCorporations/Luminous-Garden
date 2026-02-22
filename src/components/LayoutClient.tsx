@@ -13,13 +13,15 @@ import { Preloader } from "@/components/Preloader";
  */
 export function LayoutClient({ children }: { children: React.ReactNode }) {
   return (
-    <Preloader>
+    <>
       <Navbar />
+      <Preloader>
       <ScrollProgress />
       <GlowCursor />
       {children}
       <Footer />
       <ScrollToTop />
-    </Preloader>
+      </Preloader>
+    </>
   );
 }

@@ -192,15 +192,20 @@ export function Preloader({ children }: { children: React.ReactNode }) {
         )}
       </AnimatePresence>
 
-      {/* Content — matched linear cross-fade so logo never dims */}
-      <motion.div
-        className="flex-1 flex flex-col min-h-screen"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: phase === "done" ? 1 : 0 }}
-        transition={{ duration: CROSS_FADE, ease: "linear" }}
-      >
-        {children}
-      </motion.div>
+      {/* Content mounts only after preloader completes so downstream animations are blocked until then */}
+      <AnimatePresence>
+        {phase === "done" && (
+          <motion.div
+            key="app-content"
+            className="flex-1 flex flex-col min-h-screen"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: CROSS_FADE, ease: "linear" }}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
