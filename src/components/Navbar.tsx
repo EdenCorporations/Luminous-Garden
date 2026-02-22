@@ -23,7 +23,7 @@ export function Navbar() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-void/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-baseline gap-0.5 no-underline group">
+          <Link href="/" className="flex items-baseline gap-0.5 no-underline group" data-nav-logo>
             <span className="font-display text-2xl text-text tracking-tight italic">
               Eden
             </span>
