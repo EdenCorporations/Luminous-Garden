@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { GlowCursor } from "@/components/GlowCursor";
-import { ScrollProgress } from "@/components/ScrollProgress";
+import { LayoutClient } from "@/components/LayoutClient";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -29,6 +26,9 @@ export const metadata: Metadata = {
   title: "EdenCORP — The Origin of Industrial Intelligence",
   description:
     "AI-powered automation infrastructure that transforms how industries operate. By EdenCORP.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -41,11 +41,7 @@ export default function RootLayout({
       <body
         className={`${instrumentSerif.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
-        <Navbar />
-        <ScrollProgress />
-        <GlowCursor />
-        {children}
-        <Footer />
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );

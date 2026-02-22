@@ -165,7 +165,7 @@ export function EcosystemOrbital() {
   };
 
   return (
-    <Reveal className="w-full max-w-7xl mx-auto px-6 py-24 pb-40">
+    <Reveal className="w-full max-w-7xl mx-auto px-6 py-24 pb-20">
       <div className="flex flex-col md:flex-row justify-between items-end mb-16">
         <div>
           <h2 className="font-display text-4xl md:text-5xl mb-3 text-text">
