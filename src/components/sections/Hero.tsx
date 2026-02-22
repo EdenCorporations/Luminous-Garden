@@ -2,10 +2,18 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+
+/** Returns a motion value for parallax based on scroll position */
+function useParallax(speed: number) {
+  const { scrollY } = useScroll();
+  return useTransform(scrollY, [0, 1000], [0, 1000 * speed]);
+}
 import { ParticleField } from "@/components/ParticleField";
 import { TextScramble } from "@/components/TextScramble";
 import { MagneticButton } from "@/components/MagneticButton";
+import { SplitText } from "@/components/SplitText";
 
 const container = {
   hidden: {},
@@ -35,12 +43,17 @@ const scaleFade = {
 export function HeroSection() {
   return (
     <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-      {/* Interactive particle network */}
-      <ParticleField
-        particleCount={70}
-        connectionDistance={130}
-        className="opacity-60"
-      />
+      {/* Interactive particle network — parallax: moves slower than scroll */}
+      <motion.div
+        className="absolute inset-0"
+        style={{ y: useParallax(0.3) }}
+      >
+        <ParticleField
+          particleCount={70}
+          connectionDistance={130}
+          className="opacity-60"
+        />
+      </motion.div>
 
       {/* Subtle radial ember glow */}
       <div
@@ -51,12 +64,13 @@ export function HeroSection() {
         }}
       />
 
-      {/* Ember Sphere */}
+      {/* Ember Sphere — parallax: moves at 0.5x scroll speed */}
       <motion.div
         variants={scaleFade}
         initial="hidden"
         animate="visible"
         className="absolute z-10 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[420px] md:h-[420px] pointer-events-none"
+        style={{ y: useParallax(0.5) }}
       >
         <motion.div
           animate={{ scale: [1, 1.04, 1] }}
@@ -90,14 +104,20 @@ export function HeroSection() {
           <span className="h-px w-10 bg-ember/40" />
         </motion.div>
 
-        {/* Headline */}
+        {/* Headline — per-character reveal */}
         <motion.h1
           variants={fadeUp}
-          className="font-display text-5xl sm:text-7xl md:text-[6.5rem] leading-[0.95] tracking-tight mb-8 text-text"
+          className="font-display text-5xl sm:text-7xl md:text-[6.5rem] leading-[0.95] tracking-tight mb-8 text-text overflow-hidden"
         >
-          Where intelligence
+          <SplitText delay={0.5} stagger={0.025}>
+            Where intelligence
+          </SplitText>
           <br />
-          <span className="italic text-ember">begins.</span>
+          <span className="italic text-ember">
+            <SplitText delay={0.9} stagger={0.04}>
+              begins.
+            </SplitText>
+          </span>
         </motion.h1>
 
         {/* Subtitle */}

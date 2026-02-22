@@ -1,6 +1,7 @@
 "use client";
 
 import { Reveal } from "@/components/ScrollReveal";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 
 export function ProblemSection() {
   return (
@@ -12,9 +13,12 @@ export function ProblemSection() {
             40%
           </span>
           <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center">
-            <span className="font-display text-[8rem] sm:text-[10rem] md:text-[12rem] leading-none tracking-tight text-gradient-ember">
-              40%
-            </span>
+            <AnimatedCounter
+              value={40}
+              suffix="%"
+              duration={2.5}
+              className="!text-left"
+            />
           </div>
           <p className="font-mono text-xs text-text-tertiary uppercase tracking-[0.15em] mt-4 text-center md:text-left">
             Average annual resource loss across unoptimized industries
