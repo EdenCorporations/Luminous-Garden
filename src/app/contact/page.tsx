@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { ArrowRight, Fingerprint, Building, AtSign, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { Reveal } from "@/components/ScrollReveal";
+import { TextScramble } from "@/components/TextScramble";
 
 export default function ContactPage() {
   const [budget, setBudget] = useState(50);
@@ -45,226 +48,222 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="flex-grow flex items-center justify-center relative pt-28 pb-20 px-4 overflow-hidden">
-      {/* Ambient Background Effects */}
+    <main className="flex-1 flex items-center justify-center relative pt-28 pb-20 px-4 overflow-hidden">
+      {/* Subtle ember glow */}
       <div
-        className="absolute w-[600px] h-[600px] rounded-full pointer-events-none z-0 top-0 left-1/4 -translate-x-1/2 -translate-y-1/4"
+        className="absolute w-[500px] h-[500px] rounded-full pointer-events-none z-0 top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
         style={{
           background:
-            "radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, rgba(10, 10, 10, 0) 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        className="absolute w-[600px] h-[600px] rounded-full pointer-events-none z-0 bottom-0 right-1/4 translate-x-1/2 translate-y-1/4 opacity-50"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, rgba(10, 10, 10, 0) 70%)",
+            "radial-gradient(circle, rgba(200, 75, 49, 0.04) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
 
-      {/* The Gateway Container */}
-      <div className="relative w-full max-w-[600px] z-10">
-        {/* Header Text */}
-        <div className="text-center mb-10 reveal">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/20 bg-gold/5 text-gold text-xs font-mono mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-            SECURE CONNECTION ESTABLISHED
+      <div className="relative w-full max-w-[580px] z-10">
+        {/* Header */}
+        <Reveal className="text-center mb-10">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="h-px w-10 bg-ember/40" />
+            <TextScramble
+              text="Get in Touch"
+              className="font-mono text-xs text-ember tracking-[0.2em] uppercase"
+              duration={800}
+            />
+            <span className="h-px w-10 bg-ember/40" />
           </div>
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-3 tracking-tight">
-            Initialize Gateway
+          <h1 className="font-display text-4xl md:text-5xl italic text-text mb-3 tracking-tight">
+            Start a Conversation
           </h1>
-          <p className="text-slate-400 text-sm md:text-base max-w-md mx-auto">
-            Calibrate your requirements below. Our architects will construct
-            your ecosystem.
+          <p className="text-text-secondary text-sm md:text-base max-w-md mx-auto font-light">
+            Tell us about your project. We&apos;ll architect the right solution.
           </p>
-        </div>
+        </Reveal>
 
-        {/* Form Card */}
-        <div className="glass-panel rounded-sm p-8 md:p-10 shadow-glow relative overflow-hidden group reveal">
-          {/* Decorative Corner Accents */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/50" />
-          <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/50" />
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/50" />
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/50" />
-
-          <form className="space-y-8" onSubmit={handleSubmit}>
-            {/* Identity Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="group/input relative">
-                <label
-                  className="block text-xs font-mono text-slate-500 mb-2 uppercase tracking-wider group-focus-within/input:text-gold transition-colors"
-                  htmlFor="identity"
-                >
-                  Identity // Name
-                </label>
-                <input
-                  className="w-full bg-transparent border-b border-slate-700 text-white font-mono placeholder-slate-700 py-2 focus:outline-none focus:border-gold focus:bg-gold/5 transition-all duration-300"
-                  id="identity"
-                  placeholder="Enter identification"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => updateField("name", e.target.value)}
-                />
-                <Fingerprint className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
-              </div>
-              <div className="group/input relative">
-                <label
-                  className="block text-xs font-mono text-slate-500 mb-2 uppercase tracking-wider group-focus-within/input:text-gold transition-colors"
-                  htmlFor="org"
-                >
-                  Organization
-                </label>
-                <input
-                  className="w-full bg-transparent border-b border-slate-700 text-white font-mono placeholder-slate-700 py-2 focus:outline-none focus:border-gold focus:bg-gold/5 transition-all duration-300"
-                  id="org"
-                  placeholder="Entity name"
-                  type="text"
-                  value={formData.org}
-                  onChange={(e) => updateField("org", e.target.value)}
-                />
-                <Building className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
-              </div>
-            </div>
-
-            {/* Signal Frequency */}
-            <div className="group/input relative">
-              <label
-                className="block text-xs font-mono text-slate-500 mb-2 uppercase tracking-wider group-focus-within/input:text-gold transition-colors"
-                htmlFor="email"
-              >
-                Signal Frequency // Email
-              </label>
-              <input
-                className="w-full bg-transparent border-b border-slate-700 text-white font-mono placeholder-slate-700 py-2 focus:outline-none focus:border-gold focus:bg-gold/5 transition-all duration-300"
-                id="email"
-                placeholder="user@domain.com"
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => updateField("email", e.target.value)}
-              />
-              <AtSign className="absolute right-0 bottom-2 w-4 h-4 text-slate-700 group-focus-within/input:text-gold transition-colors" />
-            </div>
-
-            {/* Budget Calibration Slider */}
-            <div className="pt-4 pb-2">
-              <div className="flex justify-between items-end mb-4">
-                <label className="text-xs font-mono text-slate-500 uppercase tracking-wider">
-                  Resource Allocation
-                </label>
-                <div className="text-gold font-mono text-xl font-bold tracking-tight">
-                  {budgetDisplay}
-                </div>
-              </div>
-              <div className="relative w-full h-6 flex items-center">
-                {/* Fill Bar */}
-                <div
-                  className="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-gold to-amber rounded-l-sm pointer-events-none"
-                  style={{ width: `${budgetPercent}%` }}
-                />
-                <input
-                  className="w-full z-10"
-                  max={500}
-                  min={10}
-                  step={10}
-                  type="range"
-                  value={budget}
-                  onChange={(e) => setBudget(Number(e.target.value))}
-                />
-              </div>
-              <div className="flex justify-between mt-2 text-[10px] font-mono text-slate-600 uppercase">
-                <span>$10k</span>
-                <span>$250k</span>
-                <span>$500k+</span>
-              </div>
-            </div>
-
-            {/* Transmission Data */}
-            <div className="group/input relative">
-              <label
-                className="block text-xs font-mono text-slate-500 mb-2 uppercase tracking-wider group-focus-within/input:text-gold transition-colors"
-                htmlFor="message"
-              >
-                Transmission Data // Message
-              </label>
-              <textarea
-                className="w-full bg-transparent border-b border-slate-700 text-white font-mono placeholder-slate-700 py-2 focus:outline-none focus:border-gold focus:bg-gold/5 transition-all duration-300 resize-none"
-                id="message"
-                placeholder="Describe ecosystem requirements..."
-                rows={3}
-                required
-                value={formData.message}
-                onChange={(e) => updateField("message", e.target.value)}
-              />
-            </div>
-
-            {/* Action */}
-            <div className="pt-4">
-              {status === "sent" ? (
-                <div className="w-full h-12 border border-green-500/30 bg-green-500/10 rounded-sm flex items-center justify-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-green-400 font-mono text-sm font-bold uppercase tracking-wider">
-                    Transmission Complete
-                  </span>
-                </div>
-              ) : status === "error" ? (
-                <div className="space-y-3">
-                  <div className="w-full h-12 border border-red-500/30 bg-red-500/10 rounded-sm flex items-center justify-center gap-2">
-                    <AlertCircle className="w-4 h-4 text-red-400" />
-                    <span className="text-red-400 font-mono text-sm font-bold uppercase tracking-wider">
-                      Transmission Failed
-                    </span>
-                  </div>
-                  <button
-                    className="w-full text-center text-xs text-gold font-mono hover:text-white transition-colors"
-                    type="button"
-                    onClick={() => setStatus("idle")}
+        {/* Form */}
+        <Reveal delay={0.15}>
+          <div className="surface-card rounded-lg p-8 md:p-10 border border-border relative overflow-hidden">
+            <form className="space-y-7" onSubmit={handleSubmit}>
+              {/* Name + Org */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+                <div className="group/input relative">
+                  <label
+                    className="block text-xs font-mono text-text-tertiary mb-2 uppercase tracking-wider group-focus-within/input:text-ember transition-colors"
+                    htmlFor="identity"
                   >
-                    RETRY SEQUENCE
-                  </button>
+                    Name
+                  </label>
+                  <input
+                    className="w-full bg-transparent border-b border-border text-text font-body placeholder-text-tertiary py-2 focus:outline-none focus:border-ember transition-all duration-300"
+                    id="identity"
+                    placeholder="Your name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => updateField("name", e.target.value)}
+                  />
                 </div>
-              ) : (
-                <button
-                  className="group relative w-full h-12 bg-gold hover:bg-[#ffe033] text-black font-display font-bold text-sm uppercase tracking-[0.05em] rounded-sm flex items-center justify-center overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:shadow-[0_0_30px_rgba(255,215,0,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
-                  type="submit"
-                  disabled={status === "sending"}
-                >
-                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-                  <span className="relative z-10 flex items-center gap-2">
-                    {status === "sending" ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        Transmitting...
-                      </>
-                    ) : (
-                      <>
-                        Initiate Sequence
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                      </>
-                    )}
-                  </span>
-                </button>
-              )}
-              <p className="text-center mt-4 text-[10px] text-slate-600 font-mono">
-                DIRECT LINE: FOUNDER@EDENCORP.ORG // DATA SECURE
-              </p>
-            </div>
-          </form>
-        </div>
-      </div>
+                <div className="group/input relative">
+                  <label
+                    className="block text-xs font-mono text-text-tertiary mb-2 uppercase tracking-wider group-focus-within/input:text-ember transition-colors"
+                    htmlFor="org"
+                  >
+                    Organization
+                  </label>
+                  <input
+                    className="w-full bg-transparent border-b border-border text-text font-body placeholder-text-tertiary py-2 focus:outline-none focus:border-ember transition-all duration-300"
+                    id="org"
+                    placeholder="Company or institution"
+                    type="text"
+                    value={formData.org}
+                    onChange={(e) => updateField("org", e.target.value)}
+                  />
+                </div>
+              </div>
 
-      {/* Background Grid Decoration */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
+              {/* Email */}
+              <div className="group/input relative">
+                <label
+                  className="block text-xs font-mono text-text-tertiary mb-2 uppercase tracking-wider group-focus-within/input:text-ember transition-colors"
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <input
+                  className="w-full bg-transparent border-b border-border text-text font-body placeholder-text-tertiary py-2 focus:outline-none focus:border-ember transition-all duration-300"
+                  id="email"
+                  placeholder="you@company.com"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => updateField("email", e.target.value)}
+                />
+              </div>
+
+              {/* Budget Slider */}
+              <div className="pt-2 pb-1">
+                <div className="flex justify-between items-end mb-4">
+                  <label className="text-xs font-mono text-text-tertiary uppercase tracking-wider">
+                    Budget
+                  </label>
+                  <div className="text-ember font-display italic text-xl">
+                    {budgetDisplay}
+                  </div>
+                </div>
+                <div className="relative w-full h-6 flex items-center">
+                  <div
+                    className="absolute left-0 top-1/2 -translate-y-1/2 h-[3px] bg-gradient-to-r from-ember to-ember-glow rounded-l-sm pointer-events-none"
+                    style={{ width: `${budgetPercent}%` }}
+                  />
+                  <input
+                    className="w-full z-10"
+                    max={500}
+                    min={10}
+                    step={10}
+                    type="range"
+                    value={budget}
+                    onChange={(e) => setBudget(Number(e.target.value))}
+                  />
+                </div>
+                <div className="flex justify-between mt-2 text-[10px] font-mono text-text-tertiary">
+                  <span>$10k</span>
+                  <span>$250k</span>
+                  <span>$500k+</span>
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="group/input relative">
+                <label
+                  className="block text-xs font-mono text-text-tertiary mb-2 uppercase tracking-wider group-focus-within/input:text-ember transition-colors"
+                  htmlFor="message"
+                >
+                  Message
+                </label>
+                <textarea
+                  className="w-full bg-transparent border-b border-border text-text font-body placeholder-text-tertiary py-2 focus:outline-none focus:border-ember transition-all duration-300 resize-none"
+                  id="message"
+                  placeholder="Tell us about your project..."
+                  rows={3}
+                  required
+                  value={formData.message}
+                  onChange={(e) => updateField("message", e.target.value)}
+                />
+              </div>
+
+              {/* Submit */}
+              <div className="pt-3">
+                <AnimatePresence mode="wait">
+                  {status === "sent" ? (
+                    <motion.div
+                      key="sent"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="w-full h-12 border border-success/30 bg-success/5 rounded-sm flex items-center justify-center gap-2"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-success" />
+                      <span className="text-success font-mono text-sm tracking-wider uppercase">
+                        Message Sent
+                      </span>
+                    </motion.div>
+                  ) : status === "error" ? (
+                    <motion.div
+                      key="error"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="space-y-3"
+                    >
+                      <div className="w-full h-12 border border-error/30 bg-error/5 rounded-sm flex items-center justify-center gap-2">
+                        <AlertCircle className="w-4 h-4 text-error" />
+                        <span className="text-error font-mono text-sm tracking-wider uppercase">
+                          Failed to Send
+                        </span>
+                      </div>
+                      <button
+                        className="w-full text-center text-xs text-ember font-mono hover:text-text transition-colors"
+                        type="button"
+                        onClick={() => setStatus("idle")}
+                      >
+                        Try Again
+                      </button>
+                    </motion.div>
+                  ) : (
+                    <motion.button
+                      key="submit"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="group relative w-full h-12 bg-ember hover:bg-ember-glow text-void font-body font-medium text-sm uppercase tracking-[0.1em] rounded-sm flex items-center justify-center overflow-hidden transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      type="submit"
+                      disabled={status === "sending"}
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                    >
+                      <span className="relative z-10 flex items-center gap-2">
+                        {status === "sending" ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            Send Message
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          </>
+                        )}
+                      </span>
+                    </motion.button>
+                  )}
+                </AnimatePresence>
+                <p className="text-center mt-4 text-[10px] text-text-tertiary font-mono tracking-wider">
+                  founder@edencorp.org
+                </p>
+              </div>
+            </form>
+          </div>
+        </Reveal>
+      </div>
     </main>
   );
 }

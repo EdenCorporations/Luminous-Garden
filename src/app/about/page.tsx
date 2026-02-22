@@ -1,282 +1,316 @@
+"use client";
+
 import {
-  Leaf,
   Rocket,
   Code,
   Palette,
   Plus,
   Cog,
   Lock,
+  Zap,
 } from "lucide-react";
+import { Reveal, StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { InfiniteMarquee } from "@/components/InfiniteMarquee";
+import { TextScramble } from "@/components/TextScramble";
+import { motion } from "motion/react";
+
+const CAPABILITIES = [
+  "AI Infrastructure",
+  "Campus Automation",
+  "Intelligent Tutoring",
+  "Placement AI",
+  "Data Sovereignty",
+  "Auto-Scaling",
+  "RAG Systems",
+  "Career Mapping",
+];
+
+const TIMELINE = [
+  {
+    year: "2024",
+    title: "Genesis",
+    description:
+      "EdenCORP founded with a singular mission — automate any industry through scalable, AI-driven infrastructure.",
+    active: true,
+  },
+  {
+    year: "2025",
+    title: "First Apple",
+    description:
+      "PRISM launches — a serverless, AI-powered campus engine deployed across educational institutions.",
+    active: true,
+  },
+  {
+    year: "Next",
+    title: "The Expansion",
+    description:
+      "New products across healthcare, logistics, finance, and beyond. Each one an apple of knowledge for its industry.",
+    active: false,
+  },
+];
+
+const PILLARS = [
+  {
+    icon: Zap,
+    title: "Automate",
+    desc: "Efficiency is the byproduct of well-designed systems. We strip away friction through intelligent automation.",
+  },
+  {
+    icon: Cog,
+    title: "Scale",
+    desc: "Every solution is built for elastic growth — from one user to fifty thousand, without compromise.",
+  },
+  {
+    icon: Lock,
+    title: "Secure",
+    desc: "Your data is sacrosanct. Complete data sovereignty, zero-trust architecture, and regulatory compliance.",
+  },
+];
+
+const TEAM = [
+  { icon: Rocket, title: "Founder", role: "Vision & Strategy", dashed: false },
+  { icon: Code, title: "Engineering", role: "Infrastructure & AI", dashed: false },
+  { icon: Palette, title: "Design", role: "Experience & Interface", dashed: false },
+  { icon: Plus, title: "Join Us", role: "We're Growing", dashed: true },
+];
 
 export default function AboutPage() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="reveal relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(0,102,255,0.08),transparent_40%)]">
-        <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[120px]" />
-        </div>
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="font-display text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-6">
-            The{" "}
-            <span className="text-gold" style={{ textShadow: "0 0 10px rgba(255, 215, 0, 0.3)" }}>
-              Roots
-            </span>
+    <main className="flex-1">
+      {/* Hero */}
+      <section className="relative min-h-[70vh] flex items-center justify-center pt-20 overflow-hidden">
+        <div
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(200,75,49,0.05) 0%, transparent 70%)",
+          }}
+        />
+        <Reveal className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <span className="h-px w-10 bg-ember/40" />
+            <TextScramble
+              text="Our Story"
+              className="font-mono text-xs text-ember tracking-[0.2em] uppercase"
+              duration={800}
+            />
+            <span className="h-px w-10 bg-ember/40" />
+          </div>
+          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl italic tracking-tight mb-6 text-text leading-[0.95]">
+            The <span className="text-ember">Genesis</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Every garden begins with a single seed. At EdenCORP, we&apos;re
-            building the future of automation — across every industry imaginable.
+          <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed font-light">
+            Every breakthrough begins at the origin. At EdenCORP, we build
+            the intelligence that transforms industries.
           </p>
-          <div className="mt-12 flex justify-center">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gold/20 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-1000" />
-              <div className="relative w-24 h-24 rounded-full border border-gold/30 flex items-center justify-center bg-[#0A0A0A]">
-                <Leaf className="w-10 h-10 text-gold animate-pulse" />
-              </div>
-            </div>
-          </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* Origin Story Timeline */}
-      <section className="reveal py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold mb-20 text-center">
-            Origin Story <span className="text-gold">Timeline</span>
-          </h2>
-          <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
+      {/* Marquee */}
+      <div className="w-full py-5 border-y border-border/50">
+        <InfiniteMarquee items={CAPABILITIES} speed={20} reverse />
+      </div>
 
-            <div className="space-y-24">
-              {/* 2024 */}
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
-                <div className="w-full md:w-1/2 md:pr-16 text-right order-2 md:order-1">
-                  <div className="glass-panel p-8 rounded-xl hover:border-gold/40 transition-all duration-500">
-                    <span className="text-gold font-display font-bold text-xl block mb-2">
-                      2024
-                    </span>
-                    <h3 className="text-2xl font-bold mb-3">The Seed</h3>
-                    <p className="text-slate-400 leading-relaxed">
-                      EdenCORP founded with a mission to automate any industry
-                      through scalable, AI-driven infrastructure. If it can be
-                      automated, we&apos;ll find a way.
-                    </p>
-                  </div>
-                </div>
-                <div className="relative z-10 flex items-center justify-center order-1 md:order-2">
-                  <div className="w-4 h-4 rounded-full bg-gold shadow-[0_0_20px_rgba(255,215,0,0.15)] ring-4 ring-gold/20" />
-                </div>
-                <div className="w-full md:w-1/2 md:pl-16 hidden md:block order-3" />
-              </div>
-
-              {/* 2025 */}
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
-                <div className="w-full md:w-1/2 md:pr-16 hidden md:block order-1" />
-                <div className="relative z-10 flex items-center justify-center order-1 md:order-2">
-                  <div className="w-4 h-4 rounded-full bg-gold shadow-[0_0_20px_rgba(255,215,0,0.15)] ring-4 ring-gold/20" />
-                </div>
-                <div className="w-full md:w-1/2 md:pl-16 order-2 md:order-3">
-                  <div className="glass-panel p-8 rounded-xl hover:border-gold/40 transition-all duration-500">
-                    <span className="text-gold font-display font-bold text-xl block mb-2">
-                      2025
-                    </span>
-                    <h3 className="text-2xl font-bold mb-3">PRISM Sprout</h3>
-                    <p className="text-slate-400 leading-relaxed">
-                      Building and launching PRISM — a serverless, AI-powered
-                      automation engine deployed across multiple industries.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Future */}
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
-                <div className="w-full md:w-1/2 md:pr-16 text-right order-2 md:order-1">
-                  <div className="glass-panel p-8 rounded-xl hover:border-gold/40 transition-all duration-500 border-dashed">
-                    <span className="text-gold/50 font-display font-bold text-xl block mb-2">
-                      Next
-                    </span>
-                    <h3 className="text-2xl font-bold mb-3 text-white/60">
-                      The Canopy
-                    </h3>
-                    <p className="text-slate-400 leading-relaxed">
-                      Expanding the ecosystem with new products across
-                      healthcare, logistics, finance, and beyond. The orchard is
-                      just beginning to grow.
-                    </p>
-                  </div>
-                </div>
-                <div className="relative z-10 flex items-center justify-center order-1 md:order-2">
-                  <div className="w-4 h-4 rounded-full bg-gold/30 ring-4 ring-gold/10" />
-                </div>
-                <div className="w-full md:w-1/2 md:pl-16 hidden md:block order-3" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section className="reveal py-24 bg-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl font-bold mb-4">
-              Our <span className="text-gold">Soil</span>
+      {/* Timeline */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6">
+          <Reveal className="mb-16">
+            <h2 className="font-display text-3xl md:text-4xl italic text-text">
+              Origin Timeline
             </h2>
-            <p className="text-slate-400">
-              The foundation of everything we build.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Leaf,
-                title: "Cultivate",
-                desc: "We focus on organic growth patterns, ensuring every automation scales naturally within its environment.",
-              },
-              {
-                icon: Cog,
-                title: "Automate",
-                desc: "Efficiency is the byproduct of well-designed systems. We strip away friction through intelligent automation.",
-              },
-              {
-                icon: Lock,
-                title: "Security",
-                desc: "Your data is sacrosanct. Our infrastructure ensures complete data sovereignty and regulatory compliance.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="glass-panel p-10 rounded-lg group hover:-translate-y-2 transition-transform duration-500"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gold/10 flex items-center justify-center mb-8 border border-gold/20 group-hover:bg-gold/20 transition-colors">
-                  <item.icon className="w-8 h-8 text-gold" />
-                </div>
-                <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
-                <p className="text-slate-400 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          </Reveal>
 
-      {/* By the Numbers */}
-      <section className="reveal py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass-panel rounded-xl p-12 md:p-20 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gold/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
-            <div className="relative z-10 grid md:grid-cols-3 gap-12 md:gap-0">
-              {[
-                { value: "50K+", label: "CONCURRENT CONNECTIONS TARGET" },
-                { value: "95%", label: "AUTOMATION EFFICIENCY GOAL" },
-                { value: "0", label: "DOWNTIME TOLERANCE" },
-              ].map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className={i < 2 ? "md:border-r border-white/10" : ""}
-                >
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-border" />
+
+            <div className="space-y-16">
+              {TIMELINE.map((item, i) => (
+                <Reveal key={item.year} delay={i * 0.15}>
                   <div
-                    className="font-display text-5xl md:text-6xl font-bold text-gold mb-2"
-                    style={{ textShadow: "0 0 10px rgba(255, 215, 0, 0.3)" }}
+                    className={`flex flex-col md:flex-row items-start md:items-center gap-8 ${
+                      i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
                   >
-                    {stat.value}
+                    <div
+                      className={`flex-1 ${
+                        i % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"
+                      } pl-16 md:pl-0`}
+                    >
+                      <div
+                        className={`surface-card p-8 rounded-lg border ${
+                          item.active
+                            ? "border-border hover:border-ember/30"
+                            : "border-border/50 border-dashed"
+                        } transition-colors duration-300`}
+                      >
+                        <span
+                          className={`font-display italic text-xl block mb-2 ${
+                            item.active ? "text-ember" : "text-ember/40"
+                          }`}
+                        >
+                          {item.year}
+                        </span>
+                        <h3
+                          className={`text-xl font-display italic mb-3 ${
+                            item.active ? "text-text" : "text-text-tertiary"
+                          }`}
+                        >
+                          {item.title}
+                        </h3>
+                        <p className="text-text-secondary text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Dot */}
+                    <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
+                      <motion.div
+                        className={`w-3 h-3 rounded-full ${
+                          item.active ? "bg-ember" : "bg-border"
+                        }`}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                          delay: i * 0.2,
+                        }}
+                      />
+                    </div>
+
+                    <div className="flex-1 hidden md:block" />
                   </div>
-                  <p className="text-slate-400 font-medium tracking-wide">
-                    {stat.label}
-                  </p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="reveal py-24 pb-40">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold mb-16 text-center">
-            The <span className="text-gold">Gardeners</span>
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Rocket,
-                title: "Founder",
-                role: "Vision & Strategy",
-                dashed: false,
-              },
-              {
-                icon: Code,
-                title: "Engineering",
-                role: "Infrastructure & AI",
-                dashed: false,
-              },
-              {
-                icon: Palette,
-                title: "Design",
-                role: "Experience & Interface",
-                dashed: false,
-              },
-              {
-                icon: Plus,
-                title: "Join Us",
-                role: "We're Growing",
-                dashed: true,
-              },
-            ].map((member) => (
-              <div
-                key={member.title}
-                className={`glass-panel p-6 rounded-lg text-center group ${
-                  member.dashed
-                    ? "border-dashed border-gold/20 hover:border-gold/40 transition-colors"
-                    : ""
-                }`}
-              >
-                <div
-                  className={`w-32 h-32 mx-auto mb-6 rounded-full p-1 overflow-hidden relative transition-colors duration-500 ${
-                    member.dashed
-                      ? "border-2 border-dashed border-gold/20 group-hover:border-gold/50"
-                      : "border-2 border-gold/30 group-hover:border-gold"
-                  }`}
-                >
-                  <div
-                    className={`w-full h-full rounded-full flex items-center justify-center ${
-                      member.dashed ? "bg-gold/5" : "bg-gold/10"
-                    }`}
-                  >
-                    <member.icon
-                      className={`w-12 h-12 ${
-                        member.dashed
-                          ? "text-gold/50 group-hover:text-gold transition-colors"
-                          : "text-gold"
-                      }`}
-                    />
+      <div className="rule w-full max-w-5xl mx-auto" />
+
+      {/* Pillars */}
+      <section className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <Reveal className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl italic text-text mb-3">
+              Our Pillars
+            </h2>
+            <p className="text-text-secondary font-light">
+              The foundation of everything we build.
+            </p>
+          </Reveal>
+          <StaggerReveal className="grid md:grid-cols-3 gap-6">
+            {PILLARS.map((pillar) => (
+              <StaggerItem key={pillar.title}>
+                <div className="surface-card p-8 rounded-lg border border-border group hover:border-ember/30 transition-colors duration-300 h-full">
+                  <div className="w-12 h-12 rounded-lg bg-ember/10 flex items-center justify-center mb-6 border border-ember/20 group-hover:bg-ember/15 transition-colors">
+                    <pillar.icon className="w-5 h-5 text-ember" />
                   </div>
+                  <h4 className="text-xl font-display italic text-text mb-3">
+                    {pillar.title}
+                  </h4>
+                  <p className="text-text-secondary text-sm leading-relaxed">
+                    {pillar.desc}
+                  </p>
                 </div>
-                <h5
-                  className={`text-lg font-bold ${
-                    member.dashed
-                      ? "text-white/60 group-hover:text-white transition-colors"
-                      : ""
-                  }`}
-                >
-                  {member.title}
-                </h5>
-                <p
-                  className={`text-sm font-medium mb-4 ${
-                    member.dashed
-                      ? "text-gold/50 group-hover:text-gold transition-colors"
-                      : "text-gold"
-                  }`}
-                >
-                  {member.role}
-                </p>
-              </div>
+              </StaggerItem>
             ))}
+          </StaggerReveal>
+        </div>
+      </section>
+
+      <div className="rule w-full max-w-5xl mx-auto" />
+
+      {/* Stats */}
+      <section className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-0">
+            <div className="md:border-r border-border">
+              <AnimatedCounter
+                value={50000}
+                suffix="+"
+                label="Concurrent Connections Target"
+              />
+            </div>
+            <div className="md:border-r border-border">
+              <AnimatedCounter
+                value={95}
+                suffix="%"
+                label="Automation Efficiency Goal"
+              />
+            </div>
+            <div>
+              <AnimatedCounter value={0} label="Downtime Tolerance" />
+            </div>
           </div>
         </div>
       </section>
-    </>
+
+      <div className="rule w-full max-w-5xl mx-auto" />
+
+      {/* Team */}
+      <section className="py-24 pb-32">
+        <div className="max-w-5xl mx-auto px-6">
+          <Reveal className="mb-16">
+            <h2 className="font-display text-3xl md:text-4xl italic text-text text-center">
+              The Team
+            </h2>
+          </Reveal>
+          <StaggerReveal className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TEAM.map((member) => (
+              <StaggerItem key={member.title}>
+                <div
+                  className={`surface-card p-6 rounded-lg text-center group border ${
+                    member.dashed
+                      ? "border-dashed border-border hover:border-ember/40"
+                      : "border-border hover:border-ember/30"
+                  } transition-colors duration-300`}
+                >
+                  <div
+                    className={`w-24 h-24 mx-auto mb-5 rounded-full flex items-center justify-center transition-colors duration-300 ${
+                      member.dashed
+                        ? "border-2 border-dashed border-border group-hover:border-ember/40 bg-surface"
+                        : "border border-ember/20 group-hover:border-ember/40 bg-ember/5"
+                    }`}
+                  >
+                    <member.icon
+                      className={`w-8 h-8 ${
+                        member.dashed
+                          ? "text-text-tertiary group-hover:text-ember transition-colors"
+                          : "text-ember"
+                      }`}
+                    />
+                  </div>
+                  <h5
+                    className={`text-lg font-display italic ${
+                      member.dashed
+                        ? "text-text-tertiary group-hover:text-text transition-colors"
+                        : "text-text"
+                    }`}
+                  >
+                    {member.title}
+                  </h5>
+                  <p
+                    className={`text-xs font-mono tracking-wider uppercase mt-1 ${
+                      member.dashed
+                        ? "text-text-tertiary group-hover:text-ember transition-colors"
+                        : "text-ember"
+                    }`}
+                  >
+                    {member.role}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerReveal>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -2,28 +2,28 @@ import Link from "next/link";
 
 export default function PrivacyPage() {
   return (
-    <main className="flex-grow pt-28 pb-20">
+    <main className="flex-1 pt-28 pb-20">
       <div className="max-w-3xl mx-auto px-6">
         {/* Header */}
-        <div className="reveal mb-16">
+        <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-8 bg-gold" />
-            <span className="text-gold font-mono text-xs uppercase tracking-widest">
+            <span className="h-px w-8 bg-ember/40" />
+            <span className="text-ember font-mono text-xs uppercase tracking-[0.2em]">
               Legal
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display italic text-text mb-4 tracking-tight">
             Privacy Policy
           </h1>
-          <p className="text-gray-400 font-mono text-sm">
+          <p className="text-text-tertiary font-mono text-sm">
             Last updated: February 2026
           </p>
         </div>
 
         {/* Content */}
-        <div className="reveal space-y-12 text-gray-300 font-body leading-relaxed">
+        <div className="space-y-12 text-text-secondary font-body leading-relaxed">
           <section>
-            <h2 className="text-xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl font-display italic text-text mb-4">
               1. Information We Collect
             </h2>
             <p className="mb-4">
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
                 "Technical data such as IP address, browser type, and device information",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="w-1 h-1 rounded-full bg-gold mt-2.5 flex-shrink-0" />
+                  <span className="w-1 h-1 rounded-full bg-ember mt-2.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl font-display italic text-text mb-4">
               2. How We Use Your Information
             </h2>
             <p className="mb-4">We use collected information to:</p>
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
                 "Comply with legal obligations and enforce our terms",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="w-1 h-1 rounded-full bg-gold mt-2.5 flex-shrink-0" />
+                  <span className="w-1 h-1 rounded-full bg-ember mt-2.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -67,7 +67,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl font-display italic text-text mb-4">
               3. Data Protection
             </h2>
             <p>
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl font-display italic text-text mb-4">
               4. Data Sharing
             </h2>
             <p>
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl font-display italic text-text mb-4">
               5. Data Retention
             </h2>
             <p>
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl font-display italic text-text mb-4">
               6. Your Rights
             </h2>
             <p className="mb-4">You have the right to:</p>
@@ -117,7 +117,7 @@ export default function PrivacyPage() {
                 "Data portability — receive your data in a structured format",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="w-1 h-1 rounded-full bg-gold mt-2.5 flex-shrink-0" />
+                  <span className="w-1 h-1 rounded-full bg-ember mt-2.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl font-display italic text-text mb-4">
               7. Cookies
             </h2>
             <p>
@@ -137,7 +137,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl font-display italic text-text mb-4">
               8. Contact
             </h2>
             <p>
@@ -145,17 +145,17 @@ export default function PrivacyPage() {
               reach out through our{" "}
               <Link
                 href="/contact"
-                className="text-gold hover:text-white transition-colors underline underline-offset-4"
+                className="text-ember hover:text-text transition-colors underline underline-offset-4"
               >
-                contact gateway
+                contact page
               </Link>
               .
             </p>
           </section>
 
           {/* Divider */}
-          <div className="pt-8 border-t border-white/10">
-            <p className="text-sm text-gray-500 font-mono">
+          <div className="pt-8 border-t border-border">
+            <p className="text-sm text-text-tertiary font-mono">
               This policy may be updated periodically. We will notify you of
               material changes through our platform or via email.
             </p>

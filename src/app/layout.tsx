@@ -1,32 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Instrument_Serif, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ScrollReveal } from "@/components/ScrollReveal";
+import { GlowCursor } from "@/components/GlowCursor";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
-const inter = Inter({
-  variable: "--font-inter",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
 });
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "EdenCORP — Luminous Garden",
+  title: "EdenCORP — The Origin of Industrial Intelligence",
   description:
-    "Automating every industry, one system at a time. AI-powered automation infrastructure by EdenCORP.",
+    "AI-powered automation infrastructure that transforms how industries operate. By EdenCORP.",
 };
 
 export default function RootLayout({
@@ -37,12 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${spaceMono.variable} font-body antialiased`}
+        className={`${instrumentSerif.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
         <Navbar />
+        <ScrollProgress />
+        <GlowCursor />
         {children}
         <Footer />
-        <ScrollReveal />
       </body>
     </html>
   );

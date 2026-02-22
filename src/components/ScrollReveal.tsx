@@ -1,38 +1,115 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
+import { motion, type Variants } from "motion/react";
 
-export function ScrollReveal() {
-  const pathname = usePathname();
+interface RevealProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  direction?: "up" | "down" | "left" | "right";
+  duration?: number;
+  once?: boolean;
+  amount?: number;
+}
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("revealed");
-            observer.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
+const getTransform = (direction: RevealProps["direction"]) => {
+  switch (direction) {
+    case "down": return { y: -20 };
+    case "left": return { x: 30 };
+    case "right": return { x: -30 };
+    default: return { y: 20 };
+  }
+};
 
-    const rafId = requestAnimationFrame(() => {
-      document
-        .querySelectorAll(".reveal")
-        .forEach((el) => {
-          el.classList.remove("revealed");
-          observer.observe(el);
-        });
-    });
+export function Reveal({
+  children,
+  className,
+  delay = 0,
+  direction = "up",
+  duration = 0.6,
+  once = true,
+  amount = 0.15,
+}: RevealProps) {
+  const initial = getTransform(direction);
 
-    return () => {
-      cancelAnimationFrame(rafId);
-      observer.disconnect();
-    };
-  }, [pathname]);
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98, ...initial }}
+      whileInView={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+      viewport={{ once, margin: "-50px", amount }}
+      transition={{
+        duration,
+        delay,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
-  return null;
+/* Stagger container - wraps children that each have their own Reveal */
+interface StaggerProps {
+  children: ReactNode;
+  className?: string;
+  stagger?: number;
+  once?: boolean;
+}
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: (stagger: number) => ({
+    transition: {
+      staggerChildren: stagger,
+    },
+  }),
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+export function StaggerReveal({
+  children,
+  className,
+  stagger = 0.08,
+  once = true,
+}: StaggerProps) {
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once, margin: "-50px" }}
+      custom={stagger}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function StaggerItem({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <motion.div variants={itemVariants} className={className}>
+      {children}
+    </motion.div>
+  );
 }

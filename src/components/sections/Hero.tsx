@@ -2,62 +2,128 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { ParticleField } from "@/components/ParticleField";
+import { TextScramble } from "@/components/TextScramble";
+import { MagneticButton } from "@/components/MagneticButton";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.3 },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
+const scaleFade = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
 
 export function HeroSection() {
   return (
-    <section className="reveal relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-void-gradient z-0" />
-      <div className="absolute inset-0 grid-bg opacity-30 z-0" />
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+      {/* Interactive particle network */}
+      <ParticleField
+        particleCount={70}
+        connectionDistance={130}
+        className="opacity-60"
+      />
 
-      {/* Orb Simulation */}
-      <div className="absolute z-10 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] pointer-events-none">
-        <div className="orb-core w-full h-full animate-breathe" />
-        <div className="absolute inset-0 animate-spin-slow opacity-50">
-          <div className="absolute top-1/2 left-1/2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] border border-gold/20 rounded-full -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px] border border-gold/10 rounded-full -translate-x-1/2 -translate-y-1/2 rotate-45" />
-          <div className="absolute top-0 left-1/2 w-2 h-2 bg-gold rounded-full shadow-[0_0_10px_#FFD700]" />
-          <div className="absolute bottom-20 right-20 w-1 h-1 bg-amber rounded-full" />
-        </div>
-      </div>
+      {/* Subtle radial ember glow */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(200,75,49,0.06) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* Ember Sphere */}
+      <motion.div
+        variants={scaleFade}
+        initial="hidden"
+        animate="visible"
+        className="absolute z-10 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[420px] md:h-[420px] pointer-events-none"
+      >
+        <motion.div
+          animate={{ scale: [1, 1.04, 1] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="w-full h-full rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle at 40% 40%, rgba(200,75,49,0.18) 0%, rgba(139,52,34,0.06) 40%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
+        />
+      </motion.div>
 
       {/* Hero Content */}
-      <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-4xl mt-20">
-        {/* System Online Tag */}
-        <div className="flex items-center gap-2 mb-6 opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">
-          <span className="h-px w-8 bg-gold/50" />
-          <span className="font-mono text-xs text-gold uppercase tracking-widest">
-            System Online
-          </span>
-          <span className="h-px w-8 bg-gold/50" />
-        </div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl"
+      >
+        {/* Mono Tag */}
+        <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
+          <span className="h-px w-10 bg-ember/40" />
+          <TextScramble
+            text="The Origin of Intelligence"
+            className="font-mono text-xs text-ember tracking-[0.2em] uppercase"
+            duration={1000}
+            delay={600}
+            triggerOnView={false}
+          />
+          <span className="h-px w-10 bg-ember/40" />
+        </motion.div>
 
-        {/* Heading */}
-        <h1 className="font-display font-bold text-4xl sm:text-6xl md:text-8xl tracking-[-0.04em] leading-none mb-6 text-white drop-shadow-2xl">
-          Welcome to <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
-            the Garden
-          </span>
-        </h1>
+        {/* Headline */}
+        <motion.h1
+          variants={fadeUp}
+          className="font-display text-5xl sm:text-7xl md:text-[6.5rem] leading-[0.95] tracking-tight mb-8 text-text"
+        >
+          Where intelligence
+          <br />
+          <span className="italic text-ember">begins.</span>
+        </motion.h1>
 
-        {/* Description */}
-        <p className="font-body text-gray-400 text-lg md:text-xl max-w-lg mx-auto mb-10 font-light leading-relaxed">
-          Automating every industry, one system at a time. We find the friction
-          and engineer it away.
-        </p>
+        {/* Subtitle */}
+        <motion.p
+          variants={fadeUp}
+          className="font-body text-text-secondary text-lg md:text-xl max-w-xl mx-auto mb-12 font-light leading-relaxed"
+        >
+          AI-powered automation infrastructure that transforms how industries
+          operate.
+        </motion.p>
 
         {/* CTA */}
-        <Link
-          href="/orchard"
-          className="group relative flex items-center justify-center px-8 py-4 bg-transparent border border-gold/40 hover:border-gold text-white rounded overflow-hidden transition-all duration-300 shadow-glow-gold hover:shadow-[0_0_40px_-5px_rgba(255,215,0,0.3)] no-underline"
-        >
-          <div className="absolute inset-0 bg-gold/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-          <span className="relative font-display font-bold text-sm tracking-widest uppercase flex items-center gap-2">
-            Enter Ecosystem
-            <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" />
-          </span>
-        </Link>
-      </div>
+        <motion.div variants={fadeUp}>
+          <MagneticButton strength={0.25}>
+            <Link
+              href="/orchard"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-transparent border border-ember/40 hover:border-ember hover:bg-ember/5 text-text rounded-sm transition-all duration-300 no-underline ember-glow"
+            >
+              <span className="font-body font-medium text-sm tracking-[0.1em] uppercase flex items-center gap-3">
+                Explore the Orchard
+                <ArrowRight className="w-4 h-4 text-ember group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+          </MagneticButton>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -2,44 +2,32 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-white/10 py-8 mt-auto">
+    <footer className="w-full border-t border-border py-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="flex items-center gap-3">
-          <span className="font-display font-bold text-sm tracking-tight">
-            <span className="bg-gradient-to-r from-gold to-amber bg-clip-text text-transparent">
-              Eden
-            </span>
-            <span className="text-white/60">CORP</span>
+        <div className="flex items-baseline gap-2">
+          <span className="font-display text-lg italic text-text">Eden</span>
+          <span className="font-body text-xs font-semibold tracking-[0.15em] uppercase text-text-secondary">
+            CORP
           </span>
-          <span className="font-mono text-xs text-gray-500">
-            &copy; 2026 EdenCORP. ALL SYSTEMS NOMINAL.
+          <span className="font-mono text-xs text-text-tertiary ml-2">
+            &copy; 2026 EdenCORP
           </span>
         </div>
-        <div className="flex gap-6">
-          <Link
-            href="/about"
-            className="text-xs font-mono text-gray-500 hover:text-gold transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="text-xs font-mono text-gray-500 hover:text-gold transition-colors"
-          >
-            Contact
-          </Link>
-          <Link
-            href="/privacy"
-            className="text-xs font-mono text-gray-500 hover:text-gold transition-colors"
-          >
-            Privacy
-          </Link>
-          <Link
-            href="/terms"
-            className="text-xs font-mono text-gray-500 hover:text-gold transition-colors"
-          >
-            Terms
-          </Link>
+        <div className="flex gap-8">
+          {[
+            { href: "/about", label: "About" },
+            { href: "/contact", label: "Contact" },
+            { href: "/privacy", label: "Privacy" },
+            { href: "/terms", label: "Terms" },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-xs font-body text-text-tertiary hover:text-ember transition-colors duration-200"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
     </footer>
