@@ -8,6 +8,7 @@ import { Reveal, StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
 import { LiveTerminal } from "@/components/LiveTerminal";
 import { TextScramble } from "@/components/TextScramble";
 import { MagneticButton } from "@/components/MagneticButton";
+import { ControlRoomBoard } from "@/components/prism/ControlRoomBoard";
 
 const TERMINAL_LINES = [
   { text: "prism init --campus production", type: "command" as const, delay: 400 },
@@ -157,6 +158,10 @@ export default function PrismPage() {
                   <AnimatedBar label="Placement Rate" value="89%" width="89%" delay={0.6} />
                   <AnimatedBar label="AI Tutor Accuracy" value="97.2%" width="97.2%" delay={0.8} />
                 </div>
+              </Reveal>
+
+              <Reveal delay={0.4}>
+                <ControlRoomBoard />
               </Reveal>
             </div>
           </div>
