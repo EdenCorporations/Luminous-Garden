@@ -7,6 +7,7 @@ import { ParticleField } from "@/components/ParticleField";
 import { TextScramble } from "@/components/TextScramble";
 import { MagneticButton } from "@/components/MagneticButton";
 import { SplitText } from "@/components/SplitText";
+import { CoreField } from "@/components/hero/CoreField";
 
 /** Returns a motion value for parallax based on scroll position */
 function useParallax(speed: number) {
@@ -63,7 +64,7 @@ export function HeroSection() {
         }}
       />
 
-      {/* Ember Sphere — parallax: moves at 0.5x scroll speed */}
+      {/* Core Field — cinematic ambient simulation */}
       <motion.div
         variants={scaleFade}
         initial="hidden"
@@ -71,16 +72,9 @@ export function HeroSection() {
         className="absolute z-10 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[420px] md:h-[420px] pointer-events-none"
         style={{ y: useParallax(0.5) }}
       >
-        <motion.div
-          animate={{ scale: [1, 1.04, 1] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="w-full h-full rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle at 40% 40%, rgba(200,75,49,0.18) 0%, rgba(139,52,34,0.06) 40%, transparent 70%)",
-            filter: "blur(40px)",
-          }}
-        />
+        <div className="relative w-full h-full rounded-full overflow-hidden">
+          <CoreField />
+        </div>
       </motion.div>
 
       {/* Hero Content */}
