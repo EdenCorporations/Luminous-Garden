@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ArrowRight, Link as LinkIcon, Zap, Search, Hammer, TrendingUp, Shield } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -176,13 +177,13 @@ export function EcosystemOrbital() {
             phase.
           </p>
         </div>
-        <a
+        <Link
           className="hidden md:flex items-center gap-2 text-ember font-medium uppercase text-sm tracking-[0.1em] hover:opacity-80 transition-opacity mt-6 md:mt-0"
           href="/orchard"
         >
           View the Orchard
           <ArrowRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
 
       {/* Orbital Visualization */}
@@ -370,13 +371,13 @@ export function EcosystemOrbital() {
       </div>
 
       <div className="mt-8 md:hidden text-center">
-        <a
+        <Link
           className="inline-flex items-center gap-2 text-ember font-medium uppercase text-sm tracking-[0.1em] hover:opacity-80 transition-opacity"
           href="/orchard"
         >
           View the Orchard
           <ArrowRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
     </Reveal>
   );
