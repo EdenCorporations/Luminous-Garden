@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Rocket,
   Code,
@@ -333,7 +334,7 @@ export default function AboutPage() {
           Want to be part of the origin story?
         </p>
         <MagneticButton strength={0.25}>
-          <a
+          <Link
             href="/contact"
             className="group inline-flex items-center justify-center px-8 py-4 bg-transparent border border-ember/40 hover:border-ember hover:bg-ember/5 text-text rounded-sm transition-all duration-300 no-underline ember-glow"
           >
@@ -341,7 +342,7 @@ export default function AboutPage() {
               Get in Touch
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-ember group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
-          </a>
+          </Link>
         </MagneticButton>
       </Reveal>
     </main>

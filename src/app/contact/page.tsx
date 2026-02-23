@@ -8,6 +8,7 @@ import { Reveal } from "@/components/ScrollReveal";
 import { TextScramble } from "@/components/TextScramble";
 import { ParticleField } from "@/components/ParticleField";
 import { MagneticButton } from "@/components/MagneticButton";
+import { ROISimulator } from "@/components/contact/ROISimulator";
 
 export default function ContactPage() {
   const [budget, setBudget] = useState(50);
@@ -67,7 +68,7 @@ export default function ContactPage() {
         }}
       />
 
-      <div className="relative w-full max-w-[580px] z-10">
+      <div className="relative w-full max-w-6xl z-10">
         {/* Header */}
         <Reveal className="text-center mb-10">
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -87,10 +88,11 @@ export default function ContactPage() {
           </p>
         </Reveal>
 
-        {/* Form */}
-        <Reveal delay={0.15}>
-          <div className="surface-card rounded-lg p-8 md:p-10 border border-border relative overflow-hidden">
-            <form className="space-y-7" onSubmit={handleSubmit}>
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+          {/* Form */}
+          <Reveal delay={0.15}>
+            <div className="surface-card rounded-lg p-8 md:p-10 border border-border relative overflow-hidden">
+              <form className="space-y-7" onSubmit={handleSubmit}>
               {/* Name + Org */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                 <div className="group/input relative">
@@ -270,9 +272,14 @@ export default function ContactPage() {
                   founder@edencorp.org
                 </p>
               </div>
-            </form>
+              </form>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.25}>
+            <ROISimulator />
+          </Reveal>
           </div>
-        </Reveal>
       </div>
     </main>
   );
