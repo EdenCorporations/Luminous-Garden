@@ -4,12 +4,12 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-border py-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="flex items-baseline gap-2">
-          <span className="font-display text-lg italic text-text">Eden</span>
-          <span className="font-body text-xs font-semibold tracking-[0.15em] uppercase text-text-secondary">
-            CORP
-          </span>
-          <span className="font-mono text-xs text-text-tertiary ml-2">
+        <div className="flex items-center gap-3">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcSet="/White Mode EdenCORP.svg" />
+            <img src="/Dark Mode EdenCORP.svg" alt="EdenCORP" className="h-6 w-auto opacity-70" />
+          </picture>
+          <span className="font-mono text-xs text-text-tertiary">
             &copy; 2026 EdenCORP
           </span>
         </div>
