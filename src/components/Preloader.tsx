@@ -112,10 +112,10 @@ export function Preloader({ children }: { children: React.ReactNode }) {
               }}
             />
 
-            {/* Logo — 2× navbar size, flies to measured position */}
+            {/* Logo — larger than navbar size, flies to measured position */}
             <motion.div
               ref={logoRef}
-              className="flex items-baseline gap-1 relative z-10"
+              className="relative z-10 flex"
               initial={{ opacity: 0, y: 12 }}
               animate={
                 phase === "loading"
@@ -138,30 +138,15 @@ export function Preloader({ children }: { children: React.ReactNode }) {
                     }
               }
             >
-              <motion.span
-                className="font-display text-5xl text-text tracking-tight italic"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.1,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-              >
-                Eden
-              </motion.span>
-              <motion.span
-                className="font-body font-semibold text-[1.75rem] tracking-[0.15em] uppercase text-text-secondary"
-                initial={{ opacity: 0, x: -6 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.3,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-              >
-                CORP
-              </motion.span>
+              <picture>
+                <source media="(prefers-color-scheme: light)" srcSet="/White Mode EdenCORP.svg" />
+                <img
+                  src="/Dark Mode EdenCORP.svg"
+                  alt="EdenCORP"
+                  className="h-52 w-auto"
+                  draggable={false}
+                />
+              </picture>
             </motion.div>
 
             {/* Ember sweep line */}

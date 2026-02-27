@@ -23,12 +23,12 @@ export function Navbar() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-void/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-baseline gap-0.5 no-underline group" data-nav-logo>
-            <span className="font-display text-2xl text-text tracking-tight italic">
-              Eden
-            </span>
-            <span className="font-body font-semibold text-sm tracking-[0.15em] uppercase text-text-secondary group-hover:text-ember transition-colors duration-200">
-              CORP
+          <Link href="/" className="flex items-center no-underline">
+            <span data-nav-logo className="flex">
+              <picture>
+                <source media="(prefers-color-scheme: light)" srcSet="/White Mode EdenCORP.svg" />
+                <img src="/Dark Mode EdenCORP.svg" alt="EdenCORP" className="h-25 w-auto" />
+              </picture>
             </span>
           </Link>
 
