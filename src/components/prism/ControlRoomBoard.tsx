@@ -65,6 +65,9 @@ export function ControlRoomBoard() {
     <div className="surface-card rounded-lg border border-border p-6 space-y-6 overflow-hidden relative">
       <div className="absolute -right-16 -top-16 w-52 h-52 rounded-full pointer-events-none bg-ember/10 blur-3xl" />
 
+      <p className="text-sm font-mono text-text-secondary relative z-10">
+        Simulated digital twin. Users, performance, and incidents are demo data.
+      </p>
       <div className="flex items-center justify-between relative z-10">
         <div>
           <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-text-tertiary mb-2">

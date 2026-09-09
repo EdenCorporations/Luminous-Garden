@@ -133,6 +133,9 @@ export default function PrismPage() {
           <div className="lg:w-1/2 relative">
             <div className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto space-y-6 no-scrollbar">
               {/* Live Terminal */}
+              <p className="text-sm font-mono text-text-secondary">
+                Simulated terminal. Activity and figures are demo data.
+              </p>
               <LiveTerminal
                 lines={TERMINAL_LINES}
                 title="prism-campus-v1.0"
@@ -142,6 +145,9 @@ export default function PrismPage() {
               {/* Metrics Panel */}
               <Reveal delay={0.3}>
                 <div className="surface-card rounded-lg p-6 border border-border space-y-5">
+                  <p className="text-sm font-mono text-text-secondary">
+                    Simulated metrics. These are not measured customer results.
+                  </p>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-mono text-text-tertiary uppercase tracking-wider">
                       System Metrics
