@@ -282,6 +282,15 @@ export default function ContactPage() {
                 </p>
               </div>
               </form>
+              <p className="mt-5 text-center text-sm text-text-secondary">
+                Need help?{" "}
+                <a
+                  href="mailto:edencorp-org@mail.tin.computer"
+                  className="underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 break-all"
+                >
+                  Email support
+                </a>
+              </p>
             </div>
           </Reveal>
 
