@@ -9,7 +9,7 @@ export function Footer() {
             <source media="(prefers-color-scheme: light)" srcSet="/White Mode EdenCORP.svg" />
             <img src="/Dark Mode EdenCORP.svg" alt="EdenCORP" className="h-6 w-auto opacity-70" />
           </picture>
-          <span className="font-mono text-xs text-text-tertiary">
+          <span className="font-mono text-xs text-text-secondary">
             &copy; 2026 EdenCORP
           </span>
         </div>
@@ -23,7 +23,7 @@ export function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs font-body text-text-tertiary hover:text-ember transition-colors duration-200"
+              className="text-xs font-body text-text-secondary hover:text-ember-glow transition-colors duration-200"
             >
               {link.label}
             </Link>

@@ -46,9 +46,9 @@ export function ProblemSection() {
 
         {/* Stat Card */}
         <div className="surface-card p-8 rounded-sm relative overflow-hidden">
-          <h4 className="font-display text-3xl md:text-4xl text-text mb-2">
+          <h3 className="font-display text-3xl md:text-4xl text-text mb-2">
             Built to eliminate it.
-          </h4>
+          </h3>
           <p className="font-body text-sm text-text-secondary leading-relaxed">
             Every EdenCORP product is an apple of knowledge — a concentrated
             gift of intelligence designed to uproot inefficiency in a specific
