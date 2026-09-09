@@ -57,10 +57,10 @@ export function SplitText({
         },
       }}
       {...containerProps}
-      aria-label={children}
     >
+      <span className="sr-only">{children}</span>
       {words.map((word, wordIdx) => (
-        <span key={wordIdx} className="inline-block whitespace-pre">
+        <span key={wordIdx} className="inline-block whitespace-pre" aria-hidden="true">
           {word.split("").map((char, charIdx) => (
             <motion.span
               key={`${wordIdx}-${charIdx}`}
