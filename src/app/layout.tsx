@@ -26,6 +26,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.edencorp.org"),
+  alternates: { canonical: "/" },
   title: "EdenCORP — The Origin of Industrial Intelligence",
   description:
     "AI-powered automation infrastructure that transforms how industries operate. By EdenCORP.",
