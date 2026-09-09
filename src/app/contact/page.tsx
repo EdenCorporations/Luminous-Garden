@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { captureInquiryEvent } from "@/lib/analytics";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ArrowRight, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -11,6 +12,7 @@ import { MagneticButton } from "@/components/MagneticButton";
 import { ROISimulator } from "@/components/contact/ROISimulator";
 
 export default function ContactPage() {
+  const inquiryStarted = useRef(false);
   const [budget, setBudget] = useState(50);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [formData, setFormData] = useState({
@@ -26,6 +28,7 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+    captureInquiryEvent("inquiry_submitted");
 
     try {
       await emailjs.send(
@@ -41,12 +44,18 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
       setStatus("sent");
+      captureInquiryEvent("inquiry_succeeded");
     } catch {
       setStatus("error");
+      captureInquiryEvent("inquiry_failed");
     }
   };
 
   const updateField = (field: string, value: string) => {
+    if (!inquiryStarted.current) {
+      inquiryStarted.current = true;
+      captureInquiryEvent("inquiry_started");
+    }
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
