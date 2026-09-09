@@ -1,0 +1,28 @@
+# EdenCORP
+
+> Eden is a custom workflow automation agency for organizations.
+
+Eden provides custom development, integration, consulting, and support through individual proposals and contracts.
+Website design and executive dashboards are examples of its broad workflow automation scope.
+Project scope and pricing are agreed individually.
+PRISM's displayed activity and performance figures are simulations, not measured customer results.
+The links below lead to public web pages.
+
+## Agency and inquiries
+
+- [Home](https://www.edencorp.org/): EdenCORP's public website.
+- [About](https://www.edencorp.org/about): Background on EdenCORP.
+- [Contact](https://www.edencorp.org/contact): Discuss a workflow automation project.
+- [Orchard](https://www.edencorp.org/orchard): Offering catalog, including concepts marked coming soon.
+- [PRISM](https://www.edencorp.org/prism): Campus automation offering with simulated displays.
+
+## Workflow tool guides
+
+- [Zapier vs Make](https://www.edencorp.org/compare/zapier-vs-make): Compare workflow tool choices.
+- [n8n vs Zapier](https://www.edencorp.org/compare/n8n-vs-zapier): Compare hosting and workflow ownership.
+- [Zapier alternatives](https://www.edencorp.org/alternatives/zapier): Consider tools or custom automation services.
+
+## Optional
+
+- [Privacy](https://www.edencorp.org/privacy): Current published privacy notice.
+- [Terms](https://www.edencorp.org/terms): Current published terms.
