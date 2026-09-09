@@ -3,6 +3,10 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="w-full border-t border-border py-8 mt-auto">
+      <nav aria-label="Workflow comparisons" className="max-w-7xl mx-auto px-6 mb-6 flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-text-secondary">
+        <Link href="/compare/zapier-vs-make" className="hover:text-text underline underline-offset-4">Zapier vs Make</Link>
+        <Link href="/compare/n8n-vs-zapier" className="hover:text-text underline underline-offset-4">n8n vs Zapier</Link>
+      </nav>
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-wrap justify-center items-center gap-3">
           <picture>
