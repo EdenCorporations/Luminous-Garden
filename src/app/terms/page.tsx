@@ -16,170 +16,57 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="text-text-tertiary font-mono text-sm">
-            Last updated: February 2026
+            Last updated: September 2026
           </p>
         </div>
 
         {/* Content */}
         <div className="space-y-12 text-text-secondary font-body leading-relaxed">
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              1. Agreement to Terms
-            </h2>
-            <p>
-              By accessing or using EdenCORP&apos;s services, website, and
-              automation platforms (collectively, the &quot;Services&quot;), you
-              agree to be bound by these Terms of Service. If you do not agree to
-              these terms, do not use our Services.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">1. Website scope</h2>
+            <p>These terms describe EdenCORP&apos;s public website and project inquiry process. This website presents Eden&apos;s custom workflow automation services.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              2. Services Description
-            </h2>
-            <p>
-              EdenCORP provides AI-driven automation solutions across multiple
-              industries, including but not limited to education, healthcare,
-              logistics, and enterprise operations. Our Services include custom
-              automation development, integration, consulting, and ongoing
-              platform support.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">2. Services description</h2>
+            <p>Eden offers custom automation development, integration, consulting, and support. Project scope is discussed individually. Website examples describe possible work, not proof that every capability is deployed.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              3. User Responsibilities
-            </h2>
-            <p className="mb-4">When using our Services, you agree to:</p>
-            <ul className="list-none space-y-3 ml-4">
-              {[
-                "Provide accurate and complete information when requested",
-                "Maintain the confidentiality of your account credentials",
-                "Use the Services only for lawful purposes",
-                "Not attempt to reverse-engineer, decompile, or disassemble any part of our platform",
-                "Not interfere with or disrupt the Services or servers",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="w-1 h-1 rounded-full bg-ember mt-2.5 flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="text-xl font-display italic text-text mb-4">3. Using the inquiry form</h2>
+            <p>Provide contact details and a project description so Eden can discuss your request. Do not submit passwords, confidential records, or another person&apos;s sensitive information. Do not misuse or disrupt the website.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              4. Intellectual Property
-            </h2>
-            <p>
-              All content, software, algorithms, designs, and documentation
-              provided through our Services are the intellectual property of
-              EdenCORP unless otherwise specified in a written agreement.
-              Custom solutions developed for clients are subject to the
-              licensing terms outlined in individual project contracts.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">4. Project ownership</h2>
+            <p>Ownership and licensing for custom work belong in the individual project agreement. This website does not establish ownership terms for a future project.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              5. Payment Terms
-            </h2>
-            <p>
-              Payment terms, schedules, and pricing are agreed upon in
-              individual project proposals and contracts. All fees are
-              non-refundable unless otherwise stated. Late payments may incur
-              additional charges as specified in your service agreement.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">5. Budgets and payment</h2>
+            <p>The budget slider records your proposed budget. Submitting the form does not make a payment or purchase a service. Pricing, payment schedules, and refund terms belong in your project agreement.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              6. Service Level Agreement
-            </h2>
-            <p>
-              We strive to maintain 99.9% uptime for all deployed solutions.
-              Specific SLA terms, including response times and support
-              availability, are defined in individual client agreements.
-              Scheduled maintenance windows will be communicated in advance.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">6. Service expectations</h2>
+            <p>Website simulations and calculator outputs illustrate scenarios. They are not measured client outcomes or uptime guarantees. Support availability and service levels belong in the individual project agreement.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              7. Limitation of Liability
-            </h2>
-            <p>
-              To the maximum extent permitted by law, EdenCORP shall not be
-              liable for any indirect, incidental, special, consequential, or
-              punitive damages, including loss of profits, data, or business
-              opportunities, arising from your use of the Services, even if
-              advised of the possibility of such damages.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">7. Project risk and liability</h2>
+            <p>Responsibility for project risks and any limits of liability need to be addressed in the individual project agreement. This website does not specify those limits.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              8. Termination
-            </h2>
-            <p>
-              Either party may terminate the service relationship with written
-              notice as specified in individual contracts. Upon termination, we
-              will provide a transition period for data export and migration.
-              Sections regarding intellectual property, limitation of liability,
-              and confidentiality survive termination.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">8. Ending a project</h2>
+            <p>Cancellation, handover, and data export arrangements belong in the individual project agreement. This website does not promise a transition period.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              9. Dispute Resolution
-            </h2>
-            <p>
-              Any disputes arising from these terms shall first be attempted to
-              be resolved through good-faith negotiation. If unresolved, disputes
-              will be submitted to binding arbitration in accordance with
-              applicable laws in the jurisdiction specified in your service
-              agreement.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">9. Questions and disputes</h2>
+            <p>Contact <a href="mailto:edencorp-org@mail.tin.computer" className="underline underline-offset-4 break-all hover:text-text">edencorp-org@mail.tin.computer</a> about website or project questions. This website does not specify arbitration, governing law, or a court jurisdiction.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              10. Changes to Terms
-            </h2>
-            <p>
-              We reserve the right to modify these terms at any time. Material
-              changes will be communicated at least 30 days in advance. Continued
-              use of our Services after changes constitutes acceptance of the
-              updated terms.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">10. Updates</h2>
+            <p>Check this page for the current website terms. Changes to project agreements are handled separately.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              11. Contact
-            </h2>
-            <p>
-              Questions about these terms? Reach out through our{" "}
-              <Link
-                href="/contact"
-                className="text-ember hover:text-text transition-colors underline underline-offset-4"
-              >
-                contact page
-              </Link>
-              .
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">11. Contact and privacy</h2>
+            <p>Email <a href="mailto:edencorp-org@mail.tin.computer" className="underline underline-offset-4 break-all hover:text-text">edencorp-org@mail.tin.computer</a> for help. Read the <Link href="/privacy" className="underline underline-offset-4 hover:text-text">privacy policy</Link> for details about inquiry processing, analytics, and data requests.</p>
           </section>
-
-          {/* Divider */}
-          <div className="pt-8 border-t border-border">
-            <p className="text-sm text-text-tertiary font-mono">
-              These terms constitute the entire agreement between you and
-              EdenCORP regarding use of our Services, superseding any prior
-              agreements.
-            </p>
-          </div>
+          <div className="pt-8 border-t border-border"><p className="text-sm text-text-tertiary font-mono">These website terms do not replace an individual project agreement.</p></div>
         </div>
       </div>
     </main>

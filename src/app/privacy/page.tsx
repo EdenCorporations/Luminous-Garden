@@ -16,150 +16,45 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-text-tertiary font-mono text-sm">
-            Last updated: February 2026
+            Last updated: September 2026
           </p>
         </div>
 
         {/* Content */}
         <div className="space-y-12 text-text-secondary font-body leading-relaxed">
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              1. Information We Collect
-            </h2>
-            <p className="mb-4">
-              EdenCORP collects information you provide directly when you use our
-              services, including:
-            </p>
-            <ul className="list-none space-y-3 ml-4">
-              {[
-                "Contact information (name, email, organization)",
-                "Project requirements and budget details submitted through our contact form",
-                "Usage data and analytics from our platform interactions",
-                "Technical data such as IP address, browser type, and device information",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="w-1 h-1 rounded-full bg-ember mt-2.5 flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="text-xl font-display italic text-text mb-4">1. Information we collect</h2>
+            <p>The inquiry form collects your name, email, organization, budget, and project message. Your browser holds these fields while you complete the form.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              2. How We Use Your Information
-            </h2>
-            <p className="mb-4">We use collected information to:</p>
-            <ul className="list-none space-y-3 ml-4">
-              {[
-                "Provide, maintain, and improve our automation services",
-                "Respond to inquiries and communicate about projects",
-                "Analyze usage patterns to optimize platform performance",
-                "Ensure security and prevent unauthorized access",
-                "Comply with legal obligations and enforce our terms",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="w-1 h-1 rounded-full bg-ember mt-2.5 flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="text-xl font-display italic text-text mb-4">2. How inquiries are processed</h2>
+            <p>When you submit, your browser sends these fields to EmailJS for email processing. The form is configured to request delivery through an email service. The destination inbox and receipt have not yet been verified. The website has no application database for storing inquiries.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              3. Data Protection
-            </h2>
-            <p>
-              We implement industry-standard security measures including
-              encryption at rest and in transit, zero-trust architecture, and
-              regular security audits. Your data is stored on secure,
-              SOC 2-compliant infrastructure with redundancy across multiple
-              regions.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">3. Hosting and security</h2>
+            <p>Vercel hosts this website. Hosting and email providers process technical request data, which can include IP addresses and browser information. The website uses HTTPS. This notice makes no claim of security certification or regular security audits.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              4. Data Sharing
-            </h2>
-            <p>
-              We do not sell your personal information. We may share data with
-              trusted service providers who assist in operating our platform,
-              subject to strict confidentiality agreements. We may also disclose
-              information when required by law or to protect our rights and
-              safety.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">4. Service providers</h2>
+            <p>EmailJS processes form submissions. Vercel provides hosting, Web Analytics, and Speed Insights. Tin manages the support mailbox and Eden&apos;s PostHog analytics project. PostHog events are sent to its US ingestion endpoint. These providers process data under their own terms and policies.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              5. Data Retention
-            </h2>
-            <p>
-              We retain your information for as long as necessary to provide our
-              services and fulfill the purposes outlined in this policy. You may
-              request deletion of your data at any time by contacting us.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">5. Storage and deletion</h2>
+            <p>Form details may remain in email systems after submission. This notice does not specify a verified retention period or promise automatic deletion. To request deletion, email <a href="mailto:edencorp-org@mail.tin.computer" className="underline underline-offset-4 break-all hover:text-text">edencorp-org@mail.tin.computer</a> and identify your inquiry. Do not include passwords or sensitive records.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              6. Your Rights
-            </h2>
-            <p className="mb-4">You have the right to:</p>
-            <ul className="list-none space-y-3 ml-4">
-              {[
-                "Access the personal data we hold about you",
-                "Request correction of inaccurate data",
-                "Request deletion of your data",
-                "Object to or restrict processing of your data",
-                "Data portability — receive your data in a structured format",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="w-1 h-1 rounded-full bg-ember mt-2.5 flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="text-xl font-display italic text-text mb-4">6. Data requests</h2>
+            <p>You can ask about access, correction, or deletion through <a href="mailto:edencorp-org@mail.tin.computer" className="underline underline-offset-4 break-all hover:text-text">edencorp-org@mail.tin.computer</a>. Your applicable rights depend on the laws that cover your situation. This notice does not set a response deadline.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              7. Cookies
-            </h2>
-            <p>
-              We use essential cookies to ensure proper functionality of our
-              platform. We do not use third-party tracking cookies. Analytics
-              data is collected in aggregate and does not personally identify
-              individual users.
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">7. Analytics and cookies</h2>
+            <p>PostHog tracks page views, form starts, submission attempts, and send results. Events include the page path and temporary browser identifiers. Eden&apos;s configuration excludes form contents, persistent storage, user profiles, and session recordings. Vercel Web Analytics measures visits, and Speed Insights measures page performance. These analytics tools are configured without tracking cookies. Providers still receive technical data needed to handle network requests.</p>
           </section>
-
           <section>
-            <h2 className="text-xl font-display italic text-text mb-4">
-              8. Contact
-            </h2>
-            <p>
-              For privacy-related inquiries or to exercise your data rights,
-              reach out through our{" "}
-              <Link
-                href="/contact"
-                className="text-ember hover:text-text transition-colors underline underline-offset-4"
-              >
-                contact page
-              </Link>
-              .
-            </p>
+            <h2 className="text-xl font-display italic text-text mb-4">8. Contact</h2>
+            <p>For privacy questions or data requests, email <a href="mailto:edencorp-org@mail.tin.computer" className="underline underline-offset-4 break-all hover:text-text">edencorp-org@mail.tin.computer</a>. You can also use the <Link href="/contact" className="underline underline-offset-4 hover:text-text">contact page</Link>.</p>
           </section>
-
-          {/* Divider */}
-          <div className="pt-8 border-t border-border">
-            <p className="text-sm text-text-tertiary font-mono">
-              This policy may be updated periodically. We will notify you of
-              material changes through our platform or via email.
-            </p>
-          </div>
+          <div className="pt-8 border-t border-border"><p className="text-sm text-text-tertiary font-mono">This notice describes the public website. Check this page for the current notice.</p></div>
         </div>
       </div>
     </main>
