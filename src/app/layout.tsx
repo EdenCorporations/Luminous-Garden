@@ -1,3 +1,4 @@
+import { InquiryAnalytics } from "@/components/InquiryAnalytics";
 import type { Metadata } from "next";
 import { Instrument_Serif, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -45,6 +46,7 @@ export default function RootLayout({
       >
         <LayoutClient>{children}</LayoutClient>
         <Analytics />
+        <InquiryAnalytics />
         <SpeedInsights />
       </body>
     </html>
