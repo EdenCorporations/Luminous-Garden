@@ -1,3 +1,4 @@
+import { entityDescription } from "@/lib/entity";
 import { InquiryAnalytics } from "@/components/InquiryAnalytics";
 import type { Metadata } from "next";
 import { Instrument_Serif, Outfit, JetBrains_Mono } from "next/font/google";
@@ -12,7 +13,8 @@ const organization = {
   "@id": "https://www.edencorp.org/#organization",
   name: "EdenCORP",
   url: "https://www.edencorp.org",
-  description: "A custom workflow automation agency for organizations.",
+  description: entityDescription,
+  sameAs: ["https://github.com/EdenCorporations", "https://www.linkedin.com/company/edencorp/"],
 };
 
 const instrumentSerif = Instrument_Serif({

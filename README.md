@@ -1,3 +1,9 @@
+# EdenCORP
+
+Eden is a custom workflow automation agency for organizations.
+
+Website: https://www.edencorp.org/
+
 # EdenCORP — Luminous Garden
 
 The official EdenCORP website. Built with Next.js 16, Tailwind CSS v4, and deployed on Vercel.
