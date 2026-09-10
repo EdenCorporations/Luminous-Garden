@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { HeroSection } from "@/components/sections/Hero";
@@ -6,6 +7,11 @@ import { EcosystemOrbital } from "@/components/EcosystemOrbital";
 import { InfiniteMarquee } from "@/components/InfiniteMarquee";
 import { Reveal } from "@/components/ScrollReveal";
 import { MagneticButton } from "@/components/MagneticButton";
+
+export const metadata: Metadata = {
+  title: "Eden: Workflow automation agency for organizations",
+  description: "Eden builds custom workflow automation for organizations. Services include development, integrations, consulting, and support through individual proposals.",
+};
 
 const INDUSTRIES = [
   "Education",
