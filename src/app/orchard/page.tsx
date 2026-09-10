@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { captureInquiryEvent } from "@/lib/analytics";
 import {
   GraduationCap,
   ArrowRight,
@@ -57,6 +58,21 @@ export default function OrchardPage() {
     const matchesSearch = searchQuery === "" || p.label.toLowerCase().includes(searchQuery.toLowerCase()) || p.desc.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const emptyReported = useRef(false);
+  const isEmpty = filtered.length === 0;
+  useEffect(() => {
+    if (!isEmpty) {
+      emptyReported.current = false;
+      return;
+    }
+    // Count an empty-result episode once, after typing settles. Never send the query.
+    const timer = window.setTimeout(() => {
+      if (!emptyReported.current) captureInquiryEvent("orchard_empty", "/orchard");
+      emptyReported.current = true;
+    }, 600);
+    return () => window.clearTimeout(timer);
+  }, [isEmpty, searchQuery, activeFilter]);
 
   const flagshipProduct = filtered.find((p) => p.flagship);
   const otherProducts = filtered.filter((p) => !p.flagship);

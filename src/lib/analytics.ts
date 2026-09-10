@@ -3,7 +3,8 @@ import posthog from "posthog-js";
 let initialized = false;
 let internalTest = false;
 const events = new Set([
-  "$pageview", "inquiry_started", "inquiry_submitted", "inquiry_succeeded", "inquiry_failed",
+  "$pageview", "inquiry_started", "inquiry_submitted", "inquiry_succeeded", "inquiry_failed", "inquiry_invalid", "orchard_empty",
+  "feedback_admin", "feedback_reporting", "feedback_integrations", "feedback_website", "feedback_other",
 ]);
 
 export function captureInquiryEvent(event: string, route = "/contact") {
@@ -28,7 +29,9 @@ export function captureInquiryEvent(event: string, route = "/contact") {
         ip: false,
         save_referrer: false,
         before_send: (payload) => {
-          if (!payload || !events.has(payload.event)) return null;
+          if (!payload) return null;
+          const baseEvent = payload.event.startsWith("qa_") ? payload.event.slice(3) : payload.event;
+          if (!events.has(baseEvent)) return null;
           // Explicit allowlist: no URL queries, referrers, form values, or identities.
           const { token, distinct_id, $session_id, $lib, $lib_version, route, is_test } = payload.properties;
           payload.properties = {
@@ -44,8 +47,9 @@ export function captureInquiryEvent(event: string, route = "/contact") {
       });
       initialized = true;
     }
-    const publicRoute = ["/", "/about", "/contact", "/orchard", "/prism", "/privacy", "/terms"].includes(route) ? route : "/other";
-    posthog.capture(event, { route: publicRoute, is_test: internalTest });
+    const publicRoute = ["/", "/about", "/contact", "/orchard", "/prism", "/privacy", "/terms", "/compare/zapier-vs-make", "/compare/n8n-vs-zapier", "/alternatives/zapier"].includes(route) ? route : "/other";
+    // The reporting mirror groups by event, not properties. Separate QA by name.
+    posthog.capture(internalTest ? `qa_${event}` : event, { route: publicRoute, is_test: internalTest });
   } catch {
     // Analytics must never interrupt the inquiry or its delivery result.
   }
