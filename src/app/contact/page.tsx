@@ -1,5 +1,6 @@
 "use client";
 
+import { ReferralFields } from "@/components/contact/ReferralFields";
 import { captureInquiryEvent } from "@/lib/analytics";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -14,6 +15,8 @@ import { ROISimulator } from "@/components/contact/ROISimulator";
 export default function ContactPage() {
   const inquiryStarted = useRef(false);
   const invalidReported = useRef(false);
+  const referralReported = useRef(false);
+  const [referral, setReferral] = useState({ source: "", prompt: "" });
   const [workflow, setWorkflow] = useState("");
   const [budget, setBudget] = useState(50);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -31,6 +34,11 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("sending");
     captureInquiryEvent("inquiry_submitted");
+    if (referral.source && !referralReported.current) {
+      captureInquiryEvent("inquiry_source", "/contact", referral);
+      referralReported.current = true;
+      setReferral({ source: referral.source, prompt: "" });
+    }
 
     try {
       await emailjs.send(
@@ -237,6 +245,8 @@ export default function ContactPage() {
                   onChange={(e) => updateField("message", e.target.value)}
                 />
               </div>
+
+              <ReferralFields value={referral} onChange={setReferral} />
 
               {/* Submit */}
               <div className="pt-3">
