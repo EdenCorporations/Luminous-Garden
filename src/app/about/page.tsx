@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { entityDescription } from "@/lib/entity";
 import {
   Rocket,
   Code,
@@ -110,6 +111,7 @@ export default function AboutPage() {
             The <span className="text-ember">Genesis</span>
           </h1>
           <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed font-light">
+            {entityDescription}{" "}
             Every breakthrough begins at the origin. At EdenCORP, we build
             the intelligence that transforms industries.
           </p>
