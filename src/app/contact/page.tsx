@@ -13,6 +13,8 @@ import { ROISimulator } from "@/components/contact/ROISimulator";
 
 export default function ContactPage() {
   const inquiryStarted = useRef(false);
+  const invalidReported = useRef(false);
+  const [workflow, setWorkflow] = useState("");
   const [budget, setBudget] = useState(50);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [formData, setFormData] = useState({
@@ -56,6 +58,7 @@ export default function ContactPage() {
       inquiryStarted.current = true;
       captureInquiryEvent("inquiry_started");
     }
+    invalidReported.current = false;
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -101,7 +104,10 @@ export default function ContactPage() {
           {/* Form */}
           <Reveal delay={0.15}>
             <div className="surface-card rounded-lg p-8 md:p-10 border border-border relative overflow-hidden">
-              <form className="space-y-7" onSubmit={handleSubmit}>
+              <form className="space-y-7 ph-no-capture" onSubmit={handleSubmit} onInvalid={() => {
+                if (!invalidReported.current) captureInquiryEvent("inquiry_invalid");
+                invalidReported.current = true;
+              }}>
               {/* Name + Org */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                 <div className="group/input relative">
@@ -188,6 +194,29 @@ export default function ContactPage() {
                   <span>$250k</span>
                   <span>$500k+</span>
                 </div>
+              </div>
+
+              <div className="group/input relative">
+                <label htmlFor="workflow" className="block text-sm text-text-secondary mb-2">
+                  What would you like to automate? <span className="text-xs">(optional)</span>
+                </label>
+                <select
+                  id="workflow"
+                  value={workflow}
+                  className="w-full min-h-11 bg-surface border border-border rounded-sm px-3 text-sm text-text focus:outline-none focus:border-ember"
+                  onChange={(e) => {
+                    const choice = e.target.value;
+                    setWorkflow(choice);
+                    if (choice) captureInquiryEvent(`feedback_${choice}`);
+                  }}
+                >
+                  <option value="">Choose a workflow</option>
+                  <option value="admin">Daily admin</option>
+                  <option value="reporting">Reports and dashboards</option>
+                  <option value="integrations">Connecting tools</option>
+                  <option value="website">Website workflows</option>
+                  <option value="other">Something else</option>
+                </select>
               </div>
 
               {/* Message */}
