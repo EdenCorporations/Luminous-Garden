@@ -42,7 +42,7 @@ const TIMELINE = [
     year: "2025",
     title: "First Apple",
     description:
-      "PRISM launches — a serverless, AI-powered campus engine deployed across educational institutions.",
+      "PRISM is Eden's campus automation offering for educational institutions.",
     active: true,
   },
   {
@@ -63,12 +63,12 @@ const PILLARS = [
   {
     icon: Cog,
     title: "Scale",
-    desc: "Every solution is built for elastic growth — from one user to fifty thousand, without compromise.",
+    desc: "Custom workflow automation for your organization. Discuss capacity needs when defining your project.",
   },
   {
     icon: Lock,
     title: "Secure",
-    desc: "Your data is sacrosanct. Complete data sovereignty, zero-trust architecture, and regulatory compliance.",
+    desc: "Tell us your data access, hosting, and compliance requirements when discussing your project.",
   },
 ];
 

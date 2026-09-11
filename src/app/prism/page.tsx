@@ -52,14 +52,14 @@ const FEATURES = [
     number: "01",
     title: "Elastic Infrastructure",
     description:
-      "Auto-scaling architecture that expands instantly — whether 1 student logs in or 5,000 simultaneously. Zero downtime, always.",
-    tags: ["Auto-Scale", "Serverless", "Zero Downtime"],
+      "Proposed campus infrastructure, scoped around your institution's expected demand. Capacity and availability targets depend on the agreed project.",
+    tags: ["Auto-Scale", "Serverless", "Availability Planning"],
   },
   {
     number: "02",
     title: "AI Academic Suite",
     description:
-      "An AI tutor grounded in your college's own syllabus using RAG. No hallucinations — just curriculum. Plus Audio-Learn for revision on the go.",
+      "Proposed academic tools include syllabus-based tutoring and audio revision. AI responses can be wrong and need review.",
     tags: ["RAG-Powered", "Syllabus-Grounded", "Audio-Learn"],
   },
   {
