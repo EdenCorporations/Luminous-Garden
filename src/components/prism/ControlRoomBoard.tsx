@@ -57,9 +57,7 @@ export function ControlRoomBoard() {
     });
   }, [tick]);
 
-  const throughput = 4200 + Math.round(Math.sin(tick * 0.35) * 240 + Math.cos(tick * 0.2) * 120);
   const latency = 11 + Math.round((Math.sin(tick * 0.45) + 1) * 2);
-  const failover = 99.97 + Math.sin(tick * 0.2) * 0.02;
 
   return (
     <div className="surface-card rounded-lg border border-border p-6 space-y-6 overflow-hidden relative">
@@ -87,7 +85,7 @@ export function ControlRoomBoard() {
             <Users className="w-3.5 h-3.5" />
             <span className="text-[10px] font-mono uppercase tracking-wider">Active Users</span>
           </div>
-          <p className="text-xl font-display italic text-text">{throughput.toLocaleString()}</p>
+          <p className="text-xl font-display italic text-text">Demo</p>
         </div>
         <div className="rounded-sm border border-border bg-void/60 p-3">
           <div className="flex items-center gap-2 text-text-tertiary mb-2">
@@ -101,7 +99,7 @@ export function ControlRoomBoard() {
             <Shield className="w-3.5 h-3.5" />
             <span className="text-[10px] font-mono uppercase tracking-wider">Failover</span>
           </div>
-          <p className="text-xl font-display italic text-text">{failover.toFixed(2)}%</p>
+          <p className="text-xl font-display italic text-text">Demo</p>
         </div>
       </div>
 
@@ -133,7 +131,7 @@ export function ControlRoomBoard() {
                   transition={{ duration: 2.4, repeat: Infinity }}
                 />
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[9px] font-mono text-text-tertiary whitespace-nowrap">
-                  {node.id} · {node.load}%
+                  {node.id}
                 </div>
               </div>
             </motion.div>
@@ -171,7 +169,7 @@ export function ControlRoomBoard() {
                 <div key={label}>
                   <div className="flex justify-between mb-1 text-[10px] font-mono text-text-tertiary">
                     <span>{label}</span>
-                    <span className="text-ember">{(bars[bars.length - 1] * 100).toFixed(0)}%</span>
+                    <span className="text-ember">Demo</span>
                   </div>
                   <div className="flex items-end gap-[2px] h-8">
                     {bars.map((value, barIndex) => (

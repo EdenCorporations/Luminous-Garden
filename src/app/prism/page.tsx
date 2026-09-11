@@ -14,14 +14,14 @@ const TERMINAL_LINES = [
   { text: "prism init --campus production", type: "command" as const, delay: 400 },
   { text: "Connecting to PRISM infrastructure...", type: "info" as const, delay: 100 },
   { text: "✓ Serverless cluster initialized", type: "success" as const, delay: 300 },
-  { text: "✓ Auto-scaling policy applied (1 → 5,000 users)", type: "success" as const, delay: 200 },
+  { text: "✓ Auto-scaling policy applied", type: "success" as const, delay: 200 },
   { text: "prism deploy --ai-tutor --rag-engine", type: "command" as const, delay: 600 },
   { text: "Deploying AI Academic Suite...", type: "info" as const, delay: 100 },
   { text: "✓ RAG engine loaded (syllabus-grounded)", type: "success" as const, delay: 400 },
   { text: "✓ Audio-Learn module active", type: "success" as const, delay: 200 },
   { text: "✓ Placement Research Agent ready", type: "success" as const, delay: 200 },
   { text: "prism status --all", type: "command" as const, delay: 500 },
-  { text: "UPTIME: 100% | LATENCY: 12ms | USERS: 4,892 active", type: "output" as const, delay: 100 },
+  { text: "UPTIME: Demo | LATENCY: 12ms | USERS: Demo", type: "output" as const, delay: 100 },
   { text: "All systems operational.", type: "success" as const, delay: 200 },
 ];
 
@@ -159,10 +159,10 @@ export default function PrismPage() {
                       </span>
                     </div>
                   </div>
-                  <AnimatedBar label="Uptime" value="100%" width="100%" delay={0.2} />
-                  <AnimatedBar label="Student Engagement" value="94.7%" width="94.7%" delay={0.4} />
-                  <AnimatedBar label="Placement Rate" value="89%" width="89%" delay={0.6} />
-                  <AnimatedBar label="AI Tutor Accuracy" value="97.2%" width="97.2%" delay={0.8} />
+                  <AnimatedBar label="Uptime" value="Demo" width="100%" delay={0.2} />
+                  <AnimatedBar label="Student Engagement" value="Demo" width="94.7%" delay={0.4} />
+                  <AnimatedBar label="Placement Rate" value="Demo" width="89%" delay={0.6} />
+                  <AnimatedBar label="AI Tutor Accuracy" value="Demo" width="97.2%" delay={0.8} />
                 </div>
               </Reveal>
 
