@@ -2,6 +2,7 @@
 
 import { ReferralFields } from "@/components/contact/ReferralFields";
 import { captureInquiryEvent } from "@/lib/analytics";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ArrowRight, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
@@ -250,6 +251,10 @@ export default function ContactPage() {
 
               {/* Submit */}
               <div className="pt-3">
+                <div className="mb-4 flex justify-center gap-5 text-sm text-text-secondary">
+                  <Link href="/privacy" className="underline underline-offset-4 hover:text-text">Privacy</Link>
+                  <Link href="/terms" className="underline underline-offset-4 hover:text-text">Terms</Link>
+                </div>
                 <AnimatePresence mode="wait">
                   {status === "sent" ? (
                     <motion.div
