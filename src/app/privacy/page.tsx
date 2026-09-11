@@ -48,7 +48,7 @@ export default function PrivacyPage() {
           </section>
           <section>
             <h2 className="text-xl font-display italic text-text mb-4">7. Analytics and cookies</h2>
-            <p>PostHog tracks page views, form starts, submission attempts, and send results. Events include the page path and temporary browser identifiers. Eden&apos;s configuration excludes form contents, persistent storage, user profiles, and session recordings. Vercel Web Analytics measures visits, and Speed Insights measures page performance. These analytics tools are configured without tracking cookies. Providers still receive technical data needed to handle network requests.</p>
+            <p>PostHog tracks page views, form starts, submission attempts, send results, and empty catalog searches. It also records optional workflow choices, referral categories, and AI question topics. AI question text stays in your browser; only its topic category is sent. Events include the page path and temporary browser identifiers. Eden&apos;s configuration excludes raw form contents, persistent storage, user profiles, and session recordings. Vercel Web Analytics measures visits, and Speed Insights measures page performance. These analytics tools are configured without tracking cookies. Providers still receive technical data needed to handle network requests.</p>
           </section>
           <section>
             <h2 className="text-xl font-display italic text-text mb-4">8. Contact</h2>
