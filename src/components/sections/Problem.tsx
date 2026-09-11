@@ -1,27 +1,18 @@
 "use client";
 
 import { Reveal } from "@/components/ScrollReveal";
-import { AnimatedCounter } from "@/components/AnimatedCounter";
 
 export function ProblemSection() {
   return (
     <section className="relative w-full max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-      {/* Left: The Big Stat */}
+      {/* Left: Workflow Automation */}
       <Reveal className="order-2 md:order-1">
         <div className="relative flex flex-col items-center md:items-start">
-          <span className="font-display text-[8rem] sm:text-[10rem] md:text-[12rem] leading-none tracking-tight text-text/5">
-            40%
+          <span className="font-display italic text-[4.5rem] sm:text-[5.5rem] lg:text-[6rem] leading-none tracking-tight text-ember">
+            Automate
           </span>
-          <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center">
-            <AnimatedCounter
-              value={40}
-              suffix="%"
-              duration={2.5}
-              className="!text-left text-[8rem] sm:text-[10rem] md:text-[12rem] leading-none"
-            />
-          </div>
           <p className="font-mono text-xs text-text-tertiary uppercase tracking-[0.15em] mt-4 text-center md:text-left">
-            Average annual resource loss across unoptimized industries
+            Custom workflows for your organization
           </p>
         </div>
       </Reveal>
