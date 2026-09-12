@@ -1,6 +1,6 @@
 # EdenCORP
 
-Eden is a custom workflow automation agency for organizations.
+Eden is a custom workflow automation agency for organizations. No entity is registered for Eden.
 
 Website: https://www.edencorp.org/
 
