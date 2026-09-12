@@ -16,7 +16,7 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   // Search guides must render their article in the initial server response.
   // Keep the original loading sequence on all existing routes.
-  if (pathname.startsWith("/compare/") || pathname.startsWith("/alternatives/")) {
+  if (pathname.startsWith("/compare/") || pathname.startsWith("/alternatives/") || pathname.startsWith("/guides/")) {
     return <><Navbar /><div className="flex-1 flex flex-col min-h-screen">{children}<Footer /></div><ScrollToTop /></>;
   }
   return (
