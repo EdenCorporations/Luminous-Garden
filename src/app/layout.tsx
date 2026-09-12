@@ -1,6 +1,7 @@
 import { entityDescription } from "@/lib/entity";
 import { InquiryAnalytics } from "@/components/InquiryAnalytics";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Instrument_Serif, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LayoutClient } from "@/components/LayoutClient";
@@ -67,6 +68,18 @@ export default function RootLayout({
           }}
         />
         <LayoutClient>{children}</LayoutClient>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18446644911"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18446644911');
+          `}
+        </Script>
         <Analytics />
         <InquiryAnalytics />
         <SpeedInsights />
