@@ -58,7 +58,7 @@ export default function Page() {
           </div>
           <div className={`${styles.row} ${styles.service}`}>
             <h3>Custom work</h3>
-            <div><span className={styles.label}>Commission a service</span><p>Eden offers development, integration, consulting, and support. Bring your process, current tools, and requirements for a project proposal.</p></div>
+            <div><span className={styles.label}>Commission a service</span><p>Eden offers development, integration, consulting, and support. Bring your process, current tools, and requirements for a project proposal. Eden builds custom workflow automation around the scope agreed for your project.</p></div>
           </div>
         </section>
 

@@ -28,7 +28,7 @@ const guide = {
     ]
   ],
   "guidanceTitle": "Try one real workflow",
-  "guidance": "Choose Zapier when its app actions and editor fit your team. Choose Make when its visual scenario layout fits your process. Test the exact trigger, a branch, and a failed step before choosing a plan.",
+  "guidance": "Choose Zapier when its app actions and editor fit your team. Choose Make when its visual scenario layout fits your process. Test the exact trigger, a branch, and a failed step before choosing a plan. Eden offers a custom development service if you want to commission the workflow.",
   "serviceTitle": "Need the workflow built for you?",
   "service": "Eden offers custom workflow automation: development, integration, consulting, and support. Bring the process you want to improve. We can discuss a project proposal around your requirements.",
   "question": "Buying a tool and commissioning a service are separate decisions. Start with the outcome your team needs.",
