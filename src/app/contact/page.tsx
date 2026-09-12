@@ -46,6 +46,10 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
+          // The template headers use these names; its body uses from_* below.
+          name: formData.name,
+          email: formData.email,
+          title: "Website inquiry",
           from_name: formData.name,
           from_email: formData.email,
           organization: formData.org,
