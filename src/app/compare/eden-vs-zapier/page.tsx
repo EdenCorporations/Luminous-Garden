@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BuyerPageSchema } from "@/components/BuyerPageSchema";
 import styles from "../comparison.module.css";
 
 export const metadata: Metadata = {
@@ -20,9 +21,15 @@ const rows = [
   ["Budget", "Project fees and ongoing support need an individual quote.", "Check plan features, task allowances, and usage charges."],
 ];
 
+const faq = {
+  "question": "Who should build it?",
+  "answer": "Zapier suits teams with time to configure, test, and maintain their workflow. Eden suits organizations seeking outside development and integration help. An agency and a tool can work together; hiring help does not always mean replacing your tools."
+};
+
 export default function Page() {
   return (
     <main className={styles.guide}>
+      <BuyerPageSchema path="/compare/eden-vs-zapier" description={rows[0][1]} faqs={[faq]} />
       <article>
         <header className={styles.hero}>
           <div className={styles.eyebrow}>Eden field notes / Workflow automation</div>
@@ -41,8 +48,8 @@ export default function Page() {
         </table>
 
         <section className={styles.choice}>
-          <h2>Who should build it?</h2>
-          <p>Zapier suits teams with time to configure, test, and maintain their workflow. Eden suits organizations seeking outside development and integration help. An agency and a tool can work together; hiring help does not always mean replacing your tools.</p>
+          <h2>{faq.question}</h2>
+          <p>{faq.answer}</p>
         </section>
 
         <section className={styles.service}>
