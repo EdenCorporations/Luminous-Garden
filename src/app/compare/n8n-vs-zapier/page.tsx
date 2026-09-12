@@ -31,7 +31,7 @@ const guide = {
   "guidance": "Choose n8n self-hosting when your team wants deployment control and can maintain it. Consider n8n Cloud or Zapier when you want hosted infrastructure. Your workflow still needs someone to test changes and handle failures.",
   "serviceTitle": "Define the work before the stack",
   "service": "Eden offers custom development, integration, consulting, and support for workflow automation. Bring your current tools and the process you want to change. We can discuss scope and responsibilities in a project proposal.",
-  "question": "Decide who will handle access, workflow changes, and ongoing support. The implementation follows those requirements.",
+  "question": "Decide who will handle access, workflow changes, and ongoing support. The implementation follows those requirements. Eden scopes workflow development and support through individual project proposals.",
   "sources": [
     [
       "n8n hosting options",
