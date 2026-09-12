@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BuyerPageSchema } from "@/components/BuyerPageSchema";
 import styles from "../comparison.module.css";
 
 export const metadata: Metadata = {
@@ -20,9 +21,15 @@ const rows = [
   ["Ownership", "Define handover, documentation, and ongoing support before work starts.", "Your team chooses the deployment and the plan or edition it needs."],
 ];
 
+const faq = {
+  "question": "Who owns hosting and workflow delivery?",
+  "answer": "n8n Cloud suits teams that want infrastructure managed for them. Self-hosting suits teams with resources to manage their own deployment. Eden suits buyers seeking help delivering the workflow itself. Hiring an agency does not automatically settle where the system runs."
+};
+
 export default function Page() {
   return (
     <main className={styles.guide}>
+      <BuyerPageSchema path="/compare/eden-vs-n8n" description={rows[0][1]} faqs={[faq]} />
       <article>
         <header className={styles.hero}>
           <div className={styles.eyebrow}>Eden field notes / Workflow automation</div>
@@ -41,8 +48,8 @@ export default function Page() {
         </table>
 
         <section className={styles.choice}>
-          <h2>Hosting and building are separate choices</h2>
-          <p>n8n Cloud suits teams that want infrastructure managed for them. Self-hosting suits teams with resources to manage their own deployment. Eden suits buyers seeking help delivering the workflow itself. Hiring an agency does not automatically settle where the system runs.</p>
+          <h2>{faq.question}</h2>
+          <p>{faq.answer}</p>
         </section>
 
         <section className={styles.service}>

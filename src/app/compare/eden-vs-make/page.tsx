@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BuyerPageSchema } from "@/components/BuyerPageSchema";
 import styles from "../comparison.module.css";
 
 export const metadata: Metadata = {
@@ -20,9 +21,15 @@ const rows = [
   ["Handover", "Agree documentation, access, and future changes before delivery.", "Assign someone to maintain scenario logic and resolve failed runs."],
 ];
 
+const faq = {
+  "question": "Who will own the branching logic?",
+  "answer": "Make suits a team ready to configure routes, map data, and test different outcomes. Eden suits organizations that want outside development and integration help. The decision is who does the work, not whether branching automation is possible."
+};
+
 export default function Page() {
   return (
     <main className={styles.guide}>
+      <BuyerPageSchema path="/compare/eden-vs-make" description={rows[0][1]} faqs={[faq]} />
       <article>
         <header className={styles.hero}>
           <div className={styles.eyebrow}>Eden field notes / Workflow automation</div>
@@ -41,8 +48,8 @@ export default function Page() {
         </table>
 
         <section className={styles.choice}>
-          <h2>Who will own the branching logic?</h2>
-          <p>Make suits a team ready to configure routes, map data, and test different outcomes. Eden suits organizations that want outside development and integration help. The decision is who does the work, not whether branching automation is possible.</p>
+          <h2>{faq.question}</h2>
+          <p>{faq.answer}</p>
         </section>
 
         <section className={styles.service}>

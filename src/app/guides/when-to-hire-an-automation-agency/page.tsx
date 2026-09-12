@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BuyerPageSchema } from "@/components/BuyerPageSchema";
 import styles from "../../compare/comparison.module.css";
 
 export const metadata: Metadata = {
@@ -20,9 +21,15 @@ const rows = [
   ["Ownership", "You can manage access and future changes.", "You want a defined handover and support scope."],
 ];
 
+const faq = {
+  "question": "Can you start with one small workflow?",
+  "answer": "Try a limited process with a clear result and a manual fallback. If you can test it safely, building independently may suit you. More apps alone do not make an agency necessary."
+};
+
 export default function Page() {
   return (
     <main className={styles.guide}>
+      <BuyerPageSchema path="/guides/when-to-hire-an-automation-agency" description="Eden offers custom workflow development, integration, and consulting. Bring one process to discuss. Feasibility, fees, and support depend on your individual proposal." faqs={[faq]} />
       <article>
         <header className={styles.hero}>
           <div className={styles.eyebrow}>Eden field notes / Workflow automation</div>
@@ -40,8 +47,8 @@ export default function Page() {
         </table>
 
         <section className={styles.choice}>
-          <h2>Can you start with one small workflow?</h2>
-          <p>Try a limited process with a clear result and a manual fallback. If you can test it safely, building independently may suit you. More apps alone do not make an agency necessary.</p>
+          <h2>{faq.question}</h2>
+          <p>{faq.answer}</p>
         </section>
 
         <section className={styles.service}>
