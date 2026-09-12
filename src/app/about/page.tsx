@@ -111,7 +111,7 @@ export default function AboutPage() {
             The <span className="text-ember">Genesis</span>
           </h1>
           <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed font-light">
-            {entityDescription}{" "}
+            {entityDescription} No entity is registered for Eden.{" "}
             Every breakthrough begins at the origin. At EdenCORP, we build
             the intelligence that transforms industries.
           </p>
