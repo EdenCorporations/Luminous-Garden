@@ -68,7 +68,7 @@ export default function Page() {
         <aside className={styles.notes} aria-label="Sources and related reading">
           <p>Sources checked September 9, 2026.</p>
           <ul>{sources.map(([label, href]) => <li key={href}><a href={href}>{label}</a></li>)}</ul>
-          <nav aria-label="Related guides"><Link href="/compare/zapier-vs-make">Zapier vs Make</Link><Link href="/compare/n8n-vs-zapier">n8n vs Zapier</Link></nav>
+          <nav aria-label="Related guides"><Link href="/compare/zapier-vs-make">Zapier vs Make</Link><Link href="/compare/n8n-vs-zapier">n8n vs Zapier</Link><Link href="/compare/eden-vs-zapier">Eden vs Zapier</Link><Link href="/guides/when-to-hire-an-automation-agency">When to hire an automation agency</Link></nav>
         </aside>
       </article>
     </main>

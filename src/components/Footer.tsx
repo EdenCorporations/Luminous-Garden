@@ -7,6 +7,10 @@ export function Footer() {
         <Link href="/compare/zapier-vs-make" className="hover:text-text underline underline-offset-4">Zapier vs Make</Link>
         <Link href="/compare/n8n-vs-zapier" className="hover:text-text underline underline-offset-4">n8n vs Zapier</Link>
         <Link href="/alternatives/zapier" className="hover:text-text underline underline-offset-4">Zapier alternatives</Link>
+        <Link href="/compare/eden-vs-zapier" className="hover:text-text underline underline-offset-4">Eden vs Zapier</Link>
+        <Link href="/compare/eden-vs-make" className="hover:text-text underline underline-offset-4">Eden vs Make</Link>
+        <Link href="/compare/eden-vs-n8n" className="hover:text-text underline underline-offset-4">Eden vs n8n</Link>
+        <Link href="/guides/when-to-hire-an-automation-agency" className="hover:text-text underline underline-offset-4">When to hire an automation agency</Link>
       </nav>
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-wrap justify-center items-center gap-3">
