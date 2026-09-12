@@ -56,7 +56,11 @@ export function ComparisonGuide({ guide }: { guide: Guide }) {
         <aside className={styles.notes} aria-label="Sources and related reading">
           <p>Sources checked <time dateTime="2026-09-09">September 9, 2026</time>. Plan details can change.</p>
           <ul className={styles.sources}>{guide.sources.map(([label, href]) => <li key={href}><a href={href}>{label}</a></li>)}</ul>
+          <nav aria-label="Related guides" className={styles.sources}>
           <Link className={styles.related} href={`/compare/${guide.related}`}>Read next: {guide.relatedLabel} <span aria-hidden="true">→</span></Link>
+            {guide.names.map((name) => <Link key={name} className={styles.related} href={`/compare/eden-vs-${name.toLowerCase()}`}>Eden vs {name}</Link>)}
+            <Link className={styles.related} href="/guides/when-to-hire-an-automation-agency">When to hire an automation agency</Link>
+          </nav>
         </aside>
       </article>
     </main>
