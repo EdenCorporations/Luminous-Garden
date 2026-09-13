@@ -2,6 +2,8 @@
 
 Eden is a custom workflow automation agency for organizations. No entity is registered for Eden.
 
+Founded in 2025. Based in Chennai, India.
+
 Website: https://www.edencorp.org/
 
 # EdenCORP — Luminous Garden

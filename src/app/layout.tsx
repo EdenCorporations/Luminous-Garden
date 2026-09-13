@@ -15,6 +15,12 @@ const organization = {
   name: "EdenCORP",
   url: "https://www.edencorp.org",
   description: entityDescription,
+  foundingDate: "2025",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Chennai",
+    addressCountry: "IN",
+  },
   sameAs: ["https://github.com/EdenCorporations", "https://www.linkedin.com/company/edencorp/"],
 };
 
