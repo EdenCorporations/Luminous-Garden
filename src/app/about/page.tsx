@@ -32,7 +32,7 @@ const CAPABILITIES = [
 
 const TIMELINE = [
   {
-    year: "2024",
+    year: "2025",
     title: "Genesis",
     description:
       "EdenCORP founded with a singular mission — automate any industry through scalable, AI-driven infrastructure.",
@@ -111,7 +111,7 @@ export default function AboutPage() {
             The <span className="text-ember">Genesis</span>
           </h1>
           <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed font-light">
-            {entityDescription} No entity is registered for Eden.{" "}
+            {entityDescription} Based in Chennai, India. No entity is registered for Eden.{" "}
             Every breakthrough begins at the origin. At EdenCORP, we build
             the intelligence that transforms industries.
           </p>
