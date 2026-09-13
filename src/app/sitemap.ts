@@ -7,10 +7,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/compare/eden-vs-zapier", "/compare/eden-vs-make", "/compare/eden-vs-n8n",
     "/guides/when-to-hire-an-automation-agency", "/compare",
   ];
+  // These pages gained article markup or a resource link on September 13.
+  const updatedSeptember13 = new Set([
+    "/compare", "/compare/eden-vs-zapier", "/compare/eden-vs-make",
+    "/compare/eden-vs-n8n", "/guides/when-to-hire-an-automation-agency",
+  ]);
   return routes.map((path) => ({
     url: `https://www.edencorp.org${path}`,
-    ...(path === "/compare" ? { lastModified: "2026-09-13" } : {}),
     ...((path.startsWith("/compare/") || path.startsWith("/alternatives/") || path.startsWith("/guides/"))
       ? { lastModified: "2026-09-12" } : {}),
+    ...(updatedSeptember13.has(path) ? { lastModified: "2026-09-13" } : {}),
   }));
 }
