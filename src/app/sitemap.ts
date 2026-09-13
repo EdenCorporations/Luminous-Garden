@@ -5,10 +5,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "", "/about", "/orchard", "/prism", "/contact", "/privacy", "/terms",
     "/compare/zapier-vs-make", "/compare/n8n-vs-zapier", "/alternatives/zapier",
     "/compare/eden-vs-zapier", "/compare/eden-vs-make", "/compare/eden-vs-n8n",
-    "/guides/when-to-hire-an-automation-agency",
+    "/guides/when-to-hire-an-automation-agency", "/compare",
   ];
   return routes.map((path) => ({
     url: `https://www.edencorp.org${path}`,
+    ...(path === "/compare" ? { lastModified: "2026-09-13" } : {}),
     ...((path.startsWith("/compare/") || path.startsWith("/alternatives/") || path.startsWith("/guides/"))
       ? { lastModified: "2026-09-12" } : {}),
   }));
