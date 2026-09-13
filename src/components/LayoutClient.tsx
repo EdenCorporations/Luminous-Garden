@@ -26,9 +26,9 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
       <ScrollProgress />
       <GlowCursor />
       {children}
-      <Footer />
       <ScrollToTop />
       </Preloader>
+      <Footer />
     </>
   );
 }
