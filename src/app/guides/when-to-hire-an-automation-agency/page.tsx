@@ -63,6 +63,7 @@ export default function Page() {
             <li><Link className={styles.related} href="/compare/eden-vs-zapier">Eden vs Zapier</Link></li>
             <li><Link className={styles.related} href="/compare/eden-vs-make">Eden vs Make</Link></li>
             <li><Link className={styles.related} href="/compare/eden-vs-n8n">Eden vs n8n</Link></li>
+            <li><Link className={styles.related} href="/compare">Comparisons and guides</Link></li>
           </ul>
         </aside>
       </article>
