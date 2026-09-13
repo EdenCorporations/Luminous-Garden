@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ComparisonArticleSchema } from "@/components/ComparisonArticleSchema";
 import { BuyerPageSchema } from "@/components/BuyerPageSchema";
 import styles from "../comparison.module.css";
 
@@ -29,6 +30,7 @@ const faq = {
 export default function Page() {
   return (
     <main className={styles.guide}>
+      <ComparisonArticleSchema path="/compare/eden-vs-n8n" headline="Eden vs n8n" />
       <BuyerPageSchema path="/compare/eden-vs-n8n" description={rows[0][1]} faqs={[faq]} />
       <article>
         <header className={styles.hero}>
