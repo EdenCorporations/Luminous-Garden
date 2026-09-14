@@ -53,9 +53,11 @@ export default function OrchardPage() {
   const [activeFilter, setActiveFilter] = useState("All Products");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const normalizedQuery = searchQuery.trim().toLowerCase();
   const filtered = products.filter((p) => {
     const matchesCategory = activeFilter === "All Products" || p.category === activeFilter;
-    const matchesSearch = searchQuery === "" || p.label.toLowerCase().includes(searchQuery.toLowerCase()) || p.desc.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = [p.label, p.subtitle, p.desc, p.category]
+      .some((field) => field.toLowerCase().includes(normalizedQuery));
     return matchesCategory && matchesSearch;
   });
 
