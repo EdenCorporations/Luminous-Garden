@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 const resources = [
+  { href: "/services/workflow-automation", title: "Workflow automation services", description: "Scope a custom project, including human checks, testing, and handover." },
   { href: "/compare/eden-vs-zapier", title: "Eden vs Zapier", description: "Custom delivery or building with Zapier: compare who builds, maintains, and supports the workflow." },
   { href: "/compare/eden-vs-make", title: "Eden vs Make", description: "Compare outside development with building in Make, including testing and ongoing ownership." },
   { href: "/compare/eden-vs-n8n", title: "Eden vs n8n", description: "Consider delivery responsibility, hosting choices, and who manages changes after launch." },
@@ -40,7 +41,7 @@ export default function ComparisonHub() {
           </div>
           <Link className={styles.primary} href="/guides/when-to-hire-an-automation-agency">When to hire an automation agency <span aria-hidden="true">↗</span></Link>
         </div>
-        <h2 className={styles.listHeading}>Explore the comparisons</h2>
+        <h2 className={styles.listHeading}>Explore your options</h2>
         <ul className={styles.list}>
           {resources.map((resource, index) => (
             <li key={resource.href}>
