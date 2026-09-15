@@ -30,7 +30,6 @@ export default function ComparisonHub() {
       <header className={styles.hero}>
         <div className={styles.eyebrow}>Eden field notes</div>
         <h1>Choose how your<br /><em>workflow gets built.</em></h1>
-        <p>Compare tools, delivery, and ownership. Start with who will build and maintain your workflow, then explore the options.</p>
       </header>
       <nav aria-label="Automation comparisons and guides" className={styles.resources}>
         <div className={styles.featured}>
