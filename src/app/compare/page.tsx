@@ -22,6 +22,8 @@ const resources = [
   { href: "/compare/zapier-vs-make", title: "Zapier vs Make", description: "Compare two workflow tools by setup, branching, and how usage is counted." },
   { href: "/compare/n8n-vs-zapier", title: "n8n vs Zapier", description: "Compare hosting and workflow ownership before choosing where your automation runs." },
   { href: "/alternatives/zapier", title: "Zapier alternatives", description: "Explore other workflow tools and when custom automation help may fit your process." },
+  { href: "/guides/workflow-automation-agency-cost", title: "Workflow automation agency costs", description: "Understand what shapes a custom quote and which costs to confirm." },
+  { href: "/guides/automation-agency-or-zapier", title: "Automation agency or Zapier?", description: "Decide who will build, test, and maintain your workflow." },
 ];
 
 export default function ComparisonHub() {
