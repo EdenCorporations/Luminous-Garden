@@ -16,9 +16,60 @@ export const metadata: Metadata = {
   },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.edencorp.org/guides/automation-agency-or-zapier#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Automation agency or Zapier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Build with Zapier when your team can own setup, testing, and maintenance. Consider an agency when you need help delivering those tasks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Zapier provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zapier connects apps through workflows called Zaps. A trigger starts one or more actions. Check that your apps support the steps you need, then test the complete process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What would you commission?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For example, a new inquiry could create a customer record and notify its owner. This is a proposed workflow, not a delivered-client result. Agree who handles duplicate entries, failed steps, and manual recovery. Define acceptance tests, documentation, account access, and support before commissioning work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does hiring replace the tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. An agency may build with a workflow tool. Agree the technology and account ownership in your proposal. Hiring help does not guarantee better results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Eden scope the work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eden offers custom development, integration, consulting, and support through individual proposals. Bring one workflow to discuss. Confirm feasibility, fees, software costs, handover, and ongoing support. No entity is registered."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <main className={styles.guide}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+      }} />
       <article>
         <header className={styles.hero}>
           <div className={styles.eyebrow}>Eden field notes / Workflow automation</div>
