@@ -15,9 +15,60 @@ export const metadata: Metadata = {
   },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.edencorp.org/guides/workflow-automation-agency-cost#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does automation agency work cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eden provides custom proposals for workflow automation. There is no public price list; your project needs an individual quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should you send for a proposal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Describe one workflow from trigger to result. Name the apps, manual steps, frequency, and person who checks the output. Explain unusual cases, access limits, and what a successful test would show. Use fictional examples instead of private records. Share your budget and preferred timing. These are planning inputs, not an agreed fee or delivery commitment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What costs should you clarify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask the proposal to distinguish development, integration, consulting, and support. Clarify software subscriptions, usage charges, maintenance, and future changes. Confirm which items are included and who pays each cost before agreeing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the website show an estimated fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Contact budget choices describe what you can spend. The ROI calculator shows an illustrative scenario, not Eden's fees or measured customer savings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you request one workflow first?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Bring one bounded process to discuss. Feasibility, scope, fees, and support still need agreement in your proposal."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <main className={styles.guide}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+      }} />
       <article>
         <header className={styles.hero}>
           <div className={styles.eyebrow}>Eden field notes / Workflow automation</div>
