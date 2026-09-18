@@ -35,7 +35,20 @@ export default function HowWeWork() {
           </li>
         ))}
       </ol>
-      {/* Keep room within the page budget for the separately scoped internal-prototype evidence section. */}
+      <section className={styles.examples} aria-labelledby="internal-examples">
+        <h2 id="internal-examples">Internal examples</h2>
+        <p>These are Eden&apos;s internal prototypes, not client deployments.</p>
+        <dl>
+          <div>
+            <dt>Orchard</dt>
+            <dd>An internal catalog prototype for browsing and filtering Eden&apos;s product concepts, including PRISM.</dd>
+          </div>
+          <div>
+            <dt>PRISM</dt>
+            <dd>An internal campus automation prototype. Its digital twin shows simulated users, performance, and incidents, not measured client activity.</dd>
+          </div>
+        </dl>
+      </section>
       <nav className={styles.related} aria-label="Related reading">
         <Link href="/services/workflow-automation">Workflow automation services</Link>
         <Link href="/about">About Eden</Link>
