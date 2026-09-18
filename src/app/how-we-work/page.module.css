@@ -14,4 +14,10 @@
 .related { display: flex; flex-wrap: wrap; gap: 16px 32px; border-top: 1px solid #2a2622; padding-top: 24px; margin-top: 48px; font-size: 14px; }
 .related a { text-decoration: underline; text-underline-offset: 4px; }
 .related a:hover { color: #ff8563; }
+.examples { border-top: 1px solid #2a2622; margin-top: 48px; padding-top: 24px; }
+.examples h2 { font-family: var(--font-instrument-serif), serif; font-size: 32px; line-height: 1.2; margin: 0; }
+.examples dl { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 64px; margin: 24px 0 0; }
+.examples dt { font-size: 18px; font-weight: 600; }
+.examples dd { color: #b5aea4; font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 8px 0 0; text-wrap: pretty; }
+@media(max-width:760px) { .examples dl { grid-template-columns: 1fr; } }
 @media(max-width:760px) { .page { padding-top: 104px; padding-bottom: 40px; } .hero { margin-bottom: 40px; } .stages { grid-template-columns: 1fr; gap: 24px; } .stages li { grid-template-columns: 24px 1fr; gap: 12px; padding-top: 20px; } }
