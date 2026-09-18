@@ -17,7 +17,7 @@ export default function ContactPage() {
   const inquiryStarted = useRef(false);
   const invalidReported = useRef(false);
   const referralReported = useRef(false);
-  const [referral, setReferral] = useState({ source: "", prompt: "" });
+  const [referral, setReferral] = useState({ source: "" });
   const [workflow, setWorkflow] = useState("");
   const [budget, setBudget] = useState(50);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -38,7 +38,6 @@ export default function ContactPage() {
     if (referral.source && !referralReported.current) {
       captureInquiryEvent("inquiry_source", "/contact", referral);
       referralReported.current = true;
-      setReferral({ source: referral.source, prompt: "" });
     }
 
     try {
