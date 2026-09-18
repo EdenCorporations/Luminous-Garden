@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
-    "", "/about", "/orchard", "/prism", "/contact", "/privacy", "/terms",
+    "", "/how-we-work", "/about", "/orchard", "/prism", "/contact", "/privacy", "/terms",
     "/compare/zapier-vs-make", "/compare/n8n-vs-zapier", "/alternatives/zapier",
     "/compare/eden-vs-zapier", "/compare/eden-vs-make", "/compare/eden-vs-n8n",
     "/guides/when-to-hire-an-automation-agency", "/compare", "/services/workflow-automation",
@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]);
   return routes.map((path) => ({
     url: `https://www.edencorp.org${path}`,
+    ...(path === "/how-we-work" ? { lastModified: "2026-09-18" } : {}),
     ...((path.startsWith("/compare/") || path.startsWith("/alternatives/") || path.startsWith("/guides/"))
       ? { lastModified: "2026-09-12" } : {}),
     ...(updatedSeptember13.has(path) ? { lastModified: "2026-09-13" } : {}),
