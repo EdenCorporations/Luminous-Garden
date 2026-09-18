@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 const resources = [
+  { href: "/how-we-work", title: "How we work", description: "From your first inquiry to scope, build, handover, and support." },
   { href: "/services/workflow-automation", title: "Workflow automation services", description: "Scope a custom project, including human checks, testing, and handover." },
   { href: "/compare/eden-vs-zapier", title: "Eden vs Zapier", description: "Custom delivery or building with Zapier: compare who builds, maintains, and supports the workflow." },
   { href: "/compare/eden-vs-make", title: "Eden vs Make", description: "Compare outside development with building in Make, including testing and ongoing ownership." },

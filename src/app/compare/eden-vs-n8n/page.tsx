@@ -67,6 +67,7 @@ export default function Page() {
             <li><a href="https://docs.n8n.io/deploy/host-n8n">n8n self-hosting</a></li>
           </ul>
           <Link className={styles.related} href="/compare/n8n-vs-zapier">Read next: n8n vs Zapier <span aria-hidden="true">→</span></Link>
+          <div><Link className={styles.related} href="/how-we-work">How we work</Link></div>
         </aside>
       </article>
     </main>

@@ -68,6 +68,7 @@ export default function Page() {
             <li><a href="https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history">Zapier run history</a></li>
           </ul>
           <Link className={styles.related} href="/alternatives/zapier">Read next: Zapier alternatives <span aria-hidden="true">→</span></Link>
+          <div><Link className={styles.related} href="/how-we-work">How we work</Link></div>
         </aside>
       </article>
     </main>
