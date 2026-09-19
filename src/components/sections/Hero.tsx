@@ -118,20 +118,19 @@ export function HeroSection() {
           variants={fadeUp}
           className="font-body text-text-secondary text-lg md:text-xl max-w-xl mx-auto mb-12 font-light leading-relaxed"
         >
-          AI-powered automation infrastructure that transforms how industries
-          operate.
+          Eden builds custom workflow automation for your organization. We work entirely online, with scope and pricing agreed in your proposal.
         </motion.p>
 
         {/* CTA */}
         <motion.div variants={fadeUp}>
           <MagneticButton strength={0.25}>
             <Link
-              href="/orchard"
-              className="group relative inline-flex items-center justify-center px-8 py-4 bg-transparent border border-ember/40 hover:border-ember hover:bg-ember/5 text-text rounded-sm transition-all duration-300 no-underline ember-glow"
+              href="/contact"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-ember border border-ember hover:bg-ember/90 text-white rounded-sm transition-all duration-300 no-underline ember-glow"
             >
               <span className="font-body font-medium text-sm tracking-[0.1em] uppercase flex items-center gap-3">
-                Explore the Orchard
-                <ArrowRight className="w-4 h-4 text-ember group-hover:translate-x-1 transition-transform" />
+                Discuss your workflow
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
           </MagneticButton>

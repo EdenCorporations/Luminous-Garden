@@ -44,7 +44,8 @@ export default function Home() {
           Ready to grow?
         </h2>
         <p className="text-text-secondary font-light text-lg mb-8 max-w-md mx-auto">
-          Every great system starts with a conversation.
+          Tell us about your workflow. We discuss scope, then agree a proposal before building. Handover and support follow your proposal.{" "}
+          <Link href="/how-we-work" className="underline underline-offset-4 hover:text-text">How we work</Link>
         </p>
         <MagneticButton strength={0.25}>
           <Link
