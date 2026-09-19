@@ -5,6 +5,12 @@
 Eden provides custom development, integration, consulting, and support through individual proposals and contracts.
 Website design and executive dashboards are examples of its broad workflow automation scope.
 Project scope and pricing are agreed individually.
+Eden works entirely online. Each proposal defines the project scope and fixed-scope milestones.
+Handover requirements, maintenance responsibilities, and any ongoing support fees depend on the individual proposal.
+No entity is registered.
+Orchard and PRISM are Eden's internal prototypes, not client deployments.
+Orchard is an internal catalog prototype for browsing and filtering Eden's product concepts.
+PRISM is an internal campus automation prototype.
 PRISM's displayed activity and performance figures are simulations, not measured customer results.
 The links below lead to public web pages.
 
