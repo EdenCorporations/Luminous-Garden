@@ -6,7 +6,6 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ParticleField } from "@/components/ParticleField";
 import { TextScramble } from "@/components/TextScramble";
 import { MagneticButton } from "@/components/MagneticButton";
-import { SplitText } from "@/components/SplitText";
 import { CoreField } from "@/components/hero/CoreField";
 
 /** Returns a motion value for parallax based on scroll position */
@@ -80,7 +79,7 @@ export function HeroSection() {
       {/* Hero Content */}
       <motion.div
         variants={container}
-        initial="hidden"
+        initial={false}
         animate="visible"
         className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl"
       >
@@ -97,19 +96,15 @@ export function HeroSection() {
           <span className="h-px w-10 bg-ember/40" />
         </motion.div>
 
-        {/* Headline — per-character reveal */}
+        {/* Headline — visible in the first server render */}
         <motion.h1
           variants={fadeUp}
           className="font-display text-5xl sm:text-7xl md:text-[6.5rem] leading-[0.95] tracking-tight mb-8 text-text overflow-hidden"
         >
-          <SplitText delay={0.5} stagger={0.025}>
-            Where intelligence
-          </SplitText>
+          Where intelligence
           <br />
           <span className="italic text-ember">
-            <SplitText delay={0.9} stagger={0.04}>
-              begins.
-            </SplitText>
+            begins.
           </span>
         </motion.h1>
 

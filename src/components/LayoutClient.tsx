@@ -19,6 +19,10 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
   const serviceSchema = pathname === "/" || pathname === "/how-we-work"
     ? <AgencyServiceSchema path={pathname} />
     : null;
+  // The homepage must be readable before hydration, without the loading overlay.
+  if (pathname === "/") {
+    return <>{serviceSchema}<Navbar /><div className="flex-1 flex flex-col min-h-screen"><ScrollProgress /><GlowCursor />{children}<ScrollToTop /></div><Footer /></>;
+  }
   // Search guides must render their article in the initial server response.
   // Keep the original loading sequence on all existing routes.
   if (pathname === "/how-we-work" || pathname === "/compare" || pathname.startsWith("/compare/") || pathname.startsWith("/alternatives/") || pathname.startsWith("/guides/") || pathname.startsWith("/services/")) {

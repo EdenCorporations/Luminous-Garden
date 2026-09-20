@@ -4,20 +4,19 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-border py-8 mt-auto">
       <nav aria-label="Workflow guides" className="max-w-7xl mx-auto px-6 mb-6 flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-text-secondary">
-        <Link href="/compare" className="hover:text-text underline underline-offset-4">Comparisons and guides</Link>
-        <Link href="/compare/zapier-vs-make" className="hover:text-text underline underline-offset-4">Zapier vs Make</Link>
-        <Link href="/compare/n8n-vs-zapier" className="hover:text-text underline underline-offset-4">n8n vs Zapier</Link>
-        <Link href="/alternatives/zapier" className="hover:text-text underline underline-offset-4">Zapier alternatives</Link>
-        <Link href="/compare/eden-vs-zapier" className="hover:text-text underline underline-offset-4">Eden vs Zapier</Link>
-        <Link href="/compare/eden-vs-make" className="hover:text-text underline underline-offset-4">Eden vs Make</Link>
-        <Link href="/compare/eden-vs-n8n" className="hover:text-text underline underline-offset-4">Eden vs n8n</Link>
-        <Link href="/guides/when-to-hire-an-automation-agency" className="hover:text-text underline underline-offset-4">When to hire an automation agency</Link>
+        <Link prefetch={false} href="/compare" className="hover:text-text underline underline-offset-4">Comparisons and guides</Link>
+        <Link prefetch={false} href="/compare/zapier-vs-make" className="hover:text-text underline underline-offset-4">Zapier vs Make</Link>
+        <Link prefetch={false} href="/compare/n8n-vs-zapier" className="hover:text-text underline underline-offset-4">n8n vs Zapier</Link>
+        <Link prefetch={false} href="/alternatives/zapier" className="hover:text-text underline underline-offset-4">Zapier alternatives</Link>
+        <Link prefetch={false} href="/compare/eden-vs-zapier" className="hover:text-text underline underline-offset-4">Eden vs Zapier</Link>
+        <Link prefetch={false} href="/compare/eden-vs-make" className="hover:text-text underline underline-offset-4">Eden vs Make</Link>
+        <Link prefetch={false} href="/compare/eden-vs-n8n" className="hover:text-text underline underline-offset-4">Eden vs n8n</Link>
+        <Link prefetch={false} href="/guides/when-to-hire-an-automation-agency" className="hover:text-text underline underline-offset-4">When to hire an automation agency</Link>
       </nav>
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-wrap justify-center items-center gap-3">
           <picture>
-            <source media="(prefers-color-scheme: light)" srcSet="/White Mode EdenCORP.svg" />
-            <img src="/Dark Mode EdenCORP.svg" alt="EdenCORP" className="h-6 w-auto opacity-70" />
+            <img width={2000} height={2000} src="/Dark Mode EdenCORP.svg" alt="EdenCORP" className="h-6 w-auto opacity-70" />
           </picture>
           <span className="font-mono text-xs text-text-secondary">
             &copy; 2026 EdenCORP
@@ -34,7 +33,7 @@ export function Footer() {
             { href: "/privacy", label: "Privacy" },
             { href: "/terms", label: "Terms" },
           ].map((link) => (
-            <Link
+            <Link prefetch={false}
               key={link.href}
               href={link.href}
               className="text-xs font-body text-text-secondary hover:text-ember-glow transition-colors duration-200"

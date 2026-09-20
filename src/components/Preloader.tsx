@@ -139,7 +139,6 @@ export function Preloader({ children }: { children: React.ReactNode }) {
               }
             >
               <picture>
-                <source media="(prefers-color-scheme: light)" srcSet="/White Mode EdenCORP.svg" />
                 <img
                   src="/Dark Mode EdenCORP.svg"
                   alt="EdenCORP"
