@@ -23,11 +23,10 @@ export function Navbar() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-void/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center no-underline">
+          <Link prefetch={false} href="/" className="flex items-center no-underline">
             <span data-nav-logo className="flex">
               <picture>
-                <source media="(prefers-color-scheme: light)" srcSet="/White Mode EdenCORP.svg" />
-                <img src="/Dark Mode EdenCORP.svg" alt="EdenCORP" className="h-25 w-auto" />
+                <img width={2000} height={2000} src="/Dark Mode EdenCORP.svg" alt="EdenCORP" className="h-25 w-auto" />
               </picture>
             </span>
           </Link>
@@ -35,7 +34,7 @@ export function Navbar() {
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-10">
             {links.map((link) => (
-              <Link
+              <Link prefetch={false}
                 key={link.href}
                 href={link.href}
                 className={`relative text-sm font-body font-medium transition-colors duration-200 ${
@@ -99,7 +98,7 @@ export function Navbar() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ delay: i * 0.06, duration: 0.3 }}
                 >
-                  <Link
+                  <Link prefetch={false}
                     href={link.href}
                     className={`text-3xl font-display transition-colors duration-200 ${
                       pathname === link.href

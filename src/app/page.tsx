@@ -9,6 +9,20 @@ import { Reveal } from "@/components/ScrollReveal";
 import { MagneticButton } from "@/components/MagneticButton";
 
 export const metadata: Metadata = {
+  openGraph: {
+    type: "website",
+    url: "https://www.edencorp.org/",
+    siteName: "EdenCORP",
+    title: "Eden: Workflow automation agency for organizations",
+    description: "Eden builds custom workflow automation for organizations. Scope and pricing are agreed through individual proposals.",
+    images: [{ url: "/social/eden-home.png", width: 1200, height: 630, alt: "EdenCORP workflow automation agency" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eden: Workflow automation agency for organizations",
+    description: "Custom workflow automation, delivered online through individual proposals.",
+    images: ["/social/eden-home.png"],
+  },
   title: "Eden: Workflow automation agency for organizations",
   description: "Eden builds custom workflow automation for organizations. Services include development, integrations, consulting, and support through individual proposals.",
 };
