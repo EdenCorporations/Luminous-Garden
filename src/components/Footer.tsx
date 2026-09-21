@@ -12,6 +12,7 @@ export function Footer() {
         <Link prefetch={false} href="/compare/eden-vs-make" className="hover:text-text underline underline-offset-4">Eden vs Make</Link>
         <Link prefetch={false} href="/compare/eden-vs-n8n" className="hover:text-text underline underline-offset-4">Eden vs n8n</Link>
         <Link prefetch={false} href="/guides/when-to-hire-an-automation-agency" className="hover:text-text underline underline-offset-4">When to hire an automation agency</Link>
+        <a href="/llms.txt" className="hover:text-text underline underline-offset-4">Eden facts</a>
       </nav>
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-wrap justify-center items-center gap-3">
