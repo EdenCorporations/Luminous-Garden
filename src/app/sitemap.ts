@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/when-to-hire-an-automation-agency", "/compare", "/services/workflow-automation",
     "/guides/workflow-automation-agency-cost",
     "/guides/automation-agency-or-zapier",
+    "/services/excel-automation",
   ];
   // These pages gained article markup or a resource link on September 13.
   const updatedSeptember13 = new Set([
@@ -23,5 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(["/compare", "/services/workflow-automation"].includes(path) ? { lastModified: "2026-09-14" } : {}),
     ...(path === "/guides/workflow-automation-agency-cost" ? { lastModified: "2026-09-15" } : {}),
     ...(path === "/guides/automation-agency-or-zapier" ? { lastModified: "2026-09-16" } : {}),
+    ...(["/services/excel-automation", "/services/workflow-automation", "/compare"].includes(path) ? { lastModified: "2026-09-21" } : {}),
   }));
 }
