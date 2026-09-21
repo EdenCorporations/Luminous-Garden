@@ -40,6 +40,6 @@ export default function ExcelAutomationServices() {
       <section><h2>Bring a safe sample.</h2><p>Share fictional rows, column names, and the output you want. Tell us your Excel version, file location, frequency, and approval steps.</p><p>We assess access and tool constraints before proposing an approach. Agree the handover instructions and who maintains it.</p></section>
       <section><h2>What does a project cost?</h2><p>{priceAnswer}</p></section>
     </div>
-    <nav className={styles.related} aria-label="Related guides"><Link href="/services/workflow-automation">Workflow automation services</Link><Link href="/how-we-work">How we work</Link><Link href="/guides/workflow-automation-agency-cost">Workflow automation agency costs</Link></nav>
+    <nav className={styles.related} aria-label="Related guides"><Link href="/examples/spreadsheet-reporting">Working spreadsheet example</Link><Link href="/services/workflow-automation">Workflow automation services</Link><Link href="/how-we-work">How we work</Link><Link href="/guides/workflow-automation-agency-cost">Workflow automation agency costs</Link></nav>
   </main>;
 }
