@@ -39,6 +39,6 @@ export default function WorkflowAutomationServices() {
       <section><h2>How much does it cost?</h2><p>{priceAnswer}</p></section>
       <section><h2>Bring a useful brief.</h2><p>Tell us what starts the work, how often it happens, and who checks the result. Include a fictional example instead of private records.</p></section>
     </div>
-    <nav className={styles.related} aria-label="Related guides"><Link href="/guides/when-to-hire-an-automation-agency">When to hire an automation agency</Link><Link href="/compare">Comparisons and guides</Link><Link href="/how-we-work">How we work</Link></nav>
+    <nav className={styles.related} aria-label="Related guides"><Link href="/guides/when-to-hire-an-automation-agency">When to hire an automation agency</Link><Link href="/compare">Comparisons and guides</Link><Link href="/how-we-work">How we work</Link><Link href="/services/excel-automation">Excel automation services</Link></nav>
   </main>;
 }
