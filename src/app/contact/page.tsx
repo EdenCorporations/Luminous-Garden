@@ -330,6 +330,7 @@ export default function ContactPage() {
               </div>
               </form>
               <p className="mt-5 text-center text-sm text-text-secondary">
+                We review your inquiry and follow up personally to discuss your workflow and project scope.{" "}
                 Need help?{" "}
                 <a
                   href="mailto:edencorp-org@mail.tin.computer"
