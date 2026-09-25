@@ -181,6 +181,9 @@ export default function ContactPage() {
                 <div className="flex justify-between items-end mb-4">
                   <label className="text-xs font-mono text-text-tertiary uppercase tracking-wider">
                     Budget
+                    <span className="block mt-1 text-xs normal-case tracking-normal text-text-secondary">
+                      Your input, not a quote. Fees depend on your proposal.
+                    </span>
                   </label>
                   <div className="text-ember font-display italic text-xl">
                     {budgetDisplay}

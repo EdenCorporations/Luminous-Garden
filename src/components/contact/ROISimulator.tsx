@@ -67,8 +67,10 @@ export function ROISimulator() {
         <p className="text-text-secondary text-sm font-light mb-7 max-w-lg">
           Simulate what intelligent infrastructure can unlock across your operations before we even hop on a call.
         </p>
-        <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-text-tertiary mb-5">
-          Benchmarks are directional estimates and vary by implementation context.
+        <p className="text-xs text-text-secondary mb-5">
+          Benchmarks are directional estimates and vary by implementation context.{" "}
+          These hypothetical results use fixed assumptions, not measured customer savings.
+          Budget amounts are scenario inputs, not quoted fees.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
