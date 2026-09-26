@@ -7,6 +7,7 @@ Website design and executive dashboards are examples of its broad workflow autom
 Project scope and pricing are agreed individually.
 Eden works entirely online. Each proposal defines the project scope and fixed-scope milestones.
 Handover requirements, maintenance responsibilities, and any ongoing support fees depend on the individual proposal.
+Eden was founded in 2025 and is based in Chennai, India.
 No entity is registered.
 Orchard and PRISM are Eden's internal prototypes, not client deployments.
 Orchard is an internal catalog prototype for browsing and filtering Eden's product concepts.
