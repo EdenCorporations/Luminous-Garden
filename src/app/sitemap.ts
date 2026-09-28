@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/workflow-automation-agency-cost",
     "/guides/automation-agency-or-zapier",
     "/services/excel-automation", "/examples/spreadsheet-reporting", "/guides/data-entry-automation",
+    "/guides/invoice-processing-automation",
   ];
   // These pages gained article markup or a resource link on September 13.
   const updatedSeptember13 = new Set([
@@ -26,5 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/automation-agency-or-zapier" ? { lastModified: "2026-09-16" } : {}),
     ...(["/examples/spreadsheet-reporting", "/services/excel-automation", "/services/workflow-automation", "/compare"].includes(path) ? { lastModified: "2026-09-21" } : {}),
     ...(path === "/guides/data-entry-automation" ? { lastModified: "2026-09-28" } : {}),
+    ...(path === "/guides/invoice-processing-automation" ? { lastModified: "2026-09-28" } : {}),
   }));
 }
