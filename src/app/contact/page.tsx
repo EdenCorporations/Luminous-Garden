@@ -181,7 +181,7 @@ export default function ContactPage() {
                 <div className="flex justify-between items-end mb-4">
                   <label className="text-xs font-mono text-text-tertiary uppercase tracking-wider">
                     Budget
-                    <span className="block mt-1 text-xs normal-case tracking-normal text-text-secondary">
+                    <span id="budget-help" className="block mt-1 text-xs normal-case tracking-normal text-text-secondary">
                       Your input, not a quote. Fees depend on your proposal.
                     </span>
                   </label>
@@ -196,6 +196,9 @@ export default function ContactPage() {
                   />
                   <input
                     className="w-full z-10"
+                    aria-label="Budget"
+                    aria-describedby="budget-help"
+                    aria-valuetext={budgetDisplay}
                     max={500}
                     min={10}
                     step={10}
