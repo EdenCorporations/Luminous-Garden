@@ -330,9 +330,6 @@ export default function ContactPage() {
                     </MagneticButton>
                   )}
                 </AnimatePresence>
-                <p className="text-center mt-4 text-[10px] text-text-tertiary font-mono tracking-wider">
-                  founder@edencorp.org
-                </p>
               </div>
               </form>
               <p className="mt-5 text-center text-sm text-text-secondary">
