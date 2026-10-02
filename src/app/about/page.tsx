@@ -79,6 +79,21 @@ const TEAM = [
   { icon: Plus, title: "Join Us", role: "We're Growing", dashed: true },
 ];
 
+const BUYER_QUESTIONS = [
+  {
+    question: "What workflows can Eden automate?",
+    answer: "Eden scopes custom workflows across industries, from websites to connected operations. Share the manual steps and systems you want to change.",
+  },
+  {
+    question: "When should I hire Eden instead of using a workflow tool?",
+    answer: "Consider custom help when several systems, approvals, or exception paths must work together. A simple workflow may suit a tool you manage yourself.",
+  },
+  {
+    question: "How does Eden plan a project?",
+    answer: "Bring one process and its exceptions. Eden discusses scope, ownership, testing, fees, and support in an individual proposal.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <main className="flex-1">
@@ -326,6 +341,24 @@ export default function AboutPage() {
               </StaggerItem>
             ))}
           </StaggerReveal>
+        </div>
+      </section>
+
+      <div className="rule w-full max-w-5xl mx-auto" />
+
+      <section className="py-20" aria-labelledby="buyer-questions-heading">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 id="buyer-questions-heading" className="font-display text-3xl md:text-4xl italic text-text mb-10">
+            Questions before we begin
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {BUYER_QUESTIONS.map(({ question, answer }) => (
+              <div key={question} className="surface-card p-6 rounded-lg border border-border">
+                <h3 className="font-display text-xl italic text-text mb-3">{question}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
