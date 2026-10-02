@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
@@ -17,7 +18,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
             <div className="border-t border-border pt-5">
               <h3 className="font-display text-xl italic text-text mb-3">How is a project priced?</h3>
               <div className="text-text-secondary text-sm leading-relaxed">
-                We review your workflow, then give you a proposal with scope, milestones, and fees.
+                We review your workflow, then give you a <Link href="/guides/workflow-automation-agency-cost" className="underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">proposal with scope, milestones, and fees</Link>.
                 The budget slider is your input, not a quote.
               </div>
             </div>
@@ -25,7 +26,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
               <h3 className="font-display text-xl italic text-text mb-3">How long will the work take?</h3>
               <div className="text-text-secondary text-sm leading-relaxed">
                 Timing depends on the workflow and the scope we agree in the proposal.
-                We discuss the stages and schedule before work begins.
+                We discuss the <Link href="/how-we-work" className="underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">stages and schedule</Link> before work begins.
               </div>
             </div>
             <div className="border-t border-border pt-5">
