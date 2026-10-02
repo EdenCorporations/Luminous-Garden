@@ -83,14 +83,20 @@ const BUYER_QUESTIONS = [
   {
     question: "What workflows can Eden automate?",
     answer: "Eden scopes custom workflows across industries, from websites to connected operations. Share the manual steps and systems you want to change.",
+    linkText: "custom workflows",
+    href: "/services/workflow-automation",
   },
   {
     question: "When should I hire Eden instead of using a workflow tool?",
     answer: "Consider custom help when several systems, approvals, or exception paths must work together. A simple workflow may suit a tool you manage yourself.",
+    linkText: "tool you manage yourself",
+    href: "/guides/automation-agency-or-zapier",
   },
   {
     question: "How does Eden plan a project?",
     answer: "Bring one process and its exceptions. Eden discusses scope, ownership, testing, fees, and support in an individual proposal.",
+    linkText: "scope, ownership, testing, fees, and support",
+    href: "/how-we-work",
   },
 ];
 
@@ -352,12 +358,17 @@ export default function AboutPage() {
             Questions before we begin
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {BUYER_QUESTIONS.map(({ question, answer }) => (
+            {BUYER_QUESTIONS.map(({ question, answer, linkText, href }) => {
+              const [before, after] = answer.split(linkText);
+              return (
               <div key={question} className="surface-card p-6 rounded-lg border border-border">
                 <h3 className="font-display text-xl italic text-text mb-3">{question}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">{answer}</p>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  {before}<Link href={href} className="underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">{linkText}</Link>{after}
+                </p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
