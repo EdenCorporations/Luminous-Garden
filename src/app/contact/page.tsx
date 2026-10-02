@@ -75,7 +75,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="flex-1 flex items-center justify-center relative pt-28 pb-20 px-4 overflow-hidden">
+    <div className="flex items-center justify-center relative pt-28 pb-20 px-4 overflow-hidden">
       {/* Interactive particle background */}
       <ParticleField
         particleCount={40}
@@ -353,6 +353,6 @@ export default function ContactPage() {
           </Reveal>
           </div>
       </div>
-    </main>
+    </div>
   );
 }
