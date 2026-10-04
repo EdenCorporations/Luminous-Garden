@@ -1,9 +1,9 @@
-import { entityDescription } from "@/lib/entity";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Eden: Workflow automation agency for organizations",
-  description: entityDescription,
+  title: "About EdenCORP | Custom Workflow Automation Agency",
+  description:
+    "Meet Eden, a Chennai-based team building custom workflow automations online. See how we scope projects, work by proposal, and handle handover.",
   alternates: { canonical: "/about" },
 };
 

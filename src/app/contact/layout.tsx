@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  title: "Contact EdenCORP | Discuss a Workflow Automation Project",
+  description:
+    "Tell Eden which manual workflow slows your team down. We review your inquiry personally, then discuss scope, timing, and a custom proposal.",
   alternates: { canonical: "/contact" },
 };
 
