@@ -4,7 +4,7 @@ import { BuyerPageSchema } from "@/components/BuyerPageSchema";
 import styles from "../../compare/comparison.module.css";
 
 export const metadata: Metadata = {
-  title: "When to hire an automation agency | EdenCORP",
+  title: "When Should You Hire an Automation Agency? | EdenCORP",
   description: "Decide when to hire an automation agency or build a workflow yourself. Compare ownership, exceptions, testing, and support before choosing outside help.",
   alternates: { canonical: "/guides/when-to-hire-an-automation-agency" },
   openGraph: {

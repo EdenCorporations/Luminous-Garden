@@ -3,8 +3,8 @@ import Link from "next/link";
 import styles from "./hub.module.css";
 
 export const metadata: Metadata = {
-  title: "Workflow automation comparisons and guides | EdenCORP",
-  description: "Compare Eden, Zapier, Make, and n8n. Explore delivery, ownership, and support before choosing a workflow tool or custom automation help.",
+  title: "Workflow Automation: Agency or DIY Tools? | EdenCORP",
+  description: "Compare hiring Eden with building in Zapier, Make, or n8n. See who builds, tests, maintains, and owns your workflow before you choose.",
   alternates: { canonical: "/compare" },
   openGraph: {
     title: "Workflow automation comparisons and guides",

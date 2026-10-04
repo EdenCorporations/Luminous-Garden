@@ -5,7 +5,7 @@ import styles from "../../compare/comparison.module.css";
 const description = "Choose between building a Zapier workflow yourself and commissioning an automation agency. Compare delivery, ownership, testing, and proposal scope.";
 
 export const metadata: Metadata = {
-  title: "Automation agency or Zapier: who owns the work? | EdenCORP",
+  title: "Hire an Automation Agency or Use Zapier? | EdenCORP",
   description,
   alternates: { canonical: "/guides/automation-agency-or-zapier" },
   openGraph: {

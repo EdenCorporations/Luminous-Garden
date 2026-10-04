@@ -4,7 +4,7 @@ import styles from "../../compare/comparison.module.css";
 
 const description = "Eden uses custom proposals for workflow automation. See what to include in your brief and which costs to clarify before commissioning work.";
 export const metadata: Metadata = {
-  title: "How much does workflow automation agency work cost? | EdenCORP",
+  title: "Automation Agency Costs: What Goes Into a Quote | EdenCORP",
   description,
   alternates: { canonical: "/guides/workflow-automation-agency-cost" },
   openGraph: {
