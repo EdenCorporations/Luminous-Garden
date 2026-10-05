@@ -30,6 +30,13 @@ export default function ContactPage() {
 
   const budgetDisplay = budget >= 500 ? `$${budget}k+` : `$${budget}k`;
   const budgetPercent = ((budget - 10) / (500 - 10)) * 100;
+  const workflowLabels: Record<string, string> = {
+    admin: "Daily admin",
+    reporting: "Reports and dashboards",
+    integrations: "Connecting tools",
+    website: "Website workflows",
+    other: "Something else",
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,7 +60,9 @@ export default function ContactPage() {
           from_email: formData.email,
           organization: formData.org,
           budget: budgetDisplay,
-          message: formData.message,
+          message: workflow
+            ? `Workflow: ${workflowLabels[workflow]}\n\n${formData.message}`
+            : formData.message,
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
