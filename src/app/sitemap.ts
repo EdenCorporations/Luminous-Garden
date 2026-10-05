@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/automation-agency-or-zapier",
     "/services/excel-automation", "/examples/spreadsheet-reporting", "/guides/data-entry-automation",
     "/guides/invoice-processing-automation",
+    "/guides/timesheet-automation",
   ];
   // These pages gained article markup or a resource link on September 13.
   const updatedSeptember13 = new Set([
@@ -28,5 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(["/examples/spreadsheet-reporting", "/services/excel-automation", "/services/workflow-automation", "/compare"].includes(path) ? { lastModified: "2026-09-21" } : {}),
     ...(path === "/guides/data-entry-automation" ? { lastModified: "2026-09-28" } : {}),
     ...(path === "/guides/invoice-processing-automation" ? { lastModified: "2026-09-28" } : {}),
+    ...(path === "/guides/timesheet-automation" ? { lastModified: "2026-10-05" } : {}),
   }));
 }
