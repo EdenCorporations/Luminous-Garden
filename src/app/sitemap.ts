@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/invoice-processing-automation",
     "/guides/timesheet-automation",
     "/guides/google-spreadsheet-automation",
+    "/guides/purchase-order-automation",
   ];
   // These pages gained article markup or a resource link on September 13.
   const updatedSeptember13 = new Set([
@@ -32,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/invoice-processing-automation" ? { lastModified: "2026-09-28" } : {}),
     ...(path === "/guides/timesheet-automation" ? { lastModified: "2026-10-05" } : {}),
     ...(path === "/guides/google-spreadsheet-automation" ? { lastModified: "2026-10-05" } : {}),
+    ...(path === "/guides/purchase-order-automation" ? { lastModified: "2026-10-05" } : {}),
     ...(["/services/excel-automation", "/services/workflow-automation"].includes(path) ? { lastModified: "2026-10-05" } : {}),
   }));
 }
