@@ -17,6 +17,7 @@ The links below lead to public web pages.
 
 ## Agency and inquiries
 
+- [What Eden can build](https://www.edencorp.org/capabilities): Custom workflow automation scope and project inquiry path.
 - [How we work](https://www.edencorp.org/how-we-work): Online project stages, proposal-only pricing, and proposal-dependent support.
 
 - [Home](https://www.edencorp.org/): EdenCORP's public website.
