@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
-    "", "/how-we-work", "/about", "/orchard", "/prism", "/contact", "/privacy", "/terms",
+    "", "/how-we-work", "/capabilities", "/about", "/orchard", "/prism", "/contact", "/privacy", "/terms",
     "/compare/zapier-vs-make", "/compare/n8n-vs-zapier", "/alternatives/zapier",
     "/compare/eden-vs-zapier", "/compare/eden-vs-make", "/compare/eden-vs-n8n",
     "/guides/when-to-hire-an-automation-agency", "/compare", "/services/workflow-automation",
@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/purchase-order-automation" ? { lastModified: "2026-10-05" } : {}),
     ...(path === "/guides/approval-workflow-automation" ? { lastModified: "2026-10-10" } : {}),
     ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-10" } : {}),
+    ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
     ...(["/services/excel-automation", "/services/workflow-automation"].includes(path) ? { lastModified: "2026-10-05" } : {}),
   }));
 }
