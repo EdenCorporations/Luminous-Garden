@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const resources = [
   { href: "/services/excel-automation", title: "Excel automation services", description: "Plan spreadsheet imports, checks, reports, and exception handling." },
   { href: "/how-we-work", title: "How we work", description: "From your first inquiry to scope, build, handover, and support." },
-  { href: "/capabilities", title: "What Eden can build", description: "See Eden's custom workflow scope and how to discuss a project." },
+  { href: "/capabilities", title: "What Eden can build" },
   { href: "/services/workflow-automation", title: "Workflow automation services", description: "Scope a custom project, including human checks, testing, and handover." },
   { href: "/compare/eden-vs-zapier", title: "Eden vs Zapier", description: "Custom delivery or building with Zapier: compare who builds, maintains, and supports the workflow." },
   { href: "/compare/eden-vs-make", title: "Eden vs Make", description: "Compare outside development with building in Make, including testing and ongoing ownership." },
@@ -51,7 +51,7 @@ export default function ComparisonHub() {
             <li key={resource.href}>
               <Link className={styles.resource} href={resource.href}>
                 <span className={styles.number} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                <div><h3>{resource.title}</h3><p>{resource.description}</p></div>
+                <div><h3>{resource.title}</h3>{"description" in resource && <p>{resource.description}</p>}</div>
                 <span className={styles.arrow} aria-hidden="true">↗</span>
               </Link>
             </li>
