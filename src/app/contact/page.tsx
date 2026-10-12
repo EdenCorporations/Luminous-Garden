@@ -303,8 +303,7 @@ export default function ContactPage() {
                       </div>
                       <button
                         className="w-full text-center text-xs text-ember font-mono hover:text-text transition-colors"
-                        type="button"
-                        onClick={() => setStatus("idle")}
+                        type="submit"
                       >
                         Try Again
                       </button>
