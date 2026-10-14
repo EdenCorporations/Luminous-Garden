@@ -52,6 +52,7 @@ export default function HowWeWork() {
       <nav className={styles.related} aria-label="Related reading">
         <Link href="/capabilities">What Eden can build</Link>
         <Link href="/services/workflow-automation">Workflow automation services</Link>
+        <Link href="/guides/dashboard-reporting-automation">Dashboard reporting automation</Link>
         <Link href="/about">About Eden</Link>
       </nav>
     </main>
