@@ -3,6 +3,31 @@ import Link from "next/link";
 import styles from "../../compare/comparison.module.css";
 
 const description = "Plan dashboard reporting automation around source checks, clear exceptions, and a human review before leaders act on the numbers.";
+const url = "https://www.edencorp.org/guides/dashboard-reporting-automation";
+const headline = "Dashboard reporting starts with trustworthy inputs.";
+const summary = "Bring scattered figures into one view, then give someone the chance to check them before a decision.";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${url}#article`,
+      headline,
+      description: summary,
+      url,
+      mainEntityOfPage: url,
+      publisher: { "@id": "https://www.edencorp.org/#organization" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.edencorp.org/" },
+        { "@type": "ListItem", position: 2, name: headline, item: url },
+      ],
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Dashboard reporting automation guide | EdenCORP",
@@ -19,6 +44,9 @@ export const metadata: Metadata = {
 export default function DashboardReportingAutomationGuide() {
   return (
     <main className={styles.guide}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+      }} />
       <article>
         <header className={styles.hero}>
           <div className={styles.eyebrow}>Eden field notes / Reporting</div>
