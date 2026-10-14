@@ -53,6 +53,7 @@ export default function GoogleSpreadsheetAutomationGuide() {
           <ul className={styles.sources}>
             <li><Link className={styles.related} href="/examples/spreadsheet-reporting">Working spreadsheet example</Link></li>
             <li><Link className={styles.related} href="/services/excel-automation">Spreadsheet automation services</Link></li>
+            <li><Link className={styles.related} href="/guides/dashboard-reporting-automation">Dashboard reporting automation</Link></li>
             <li><Link className={styles.related} href="/how-we-work">How Eden works</Link></li>
           </ul>
         </aside>
