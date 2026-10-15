@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]);
   return routes.map((path) => ({
     url: `https://www.edencorp.org${path}`,
-    ...(path === "/how-we-work" ? { lastModified: "2026-09-18" } : {}),
+    ...(path === "/how-we-work" ? { lastModified: "2026-10-15" } : {}),
     ...((path.startsWith("/compare/") || path.startsWith("/alternatives/") || path.startsWith("/guides/"))
       ? { lastModified: "2026-09-12" } : {}),
     ...(updatedSeptember13.has(path) ? { lastModified: "2026-09-13" } : {}),
