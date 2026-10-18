@@ -23,9 +23,8 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
   if (pathname === "/") {
     return <>{serviceSchema}<Navbar /><div className="flex-1 flex flex-col min-h-screen"><ScrollProgress /><GlowCursor />{children}<ScrollToTop /></div><Footer /></>;
   }
-  // Search guides must render their article in the initial server response.
-  // Keep the original loading sequence on all existing routes.
-  if (pathname === "/about" || pathname === "/contact" || pathname === "/how-we-work" || pathname === "/capabilities" || pathname === "/compare" || pathname.startsWith("/compare/") || pathname.startsWith("/alternatives/") || pathname.startsWith("/guides/") || pathname.startsWith("/services/") || pathname.startsWith("/examples/")) {
+  // Search pages must expose their text in the initial server response.
+  if (pathname === "/about" || pathname === "/contact" || pathname === "/how-we-work" || pathname === "/capabilities" || pathname === "/compare" || pathname === "/orchard" || pathname === "/terms" || pathname.startsWith("/compare/") || pathname.startsWith("/alternatives/") || pathname.startsWith("/guides/") || pathname.startsWith("/services/") || pathname.startsWith("/examples/")) {
     return <>{serviceSchema}<Navbar /><div className="flex-1 flex flex-col min-h-screen">{children}<Footer /></div><ScrollToTop /></>;
   }
   return (
