@@ -29,6 +29,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-display italic text-text mb-4">2. Services description</h2>
             <p>Eden offers custom automation development, integration, consulting, and support. Project scope is discussed individually. Website examples describe possible work, not proof that every capability is deployed.</p>
+            <p className="mt-3 text-sm">Planning a project? See <Link href="/how-we-work" className="underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">how Eden works</Link> from inquiry to proposal.</p>
           </section>
           <section>
             <h2 className="text-xl font-display italic text-text mb-4">3. Using the inquiry form</h2>
