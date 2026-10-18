@@ -3,6 +3,31 @@ import Link from "next/link";
 import styles from "../../compare/comparison.module.css";
 
 const description = "Plan purchase order automation around approvals, missing details, and handover. See an illustrative request path before you commission a build.";
+const url = "https://www.edencorp.org/guides/purchase-order-automation";
+const headline = "Purchase order automation with a clear approval path.";
+const summary = "A request can be complete yet still need a spending decision. Map who approves it before any order reaches a supplier.";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${url}#article`,
+      headline,
+      description: summary,
+      url,
+      mainEntityOfPage: url,
+      publisher: { "@id": "https://www.edencorp.org/#organization" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.edencorp.org/" },
+        { "@type": "ListItem", position: 2, name: headline, item: url },
+      ],
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Purchase order automation with approval checks | EdenCORP",
@@ -19,6 +44,9 @@ export const metadata: Metadata = {
 export default function PurchaseOrderAutomationGuide() {
   return (
     <main className={styles.guide}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+      }} />
       <article>
         <header className={styles.hero}>
           <div className={styles.eyebrow}>Eden field notes / Purchase approvals</div>
