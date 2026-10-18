@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About EdenCORP | Custom Workflow Automation Agency",
+  title: "About EdenCORP | Chennai Workflow Automation Team",
   description:
-    "Meet Eden, a Chennai-based team building custom workflow automations online. See how we scope projects, work by proposal, and handle handover.",
+    "Meet EdenCORP, a Chennai-based team that builds custom workflow automation online. Eden has no registered entity. See how projects are scoped by proposal.",
   alternates: { canonical: "/about" },
 };
 

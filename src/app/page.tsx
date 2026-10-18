@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     description: "Custom workflow automation, delivered online through individual proposals.",
     images: ["/social/eden-home.png"],
   },
-  title: "Custom Workflow Automation for Your Team | EdenCORP",
-  description: "Eden builds custom automations around your workflow, from integrations to handover. Tell us what slows your team down and get a proposal for your project.",
+  title: "EdenCORP | Custom Workflow Automation Agency",
+  description: "EdenCORP builds custom workflow automation for organizations, including integrations and dashboards. Tell us your process and get a project proposal.",
 };
 
 const INDUSTRIES = [

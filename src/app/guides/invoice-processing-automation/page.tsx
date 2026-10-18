@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "../../compare/comparison.module.css";
 
-const description = "A practical plan for invoice processing automation: capture invoices, check duplicates, route exceptions, and keep a person in control of payment approval.";
+const description = "Plan invoice processing automation with duplicate checks, exception review, and human payment approval. See an illustrative workflow and what to scope with Eden.";
 
 export const metadata: Metadata = {
-  title: "Invoice processing automation: checks before payment | EdenCORP",
+  title: "Invoice Processing Automation With Human Review | EdenCORP",
   description,
   alternates: { canonical: "/guides/invoice-processing-automation" },
   openGraph: {
