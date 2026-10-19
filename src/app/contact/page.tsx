@@ -20,7 +20,7 @@ export default function ContactPage() {
   const [referral, setReferral] = useState({ source: "" });
   const [workflow, setWorkflow] = useState("");
   const [budget, setBudget] = useState(50);
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "delayed" | "sent" | "error">("idle");
   const [formData, setFormData] = useState({
     name: "",
     org: "",
@@ -47,6 +47,13 @@ export default function ContactPage() {
       referralReported.current = true;
     }
 
+    // A slow provider response must not leave the visitor with only a spinner.
+    // Keep the request pending: retrying before its outcome is known can send twice.
+    const delayTimer = window.setTimeout(() => {
+      setStatus("delayed");
+      captureInquiryEvent("inquiry_delayed");
+    }, 10000);
+
     try {
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -71,6 +78,8 @@ export default function ContactPage() {
     } catch {
       setStatus("error");
       captureInquiryEvent("inquiry_failed");
+    } finally {
+      window.clearTimeout(delayTimer);
     }
   };
 
@@ -286,6 +295,24 @@ export default function ContactPage() {
                       <span className="text-success font-mono text-sm tracking-wider uppercase">
                         Message Sent
                       </span>
+                    </motion.div>
+                  ) : status === "delayed" ? (
+                    <motion.div
+                      key="delayed"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="border border-ember/30 bg-ember/5 rounded-sm p-4 text-sm text-text-secondary"
+                      role="status"
+                    >
+                      <p className="text-text">Still waiting for delivery confirmation. Please don&apos;t send the form again yet.</p>
+                      <p className="mt-2">
+                        Need help now?{" "}
+                        <a href="mailto:edencorp-org@mail.tin.computer" className="text-ember underline underline-offset-4 hover:text-text">
+                          Email support
+                        </a>
+                        .
+                      </p>
                     </motion.div>
                   ) : status === "error" ? (
                     <motion.div
