@@ -62,6 +62,7 @@ export default function CapabilitiesPage() {
       <nav className={styles.related} aria-label="Related reading">
         <Link href="/how-we-work">How we work <span aria-hidden="true">↗</span></Link>
         <Link href="/guides/approval-workflow-automation">Approval workflow guide <span aria-hidden="true">↗</span></Link>
+        <Link href="/agency-facts">Agency facts <span aria-hidden="true">↗</span></Link>
       </nav>
     </main>
   );
