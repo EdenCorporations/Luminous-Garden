@@ -77,6 +77,7 @@ export default function AgencyFactsPage() {
       </aside>
 
       <nav className={styles.related} aria-label="Related reading">
+        <Link href="/guides/automation-project-checklist">Automation project checklist <span aria-hidden="true">↗</span></Link>
         <Link href="/how-we-work">How we work <span aria-hidden="true">↗</span></Link>
         <Link href="/capabilities">What Eden can build <span aria-hidden="true">↗</span></Link>
       </nav>
