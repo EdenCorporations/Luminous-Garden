@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/expense-report-automation",
     "/guides/dashboard-reporting-automation",
     "/guides/document-processing-automation",
+    "/guides/employee-onboarding-automation",
   ];
   // These pages gained article markup or a resource link on September 13.
   const updatedSeptember13 = new Set([
@@ -42,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/expense-report-automation" ? { lastModified: "2026-10-12" } : {}),
     ...(path === "/guides/dashboard-reporting-automation" ? { lastModified: "2026-10-14" } : {}),
     ...(path === "/guides/document-processing-automation" ? { lastModified: "2026-10-14" } : {}),
+    ...(path === "/guides/employee-onboarding-automation" ? { lastModified: "2026-10-19" } : {}),
     ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-10" } : {}),
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
     ...(["/services/excel-automation", "/services/workflow-automation"].includes(path) ? { lastModified: "2026-10-05" } : {}),
