@@ -1,0 +1,22 @@
+.page { max-width: 1120px; margin: 0 auto; padding: 132px 24px 72px; color: #ece7de; }
+.label { font-family: var(--font-jetbrains-mono), monospace; font-size: 11px; line-height: 1.5; color: #b5aea4; }
+.hero { padding-bottom: 64px; border-bottom: 1px solid #2a2622; }
+.hero h1 { font-family: var(--font-instrument-serif), serif; font-size: clamp(50px, 5.6vw, 76px); line-height: 1.06; letter-spacing: -.025em; margin: 24px 0; text-wrap: balance; }
+.hero h1 em { font-weight: 400; }
+.page p { color: #b5aea4; font-size: 17px; line-height: 1.6; max-width: 60ch; text-wrap: pretty; }
+.hero p { max-width: 52ch; }
+.primary { display: inline-flex; align-items: center; justify-content: space-between; min-height: 48px; gap: 28px; background: #c84b31; color: #fff; border-radius: 3px; padding: 14px 20px; margin-top: 18px; font-weight: 500; }
+.primary:hover { background: #ac3e28; }
+.page a:focus-visible { outline: 2px solid #ff8563; outline-offset: 5px; }
+.body { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; padding: 64px 0; }
+.intro h2 { font-family: var(--font-instrument-serif), serif; font-size: clamp(36px, 4vw, 52px); line-height: 1.12; font-weight: 400; margin: 16px 0 24px; text-wrap: balance; }
+.facts { margin: 0; border-top: 1px solid #66564d; }
+.facts div { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid #2a2622; }
+.facts dt { color: #b5aea4; font-family: var(--font-jetbrains-mono), monospace; font-size: 12px; }
+.facts dd { margin: 0; font-size: 16px; line-height: 1.5; }
+.note { background: #161412; border: 1px solid #2a2622; padding: 24px 28px; }
+.note p { margin: 12px 0 0; font-size: 15px; }
+.related { border-top: 1px solid #2a2622; padding-top: 26px; margin-top: 48px; display: flex; gap: 36px; font-size: 14px; }
+.related a { text-decoration: underline; text-underline-offset: 4px; }
+.related a:hover { color: #ff8563; }
+@media (max-width: 760px) { .page { padding-top: 106px; padding-bottom: 40px; } .hero { padding-bottom: 48px; } .hero h1 { font-size: clamp(48px, 11vw, 64px); } .body { grid-template-columns: 1fr; gap: 36px; padding: 48px 0; } .facts div { grid-template-columns: 110px 1fr; gap: 16px; } .related { flex-direction: column; gap: 16px; margin-top: 40px; } }
