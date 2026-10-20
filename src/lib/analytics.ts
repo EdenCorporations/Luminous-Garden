@@ -37,7 +37,7 @@ export function promptTopic(text: string) {
 const events = new Set([
   "inquiry_source",
   ...["ai", "search", "direct", "other", "unknown"].flatMap(channel => [`contact_visit_${channel}`, `contact_success_${channel}`]),
-  "$pageview", "inquiry_started", "inquiry_submitted", "inquiry_delayed", "inquiry_succeeded", "inquiry_failed", "inquiry_invalid", "orchard_empty",
+  "$pageview", "inquiry_started", "inquiry_submitted", "inquiry_delayed", "inquiry_succeeded", "inquiry_failed", "inquiry_failed_4xx", "inquiry_failed_5xx", "inquiry_failed_network", "inquiry_failed_local", "inquiry_invalid", "orchard_empty",
   "feedback_admin", "feedback_reporting", "feedback_integrations", "feedback_website", "feedback_other",
 ]);
 
