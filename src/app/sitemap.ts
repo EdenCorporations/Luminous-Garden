@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/dashboard-reporting-automation",
     "/guides/document-processing-automation",
     "/guides/employee-onboarding-automation",
+    "/guides/client-onboarding-automation",
     "/guides/automation-project-checklist",
   ];
   // These pages gained article markup or a resource link on September 13.
@@ -45,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/dashboard-reporting-automation" ? { lastModified: "2026-10-14" } : {}),
     ...(path === "/guides/document-processing-automation" ? { lastModified: "2026-10-14" } : {}),
     ...(path === "/guides/employee-onboarding-automation" ? { lastModified: "2026-10-19" } : {}),
+    ...(path === "/guides/client-onboarding-automation" ? { lastModified: "2026-10-20" } : {}),
     ...(path === "/guides/automation-project-checklist" ? { lastModified: "2026-10-19" } : {}),
     ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-10" } : {}),
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
