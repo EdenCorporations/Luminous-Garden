@@ -75,9 +75,21 @@ export default function ContactPage() {
       );
       setStatus("sent");
       captureInquiryEvent("inquiry_succeeded");
-    } catch {
+    } catch (error) {
       setStatus("error");
       captureInquiryEvent("inquiry_failed");
+      // Record only a coarse failure class. Error text may contain private data.
+      const status = error && typeof error === "object" && "status" in error
+        ? Number(error.status)
+        : null;
+      const failureClass = status !== null && status >= 400 && status < 500
+        ? "4xx"
+        : status !== null && status >= 500 && status < 600
+          ? "5xx"
+          : error instanceof TypeError
+            ? "network"
+            : "local";
+      captureInquiryEvent(`inquiry_failed_${failureClass}`);
     } finally {
       window.clearTimeout(delayTimer);
     }
