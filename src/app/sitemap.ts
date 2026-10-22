@@ -54,9 +54,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/recruitment-workflow-automation" ? { lastModified: "2026-10-22" } : {}),
     ...(path === "/guides/contract-management-automation" ? { lastModified: "2026-10-22" } : {}),
     ...(path === "/guides/automation-project-checklist" ? { lastModified: "2026-10-19" } : {}),
-    ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-10" } : {}),
+    ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-22" } : {}),
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
     ...(path === "/agency-facts" ? { lastModified: "2026-10-19" } : {}),
-    ...(["/services/excel-automation", "/services/workflow-automation"].includes(path) ? { lastModified: "2026-10-05" } : {}),
+    ...(path === "/services/excel-automation" ? { lastModified: "2026-10-05" } : {}),
   }));
 }
