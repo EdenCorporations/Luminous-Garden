@@ -4,7 +4,8 @@ import styles from "../../compare/comparison.module.css";
 
 const url = "https://www.edencorp.org/guides/customer-support-automation";
 const headline = "Customer support automation with a human reply";
-const description = "Plan customer support automation for intake, triage, exceptions, and a reviewed reply. See an illustrative workflow for your team.";
+const searchTitle = "Customer Support Automation With Human Review | EdenCORP";
+const description = "Plan customer support automation with request triage, clear ownership, and human-reviewed replies. See an illustrative workflow and what to scope with Eden.";
 const summary = "Give each request an owner and a next step, while your team keeps control of the answer.";
 
 const schema = {
@@ -31,10 +32,10 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: `${headline} | EdenCORP`,
+  title: searchTitle,
   description,
   alternates: { canonical: "/guides/customer-support-automation" },
-  openGraph: { title: `${headline} | EdenCORP`, description, url, type: "article" },
+  openGraph: { title: searchTitle, description, url, type: "article" },
 };
 
 export default function CustomerSupportAutomationGuide() {
