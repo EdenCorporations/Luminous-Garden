@@ -4,7 +4,8 @@ import styles from "../../compare/comparison.module.css";
 
 const url = "https://www.edencorp.org/guides/recruitment-workflow-automation";
 const headline = "Recruitment workflow automation with human decisions";
-const description = "Plan recruitment workflow automation for request intake, candidate handoffs, exceptions, and recruiter decisions. See an illustrative staffing workflow.";
+const searchTitle = "Recruitment Workflow Automation With Human Decisions | EdenCORP";
+const description = "Plan recruitment workflow automation for hiring requests, candidate handoffs, and exceptions. See where recruiters keep decisions and what to scope with Eden.";
 const summary = "Move hiring requests and candidate updates between people without handing hiring decisions to software.";
 
 const schema = {
@@ -31,10 +32,10 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: `${headline} | EdenCORP`,
+  title: searchTitle,
   description,
   alternates: { canonical: "/guides/recruitment-workflow-automation" },
-  openGraph: { title: `${headline} | EdenCORP`, description, url, type: "article" },
+  openGraph: { title: searchTitle, description, url, type: "article" },
 };
 
 export default function RecruitmentWorkflowAutomationGuide() {

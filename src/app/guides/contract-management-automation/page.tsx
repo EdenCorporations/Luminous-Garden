@@ -4,7 +4,8 @@ import styles from "../../compare/comparison.module.css";
 
 const url = "https://www.edencorp.org/guides/contract-management-automation";
 const headline = "Contract management automation with human review.";
-const description = "Plan contract management automation for intake, approval, signatures, and renewal reminders. See an illustrative workflow with human review.";
+const searchTitle = "Contract Management Automation With Human Review | EdenCORP";
+const description = "Plan contract management automation for intake, approvals, signing, and renewals. See how people review terms and what Eden can scope around your tools.";
 const summary = "Keep contract handoffs and renewal dates visible while people make the legal and commercial decisions.";
 
 const schema = {
@@ -31,10 +32,10 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: `${headline} | EdenCORP`,
+  title: searchTitle,
   description,
   alternates: { canonical: "/guides/contract-management-automation" },
-  openGraph: { title: `${headline} | EdenCORP`, description, url, type: "article" },
+  openGraph: { title: searchTitle, description, url, type: "article" },
 };
 
 export default function ContractManagementAutomationGuide() {
