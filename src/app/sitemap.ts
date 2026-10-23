@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/customer-support-automation",
     "/guides/recruitment-workflow-automation",
     "/guides/contract-management-automation",
+    "/guides/inventory-management-automation",
     "/guides/automation-project-checklist",
   ];
   // These pages gained article markup or a resource link on September 13.
@@ -53,6 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/customer-support-automation" ? { lastModified: "2026-10-22" } : {}),
     ...(path === "/guides/recruitment-workflow-automation" ? { lastModified: "2026-10-22" } : {}),
     ...(path === "/guides/contract-management-automation" ? { lastModified: "2026-10-22" } : {}),
+    ...(path === "/guides/inventory-management-automation" ? { lastModified: "2026-10-23" } : {}),
     ...(path === "/guides/automation-project-checklist" ? { lastModified: "2026-10-19" } : {}),
     ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-22" } : {}),
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
