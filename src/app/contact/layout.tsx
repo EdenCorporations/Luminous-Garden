@@ -25,7 +25,7 @@ const buyerQuestions = [
   },
   {
     question: "Will I speak with a person?",
-    before: "Yes. We review your inquiry and follow up personally to discuss your workflow. You can also use the Email support link above if you need help.",
+    before: "Yes. We review your inquiry and follow up personally to discuss your workflow. If the form fails, an email link appears beside the retry option.",
     linkText: "",
     after: "",
     href: "",

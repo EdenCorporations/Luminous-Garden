@@ -318,13 +318,6 @@ export default function ContactPage() {
                       role="status"
                     >
                       <p className="text-text">Still waiting for delivery confirmation. Please don&apos;t send the form again yet.</p>
-                      <p className="mt-2">
-                        Need help now?{" "}
-                        <a href="mailto:edencorp-org@mail.tin.computer" className="text-ember underline underline-offset-4 hover:text-text">
-                          Email support
-                        </a>
-                        .
-                      </p>
                     </motion.div>
                   ) : status === "error" ? (
                     <motion.div
@@ -346,6 +339,16 @@ export default function ContactPage() {
                       >
                         Try Again
                       </button>
+                      <p className="text-center text-sm text-text-secondary">
+                        Still can&apos;t send?{" "}
+                        <a
+                          href="mailto:edencorp-org@mail.tin.computer"
+                          className="text-ember underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 break-all"
+                        >
+                          Email Eden support
+                        </a>
+                        .
+                      </p>
                     </motion.div>
                   ) : (
                     <MagneticButton strength={0.15} className="w-full">
@@ -380,14 +383,7 @@ export default function ContactPage() {
               </div>
               </form>
               <p className="mt-5 text-center text-sm text-text-secondary">
-                We review your inquiry and follow up personally to discuss your workflow and project scope.{" "}
-                Need help?{" "}
-                <a
-                  href="mailto:edencorp-org@mail.tin.computer"
-                  className="underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 break-all"
-                >
-                  Email support
-                </a>
+                We review your inquiry and follow up personally to discuss your workflow and project scope.
               </p>
             </div>
           </Reveal>
