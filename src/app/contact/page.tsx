@@ -1,7 +1,7 @@
 "use client";
 
 import { ReferralFields } from "@/components/contact/ReferralFields";
-import { captureInquiryEvent } from "@/lib/analytics";
+import { captureInquiryEvent, type InquiryFailureType } from "@/lib/analytics";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -77,18 +77,22 @@ export default function ContactPage() {
       captureInquiryEvent("inquiry_succeeded");
     } catch (error) {
       setStatus("error");
-      captureInquiryEvent("inquiry_failed");
-      // Record only a coarse failure class. Error text may contain private data.
-      const status = error && typeof error === "object" && "status" in error
-        ? Number(error.status)
-        : null;
-      const failureClass = status !== null && status >= 400 && status < 500
-        ? "4xx"
-        : status !== null && status >= 500 && status < 600
-          ? "5xx"
-          : error instanceof TypeError
-            ? "network"
-            : "local";
+      // Only fixed categories leave the browser. Provider text can contain private data.
+      const responseStatus = error && typeof error === "object" && "status" in error
+        && typeof error.status === "number" ? error.status : null;
+      const failureType: InquiryFailureType = responseStatus !== null && responseStatus >= 400 && responseStatus < 500
+        ? "http_4xx"
+        : responseStatus !== null && responseStatus >= 500 && responseStatus < 600
+          ? "http_5xx"
+          : responseStatus !== null && responseStatus >= 100
+            ? "http_other"
+            : error instanceof TypeError || responseStatus === 0
+              ? navigator.onLine === false ? "offline" : "network"
+              : "local";
+      captureInquiryEvent("inquiry_failed", "/contact", { failure_type: failureType });
+      const failureClass = failureType === "http_4xx" ? "4xx"
+        : failureType === "http_5xx" ? "5xx"
+          : failureType === "offline" || failureType === "network" ? "network" : "local";
       captureInquiryEvent(`inquiry_failed_${failureClass}`);
     } finally {
       window.clearTimeout(delayTimer);

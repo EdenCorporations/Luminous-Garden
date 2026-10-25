@@ -8,6 +8,8 @@ let contactSuccessCaptured = false;
 const channels = new Set(["ai", "search", "direct", "other", "unknown"]);
 const sources = new Set(["ai", "search", "friend", "social", "directory", "other"]);
 const topics = new Set(["admin", "reporting", "integrations", "website", "other", "not_provided"]);
+export type InquiryFailureType = "offline" | "network" | "http_4xx" | "http_5xx" | "http_other" | "local";
+const failureTypes = new Set<InquiryFailureType>(["offline", "network", "http_4xx", "http_5xx", "http_other", "local"]);
 
 export function classifyReferrer(referrer: string, search = "") {
   const aiHosts = ["chatgpt.com", "chat.openai.com", "claude.ai", "perplexity.ai", "gemini.google.com", "copilot.microsoft.com"];
@@ -41,7 +43,7 @@ const events = new Set([
   "feedback_admin", "feedback_reporting", "feedback_integrations", "feedback_website", "feedback_other",
 ]);
 
-export function captureInquiryEvent(event: string, route = "/contact", attribution: { source?: string; prompt?: string } = {}) {
+export function captureInquiryEvent(event: string, route = "/contact", attribution: { source?: string; prompt?: string; failure_type?: InquiryFailureType } = {}) {
   if (typeof window === "undefined" || !events.has(event)) return;
   try {
     // Keep the explicit QA marker in memory across client-side navigation only.
@@ -70,14 +72,22 @@ export function captureInquiryEvent(event: string, route = "/contact", attributi
           const baseEvent = payload.event.startsWith("qa_") ? payload.event.slice(3) : payload.event;
           if (!events.has(baseEvent)) return null;
           // Explicit allowlist: no URL queries, referrers, form values, or identities.
-          const { token, distinct_id, $session_id, $lib, $lib_version, route, is_test, referrer_channel, source, ai_prompt_topic } = payload.properties;
+          const { token, distinct_id, $session_id, $lib, $lib_version, route, is_test, referrer_channel, source, ai_prompt_topic, failure_type, request_stage } = payload.properties;
           payload.properties = {
-            token, distinct_id, $session_id, $lib, $lib_version, route,
+            token,
+            // Aggregate failures under one fixed value, without a visitor or session key.
+            distinct_id: baseEvent === "inquiry_failed" ? "anonymous_inquiry_failure" : distinct_id,
+            ...(baseEvent === "inquiry_failed" ? {} : { $session_id }),
+            $lib, $lib_version, route,
             is_test: is_test === true,
             referrer_channel: channels.has(referrer_channel) ? referrer_channel : "unknown",
             ...(baseEvent === "inquiry_source" && sources.has(source) ? {
               source,
               ...(source === "ai" && topics.has(ai_prompt_topic) ? { ai_prompt_topic } : {}),
+            } : {}),
+            ...(baseEvent === "inquiry_failed" && failureTypes.has(failure_type) && request_stage === "emailjs_send" ? {
+              failure_type,
+              request_stage,
             } : {}),
             $current_url: `https://www.edencorp.org${route}`,
             $process_person_profile: false,
@@ -96,6 +106,10 @@ export function captureInquiryEvent(event: string, route = "/contact", attributi
       ...(event === "inquiry_source" && sources.has(attribution.source ?? "") ? {
         source: attribution.source,
         ...(attribution.source === "ai" ? { ai_prompt_topic: promptTopic(attribution.prompt ?? "") } : {}),
+      } : {}),
+      ...(event === "inquiry_failed" && attribution.failure_type && failureTypes.has(attribution.failure_type) ? {
+        failure_type: attribution.failure_type,
+        request_stage: "emailjs_send",
       } : {}),
     });
     // One tracked contact visit and provider-accepted success per document lifetime.
