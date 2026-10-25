@@ -32,6 +32,16 @@ assert.equal(JSON.stringify(sent).includes('Private'), false);
 assert.equal(config.before_send({event: '$autocapture', properties: {}}), null);
 output.captureInquiryEvent('private_event');
 assert.equal(sent.length, 1);
+output.captureInquiryEvent('inquiry_failed', '/contact', {failure_type: 'network'});
+assert.equal(sent.length, 2);
+assert.equal(sent[1].event, 'qa_inquiry_failed');
+assert.equal(sent[1].properties.failure_type, 'network');
+assert.equal(sent[1].properties.request_stage, 'emailjs_send');
+assert.equal(sent[1].properties.distinct_id, 'anonymous_inquiry_failure');
+assert.equal(sent[1].properties.$session_id, undefined);
+assert.equal(JSON.stringify(sent[1]).includes('private'), false);
+output.captureInquiryEvent('inquiry_failed', '/contact', {failure_type: 'private@example.test'});
+assert.equal(sent.at(-1).properties.failure_type, undefined);
 sdk.capture = () => { throw new Error('unavailable'); };
 assert.doesNotThrow(() => output.captureInquiryEvent('inquiry_succeeded'));
 console.log('Analytics privacy and failure isolation checks passed.');
@@ -49,10 +59,11 @@ vm.runInNewContext(ts.transpileModule(fs.readFileSync('src/app/contact/page.tsx'
     if (name === 'react') return {useState: (initial) => [initial, () => {}], useRef: () => ({current: false})};
     if (name === 'react/jsx-runtime') return {jsx, jsxs: jsx};
     if (name === 'motion/react') return {motion: {div: 'div', button: 'button'}};
-    if (name === '@/lib/analytics') return {captureInquiryEvent: (event) => formEvents.push(event)};
-    if (name === '@emailjs/browser') return {default: {send: async () => {if (providerFails) throw Error('stub failure');}}};
+    if (name === '@/lib/analytics') return {captureInquiryEvent: (event, _route, attribution) => formEvents.push({event, attribution})};
+    if (name === '@emailjs/browser') return {default: {send: async () => {if (providerFails) throw {status: 0};}}};
     return {};
   },
+  window: {setTimeout: () => 1, clearTimeout: () => {}}, navigator: {onLine: true},
 });
 function findForm(node) {
   if (!node || typeof node !== 'object') return;
@@ -62,9 +73,10 @@ function findForm(node) {
 const form = findForm(contactOutput.default());
 assert.ok(form);
 await form.props.onSubmit({preventDefault() {}});
-assert.deepEqual(formEvents, ['inquiry_submitted', 'inquiry_succeeded']);
+assert.deepEqual(formEvents.map(item => item.event), ['inquiry_submitted', 'inquiry_succeeded']);
 formEvents.length = 0;
 providerFails = true;
 await form.props.onSubmit({preventDefault() {}});
-assert.deepEqual(formEvents, ['inquiry_submitted', 'inquiry_failed']);
+assert.deepEqual(formEvents.map(item => item.event), ['inquiry_submitted', 'inquiry_failed', 'inquiry_failed_network']);
+assert.equal(formEvents[1].attribution.failure_type, 'network');
 console.log('Contact success and failure event ordering passed with a stub provider.');
