@@ -21,6 +21,7 @@ export default function ContactPage() {
   const [workflow, setWorkflow] = useState("");
   const [budget, setBudget] = useState(50);
   const [status, setStatus] = useState<"idle" | "sending" | "delayed" | "sent" | "error">("idle");
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "failed">("idle");
   const [formData, setFormData] = useState({
     name: "",
     org: "",
@@ -96,6 +97,25 @@ export default function ContactPage() {
       captureInquiryEvent(`inquiry_failed_${failureClass}`);
     } finally {
       window.clearTimeout(delayTimer);
+    }
+  };
+
+  const copyInquiry = async () => {
+    const details = [
+      `Name: ${formData.name}`,
+      ...(formData.org ? [`Organization: ${formData.org}`] : []),
+      `Email: ${formData.email}`,
+      `Budget: ${budgetDisplay}`,
+      ...(workflow ? [`Workflow: ${workflowLabels[workflow]}`] : []),
+      "",
+      formData.message,
+    ].join("\n");
+    try {
+      await navigator.clipboard.writeText(details);
+      setCopyStatus("copied");
+      captureInquiryEvent("inquiry_backup_copied");
+    } catch {
+      setCopyStatus("failed");
     }
   };
 
@@ -345,6 +365,14 @@ export default function ContactPage() {
                       </button>
                       <p className="text-center text-sm text-text-secondary">
                         Still can&apos;t send?{" "}
+                        <button
+                          type="button"
+                          onClick={copyInquiry}
+                          className="text-ember underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+                        >
+                          Copy inquiry details
+                        </button>
+                        , then{" "}
                         <a
                           href="mailto:edencorp-org@mail.tin.computer"
                           className="text-ember underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 break-all"
@@ -353,6 +381,11 @@ export default function ContactPage() {
                         </a>
                         .
                       </p>
+                      {copyStatus !== "idle" && (
+                        <p role="status" className="text-center text-xs text-text-secondary">
+                          {copyStatus === "copied" ? "Copied. Paste the details into your email." : "Copy failed. Select your message above to copy it."}
+                        </p>
+                      )}
                     </motion.div>
                   ) : (
                     <MagneticButton strength={0.15} className="w-full">
