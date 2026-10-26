@@ -81,6 +81,7 @@ export default function PurchaseOrderAutomationGuide() {
           <ul className={styles.sources}>
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/guides/invoice-processing-automation">Invoice processing automation</Link></li>
+            <li><Link className={styles.related} href="/guides/accounts-payable-automation">Accounts payable automation</Link></li>
             <li><Link className={styles.related} href="/how-we-work">How Eden works</Link></li>
           </ul>
         </aside>
