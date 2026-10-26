@@ -82,6 +82,7 @@ export default function Page() {
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/guides/data-entry-automation">Data entry automation</Link></li>
             <li><Link className={styles.related} href="/guides/document-processing-automation">Document processing automation</Link></li>
+            <li><Link className={styles.related} href="/guides/accounts-payable-automation">Accounts payable automation</Link></li>
             <li><Link className={styles.related} href="/how-we-work">How we work</Link></li>
           </ul>
         </aside>
