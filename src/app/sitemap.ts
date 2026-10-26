@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/inventory-management-automation",
     "/guides/order-processing-automation",
     "/guides/accounts-payable-automation",
+    "/guides/accounts-receivable-automation",
     "/guides/automation-project-checklist",
   ];
   // These pages gained article markup or a resource link on September 13.
@@ -59,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/inventory-management-automation" ? { lastModified: "2026-10-23" } : {}),
     ...(path === "/guides/order-processing-automation" ? { lastModified: "2026-10-24" } : {}),
     ...(path === "/guides/accounts-payable-automation" ? { lastModified: "2026-10-25" } : {}),
+    ...(path === "/guides/accounts-receivable-automation" ? { lastModified: "2026-10-26" } : {}),
     ...(path === "/guides/automation-project-checklist" ? { lastModified: "2026-10-19" } : {}),
     ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-24" } : {}),
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
