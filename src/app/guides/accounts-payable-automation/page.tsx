@@ -65,6 +65,7 @@ export default function AccountsPayableAutomationGuide() {
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/guides/invoice-processing-automation">Invoice processing automation</Link></li>
             <li><Link className={styles.related} href="/guides/purchase-order-automation">Purchase order automation</Link></li>
+            <li><Link className={styles.related} href="/guides/accounts-receivable-automation">Accounts receivable automation</Link></li>
           </ul>
         </aside>
       </article>
