@@ -81,6 +81,7 @@ export default function DashboardReportingAutomationGuide() {
           <ul className={styles.sources}>
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/guides/google-spreadsheet-automation">Google spreadsheet automation</Link></li>
+            <li><Link className={styles.related} href="/guides/financial-reporting-automation">Financial reporting automation</Link></li>
             <li><Link className={styles.related} href="/how-we-work">How Eden works</Link></li>
           </ul>
         </aside>
