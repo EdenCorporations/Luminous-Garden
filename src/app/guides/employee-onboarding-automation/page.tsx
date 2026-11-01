@@ -75,6 +75,7 @@ export default function EmployeeOnboardingAutomationGuide() {
           <ul className={styles.sources}>
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/guides/approval-workflow-automation">Approval workflow automation</Link></li>
+            <li><Link className={styles.related} href="/guides/employee-offboarding-automation">Employee offboarding automation</Link></li>
             <li><Link className={styles.related} href="/how-we-work">How Eden works</Link></li>
           </ul>
         </aside>
