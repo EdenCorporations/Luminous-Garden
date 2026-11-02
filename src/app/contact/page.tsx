@@ -125,6 +125,7 @@ export default function ContactPage() {
       captureInquiryEvent("inquiry_started");
     }
     invalidReported.current = false;
+    setCopyStatus("idle");
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -258,7 +259,10 @@ export default function ContactPage() {
                     step={10}
                     type="range"
                     value={budget}
-                    onChange={(e) => setBudget(Number(e.target.value))}
+                    onChange={(e) => {
+                      setBudget(Number(e.target.value));
+                      setCopyStatus("idle");
+                    }}
                   />
                 </div>
                 <div className="flex justify-between mt-2 text-[10px] font-mono text-text-tertiary">
@@ -279,6 +283,7 @@ export default function ContactPage() {
                   onChange={(e) => {
                     const choice = e.target.value;
                     setWorkflow(choice);
+                    setCopyStatus("idle");
                     if (choice) captureInquiryEvent(`feedback_${choice}`);
                   }}
                 >
