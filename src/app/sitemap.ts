@@ -38,14 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]);
   return routes.map((path) => ({
     url: `https://www.edencorp.org${path}`,
-    ...(path === "/how-we-work" ? { lastModified: "2026-10-15" } : {}),
+    ...(path === "/how-we-work" ? { lastModified: "2026-11-04" } : {}),
     ...((path.startsWith("/compare/") || path.startsWith("/alternatives/") || path.startsWith("/guides/"))
       ? { lastModified: "2026-09-12" } : {}),
     ...(updatedSeptember13.has(path) ? { lastModified: "2026-09-13" } : {}),
     ...(["/compare", "/services/workflow-automation"].includes(path) ? { lastModified: "2026-09-14" } : {}),
     ...(path === "/guides/workflow-automation-agency-cost" ? { lastModified: "2026-09-15" } : {}),
     ...(path === "/guides/automation-agency-or-zapier" ? { lastModified: "2026-09-16" } : {}),
-    ...(["/examples/spreadsheet-reporting", "/services/excel-automation", "/services/workflow-automation", "/compare"].includes(path) ? { lastModified: "2026-09-21" } : {}),
+    ...(["/examples/spreadsheet-reporting", "/services/excel-automation", "/compare"].includes(path) ? { lastModified: "2026-09-21" } : {}),
+    ...(path === "/services/workflow-automation" ? { lastModified: "2026-11-04" } : {}),
     ...(path === "/guides/data-entry-automation" ? { lastModified: "2026-09-28" } : {}),
     ...(path === "/guides/invoice-processing-automation" ? { lastModified: "2026-10-26" } : {}),
     ...(path === "/guides/timesheet-automation" ? { lastModified: "2026-10-05" } : {}),
