@@ -72,6 +72,19 @@ export default function Home() {
             </span>
           </Link>
         </MagneticButton>
+        <nav aria-label="Workflow examples" className="mt-12 flex flex-col items-center gap-3">
+          <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
+            Explore workflow examples
+          </span>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-text-secondary">
+            <Link href="/guides/vendor-onboarding-automation" className="underline underline-offset-4 hover:text-text focus-visible:text-text">
+              Vendor onboarding automation
+            </Link>
+            <Link href="/guides/employee-offboarding-automation" className="underline underline-offset-4 hover:text-text focus-visible:text-text">
+              Employee offboarding automation
+            </Link>
+          </div>
+        </nav>
       </Reveal>
     </main>
   );
