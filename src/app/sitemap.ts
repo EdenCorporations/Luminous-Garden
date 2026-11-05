@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/accounts-receivable-automation",
     "/guides/financial-reporting-automation",
     "/guides/vendor-onboarding-automation",
+    "/guides/sales-quotation-automation",
     "/guides/automation-project-checklist",
   ];
   // These pages gained article markup or a resource link on September 13.
@@ -68,6 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/accounts-receivable-automation" ? { lastModified: "2026-10-26" } : {}),
     ...(path === "/guides/financial-reporting-automation" ? { lastModified: "2026-10-27" } : {}),
     ...(path === "/guides/vendor-onboarding-automation" ? { lastModified: "2026-11-04" } : {}),
+    ...(path === "/guides/sales-quotation-automation" ? { lastModified: "2026-11-05" } : {}),
     ...(path === "/guides/automation-project-checklist" ? { lastModified: "2026-10-19" } : {}),
     ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-24" } : {}),
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
