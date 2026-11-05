@@ -4,7 +4,8 @@ import styles from "../../compare/comparison.module.css";
 
 const url = "https://www.edencorp.org/guides/vendor-onboarding-automation";
 const headline = "Vendor onboarding automation with clear approvals.";
-const description = "Plan vendor onboarding automation for procurement teams. Check supplier details, route exceptions, and approve each handoff before purchasing begins.";
+const searchTitle = "Vendor Onboarding Automation for Procurement | EdenCORP";
+const description = "Plan vendor onboarding automation for procurement. Route supplier checks to owners, review exceptions, and approve the vendor record before purchasing.";
 const summary = "Give procurement one clear route from a supplier request to an approved vendor record.";
 
 const schema = {
@@ -26,9 +27,9 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: `${headline} | EdenCORP`, description,
+  title: searchTitle, description,
   alternates: { canonical: "/guides/vendor-onboarding-automation" },
-  openGraph: { title: `${headline} | EdenCORP`, description, url, type: "article" },
+  openGraph: { title: searchTitle, description, url, type: "article" },
 };
 
 export default function VendorOnboardingAutomationGuide() {

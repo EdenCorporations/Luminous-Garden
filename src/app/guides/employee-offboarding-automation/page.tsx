@@ -4,7 +4,8 @@ import styles from "../../compare/comparison.module.css";
 
 const url = "https://www.edencorp.org/guides/employee-offboarding-automation";
 const headline = "Employee offboarding automation for HR and IT handoffs";
-const description = "Plan employee offboarding automation across HR, IT, and managers. Track access removal, asset return, exceptions, and human sign-off.";
+const searchTitle = "Employee Offboarding Automation for HR and IT | EdenCORP";
+const description = "Plan employee offboarding automation across HR and IT. Track access removal, device return, exceptions, and human sign-off before closing a departure.";
 const summary = "Give every departure a named owner, a clear access list, and a checked finish.";
 
 const schema = {
@@ -26,9 +27,9 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: `${headline} | EdenCORP`, description,
+  title: searchTitle, description,
   alternates: { canonical: "/guides/employee-offboarding-automation" },
-  openGraph: { title: `${headline} | EdenCORP`, description, url, type: "article" },
+  openGraph: { title: searchTitle, description, url, type: "article" },
 };
 
 export default function EmployeeOffboardingAutomationGuide() {
