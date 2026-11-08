@@ -330,12 +330,14 @@ export default function ContactPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="w-full h-12 border border-success/30 bg-success/5 rounded-sm flex items-center justify-center gap-2"
+                      className="w-full min-h-12 border border-success/30 bg-success/5 rounded-sm flex flex-col items-center justify-center gap-1 px-4 py-3 text-center"
+                      role="status"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-success" />
-                      <span className="text-success font-mono text-sm tracking-wider uppercase">
+                      <span className="flex items-center gap-2 text-success font-mono text-sm tracking-wider uppercase">
+                        <CheckCircle2 className="w-4 h-4" />
                         Message Sent
                       </span>
+                      <p className="text-xs text-text-secondary">Our email service accepted your inquiry. Inbox receipt is not confirmed here.</p>
                     </motion.div>
                   ) : status === "delayed" ? (
                     <motion.div
@@ -346,7 +348,7 @@ export default function ContactPage() {
                       className="border border-ember/30 bg-ember/5 rounded-sm p-4 text-sm text-text-secondary"
                       role="status"
                     >
-                      <p className="text-text">Still waiting for delivery confirmation. Please don&apos;t send the form again yet.</p>
+                      <p className="text-text">Still waiting for our email service to confirm your message. Please don&apos;t send the form again yet.</p>
                     </motion.div>
                   ) : status === "error" ? (
                     <motion.div
