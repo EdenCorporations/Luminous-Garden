@@ -428,6 +428,7 @@ export default function ContactPage() {
               </form>
               <p className="mt-5 text-center text-sm text-text-secondary">
                 We review your inquiry and follow up personally to discuss your workflow and project scope.
+                {" "}Prefer email? <a href="mailto:edencorp-org@mail.tin.computer" onClick={() => captureInquiryEvent("inquiry_email_link_clicked")} className="text-ember underline underline-offset-4 hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Email Eden support</a>.
               </p>
             </div>
           </Reveal>
