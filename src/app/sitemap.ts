@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/crm-workflow-automation",
     "/guides/quality-control-automation",
     "/guides/work-order-automation",
+    "/guides/claims-processing-automation",
     "/guides/automation-project-checklist",
   ];
   // These pages gained article markup or a resource link on September 13.
@@ -76,6 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/crm-workflow-automation" ? { lastModified: "2026-11-06" } : {}),
     ...(path === "/guides/quality-control-automation" ? { lastModified: "2026-11-08" } : {}),
     ...(path === "/guides/work-order-automation" ? { lastModified: "2026-11-09" } : {}),
+    ...(path === "/guides/claims-processing-automation" ? { lastModified: "2026-11-09" } : {}),
     ...(path === "/guides/automation-project-checklist" ? { lastModified: "2026-10-19" } : {}),
     ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-24" } : {}),
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
