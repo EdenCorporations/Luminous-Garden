@@ -75,6 +75,7 @@ export default function InventoryManagementAutomationGuide() {
           <ul className={styles.sources}>
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/guides/automation-project-checklist">Automation project checklist</Link></li>
+            <li><Link className={styles.related} href="/guides/quality-control-automation">Quality control automation</Link></li>
             <li><Link className={styles.related} href="/how-we-work">How Eden works</Link></li>
           </ul>
         </aside>
