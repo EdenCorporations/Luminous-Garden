@@ -63,6 +63,7 @@ export default function VendorOnboardingAutomationGuide() {
         <aside className={styles.notes} aria-label="Related guides">
           <h2>Keep planning</h2>
           <ul className={styles.sources}>
+            <li><Link className={styles.related} href="/guides/procurement-automation">Procurement automation</Link></li>
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/guides/purchase-order-automation">Purchase order automation</Link></li>
             <li><Link className={styles.related} href="/guides/accounts-payable-automation">Accounts payable automation</Link></li>
