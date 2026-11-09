@@ -83,6 +83,7 @@ export default function DocumentProcessingAutomationGuide() {
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/guides/invoice-processing-automation">Invoice processing automation</Link></li>
             <li><Link className={styles.related} href="/guides/claims-processing-automation">Claims processing automation</Link></li>
+            <li><Link className={styles.related} href="/guides/compliance-workflow-automation">Compliance workflow automation</Link></li>
             <li><Link className={styles.related} href="/how-we-work">How Eden works</Link></li>
           </ul>
         </aside>

@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/claims-processing-automation",
     "/guides/asset-management-automation",
     "/guides/procurement-automation",
+    "/guides/compliance-workflow-automation",
     "/guides/automation-project-checklist",
   ];
   // These pages gained article markup or a resource link on September 13.
@@ -82,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/guides/claims-processing-automation" ? { lastModified: "2026-11-09" } : {}),
     ...(path === "/guides/asset-management-automation" ? { lastModified: "2026-11-09" } : {}),
     ...(path === "/guides/procurement-automation" ? { lastModified: "2026-11-09" } : {}),
+    ...(path === "/guides/compliance-workflow-automation" ? { lastModified: "2026-11-09" } : {}),
     ...(path === "/guides/automation-project-checklist" ? { lastModified: "2026-10-19" } : {}),
     ...(path === "/services/workflow-automation" ? { lastModified: "2026-10-24" } : {}),
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
