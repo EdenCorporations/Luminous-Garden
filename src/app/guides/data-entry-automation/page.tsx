@@ -53,6 +53,7 @@ export default function Page() {
           <ul className={styles.sources}>
             <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/examples/spreadsheet-reporting">Working spreadsheet example</Link></li>
+            <li><Link className={styles.related} href="/guides/data-validation-automation">Data validation automation</Link></li>
             <li><Link className={styles.related} href="/how-we-work">How we work</Link></li>
           </ul>
         </aside>
