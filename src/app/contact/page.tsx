@@ -164,6 +164,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-text-secondary text-sm md:text-base max-w-md mx-auto font-light">
             Tell us about your project. We&apos;ll architect the right solution.
+            <span className="block mt-2">We help organizations with manual workflows connect tools and reduce repeated handoffs.</span>
           </p>
         </Reveal>
 
