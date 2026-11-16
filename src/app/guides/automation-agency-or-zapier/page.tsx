@@ -102,6 +102,7 @@ export default function Page() {
         <aside className={styles.notes} aria-label="Sources and related guides">
           <h2>Compare your options</h2>
           <ul className={styles.sources}>
+            <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/compare/eden-vs-zapier">Eden vs Zapier</Link></li>
             <li><Link className={styles.related} href="/alternatives/zapier">Zapier alternatives</Link></li>
             <li><a className={styles.related} href="https://help.zapier.com/hc/en-us/articles/8496309697421-What-is-a-Zap">Zapier: What is a Zap?</a></li>

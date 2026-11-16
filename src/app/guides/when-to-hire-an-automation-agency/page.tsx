@@ -60,6 +60,7 @@ export default function Page() {
         <aside className={styles.notes} aria-label="Related comparisons">
           <h2>Compare Eden with your tool</h2>
           <ul className={styles.sources}>
+            <li><Link className={styles.related} href="/services/workflow-automation">Workflow automation services</Link></li>
             <li><Link className={styles.related} href="/compare/eden-vs-zapier">Eden vs Zapier</Link></li>
             <li><Link className={styles.related} href="/compare/eden-vs-make">Eden vs Make</Link></li>
             <li><Link className={styles.related} href="/compare/eden-vs-n8n">Eden vs n8n</Link></li>
