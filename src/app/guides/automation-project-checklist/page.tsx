@@ -60,7 +60,7 @@ export default function AutomationProjectChecklist() {
           <div className={styles.intro}>
             <span className={styles.label}>Five checks</span>
             <h2 id="checklist-title">Automation project checklist</h2>
-            <p>Use this before scoping a project. A rough map is enough to start a useful conversation.</p>
+            <p>Use this if your team repeats a manual handoff. A rough map is enough. Send Eden the steps through Contact, which offers email. Eden scopes work and fees in a proposal.</p>
           </div>
           <ol className={styles.checks}>
             {checks.map(([title, text], index) => (
@@ -79,6 +79,7 @@ export default function AutomationProjectChecklist() {
         </aside>
 
         <nav className={styles.related} aria-label="Related reading">
+          <Link href="/services/workflow-automation">Workflow automation services <span aria-hidden="true">↗</span></Link>
           <Link href="/how-we-work">How Eden scopes and delivers work <span aria-hidden="true">↗</span></Link>
           <Link href="/agency-facts">Eden agency facts <span aria-hidden="true">↗</span></Link>
         </nav>

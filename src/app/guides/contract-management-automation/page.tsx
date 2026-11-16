@@ -68,7 +68,7 @@ export default function ContractManagementAutomationGuide() {
 
         <section className={styles.choice}>
           <h2>Test exceptions before launch.</h2>
-          <p>Try a missing signer, conflicting versions, a rejected clause, and a missed reminder. Each needs a visible owner and a manual route. This is a planning example, not a delivered client result or legal advice. Eden can scope the handoffs around your tools.</p>
+          <p>Try a missing signer, conflicting versions, a rejected clause, and a missed reminder. Each needs a visible owner and a manual route. This is a planning example, not a delivered client result or legal advice. If your team tracks contracts across tools, tell Eden where handoffs stall. Contact offers an email option. Eden can scope the work and fees in a proposal.</p>
         </section>
 
         <aside className={styles.notes} aria-label="Related guides">
