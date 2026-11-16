@@ -21,6 +21,7 @@ export default function ContactPage() {
   const [workflow, setWorkflow] = useState("");
   const [budget, setBudget] = useState(50);
   const [status, setStatus] = useState<"idle" | "sending" | "delayed" | "sent" | "error">("idle");
+  const [failureType, setFailureType] = useState<InquiryFailureType | null>(null);
   const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "failed">("idle");
   const [formData, setFormData] = useState({
     name: "",
@@ -90,6 +91,7 @@ export default function ContactPage() {
             : error instanceof TypeError || responseStatus === 0
               ? navigator.onLine === false ? "offline" : "network"
               : "local";
+      setFailureType(failureType);
       captureInquiryEvent("inquiry_failed", "/contact", { failure_type: failureType });
       const failureClass = failureType === "http_4xx" ? "4xx"
         : failureType === "http_5xx" ? "5xx"
@@ -365,6 +367,13 @@ export default function ContactPage() {
                           Failed to Send
                         </span>
                       </div>
+                      <p role="status" className="text-center text-sm text-text-secondary">
+                        {failureType === "offline"
+                          ? "You are offline. Your message is still here. Reconnect, then try again."
+                          : failureType === "network"
+                            ? "We could not reach our email service. Your message is still here."
+                            : "Our email service could not accept your message. Your details are still here."}
+                      </p>
                       <button
                         className="w-full text-center text-xs text-ember font-mono hover:text-text transition-colors"
                         type="submit"
