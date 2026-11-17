@@ -45,7 +45,7 @@ export default function ApprovalWorkflowAutomationGuide() {
 
         <section className={styles.choice}>
           <h2>Choose the right build.</h2>
-          <p>Existing tools may cover a single team. Custom work can connect requests across inboxes, forms, and internal systems. If your team moves approvals between tools, tell Eden where requests stall. Contact offers an email option. Eden scopes the route, tests, access, fees, and support in a project proposal.</p>
+          <p>Existing tools may cover a single team. Custom work can connect requests across inboxes, forms, and internal systems. If your team moves approvals between tools, tell Eden where requests stall. Contact offers an email option. Eden scopes the route, tests, access, fees, and support in a project proposal. There is no checkout; email Eden through Contact to request a proposal.</p>
         </section>
 
         <aside className={styles.notes} aria-label="Related guides">

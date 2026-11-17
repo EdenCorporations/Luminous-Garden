@@ -60,7 +60,7 @@ export default function AutomationProjectChecklist() {
           <div className={styles.intro}>
             <span className={styles.label}>Five checks</span>
             <h2 id="checklist-title">Automation project checklist</h2>
-            <p>Use this if your team repeats a manual handoff. A rough map is enough. Send Eden the steps through Contact, which offers email. Eden scopes work and fees in a proposal.</p>
+            <p>Use this if your team repeats a manual handoff. A rough map is enough. Send Eden the steps through Contact, which offers email. Eden scopes work and fees in a proposal. There is no checkout; email Eden through Contact to request a proposal.</p>
           </div>
           <ol className={styles.checks}>
             {checks.map(([title, text], index) => (

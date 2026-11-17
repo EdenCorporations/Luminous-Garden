@@ -67,7 +67,7 @@ export default function EmployeeOnboardingAutomationGuide() {
 
         <section className={styles.choice}>
           <h2>Test the first day.</h2>
-          <p>Try a normal hire, a delayed start, and an IT system outage. Confirm that a person can finish urgent steps manually. If your HR system already handles these handoffs, use it. If work crosses tools, tell Eden which onboarding steps stall. Contact offers an email option. Eden can scope custom connections and fees in a proposal.</p>
+          <p>Try a normal hire, a delayed start, and an IT system outage. Confirm that a person can finish urgent steps manually. If your HR system already handles these handoffs, use it. If work crosses tools, tell Eden which onboarding steps stall. Contact offers an email option. Eden can scope custom connections and fees in a proposal. There is no checkout; email Eden through Contact to request a proposal.</p>
         </section>
 
         <aside className={styles.notes} aria-label="Related guides">
