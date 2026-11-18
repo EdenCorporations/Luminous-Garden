@@ -56,6 +56,9 @@ export default function HowWeWork() {
         <Link href="/guides/document-processing-automation">Document processing automation</Link>
         <Link href="/guides/vendor-onboarding-automation">Vendor onboarding automation</Link>
         <Link href="/guides/employee-offboarding-automation">Employee offboarding automation</Link>
+        <Link href="/guides/choose-workflow-automation-agency">Choose an automation agency</Link>
+        <Link href="/guides/workflow-automation-agency-cost">Automation project costs</Link>
+        <Link href="/guides/when-to-automate-a-workflow">When to automate a workflow</Link>
         <Link href="/about">About Eden</Link>
       </nav>
     </main>
