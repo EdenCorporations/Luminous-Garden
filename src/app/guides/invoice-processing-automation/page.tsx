@@ -73,7 +73,7 @@ export default function Page() {
 
         <section className={styles.choice}>
           <h2>Bring a useful brief.</h2>
-          <p>If your team moves invoices between tools, share the manual steps, invoice volume, systems, review owners, and fictional examples. Contact offers an email option. Eden is a custom workflow automation agency. We can scope development, integration, consulting, and support in an individual proposal. Fees and timing depend on that proposal. There is no checkout; email Eden through Contact to request a proposal.</p>
+          <p>If your team moves invoices between tools, share the manual steps, invoice volume, systems, review owners, and fictional examples. <Link href="/guides/workflow-automation-agency-cost">See how project costs are scoped</Link> before requesting a proposal. Contact offers an email option. Eden is a custom workflow automation agency. We can scope development, integration, consulting, and support in an individual proposal. Fees and timing depend on that proposal. There is no checkout; email Eden through Contact to request a proposal.</p>
         </section>
 
         <aside className={styles.notes} aria-label="Related guides">
