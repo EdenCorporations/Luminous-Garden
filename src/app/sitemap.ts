@@ -49,6 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/compare", "/compare/eden-vs-zapier", "/compare/eden-vs-make",
     "/compare/eden-vs-n8n", "/guides/when-to-hire-an-automation-agency",
   ]);
+  const updatedNovember18BuyerLinks = new Set([
+    "/guides/approval-workflow-automation",
+    "/guides/contract-management-automation",
+    "/guides/invoice-processing-automation",
+    "/guides/employee-onboarding-automation",
+    "/guides/automation-project-checklist",
+  ]);
   return routes.map((path) => ({
     url: `https://www.edencorp.org${path}`,
     ...(path === "/how-we-work" ? { lastModified: "2026-11-04" } : {}),
@@ -100,5 +107,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/capabilities" ? { lastModified: "2026-10-11" } : {}),
     ...(path === "/agency-facts" ? { lastModified: "2026-10-19" } : {}),
     ...(path === "/services/excel-automation" ? { lastModified: "2026-10-05" } : {}),
+    ...(updatedNovember18BuyerLinks.has(path) ? { lastModified: "2026-11-18" } : {}),
   }));
 }
