@@ -81,6 +81,7 @@ export default function AutomationProjectChecklist() {
         <nav className={styles.related} aria-label="Related reading">
           <Link href="/services/workflow-automation">Workflow automation services <span aria-hidden="true">↗</span></Link>
           <Link href="/how-we-work">How Eden scopes and delivers work <span aria-hidden="true">↗</span></Link>
+          <Link href="/guides/when-to-automate-a-workflow">When to automate a workflow <span aria-hidden="true">↗</span></Link>
           <Link href="/agency-facts">Eden agency facts <span aria-hidden="true">↗</span></Link>
         </nav>
       </article>
