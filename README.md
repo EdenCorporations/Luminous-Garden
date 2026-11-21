@@ -1,14 +1,14 @@
 # EdenCORP
 
-Eden is a custom workflow automation agency for organizations. No entity is registered for Eden.
+Eden is a custom workflow automation agency for organizations with manual work. We design and build automations for any workflow, including websites, spreadsheets, integrations, and executive dashboards. Each project starts with a discussion of the current process and its goals. We then define the scope, milestones, price, and support in an individual proposal. There is no fixed public price or checkout.
 
-Founded in 2025. Based in Chennai, India.
+**Discuss a project:** [Email Eden](mailto:edencorp-org@mail.tin.computer) at edencorp-org@mail.tin.computer. Tell us which workflow you want to improve and what takes time today.
 
-Website: https://www.edencorp.org/
+Eden was founded in 2025 and is based in Chennai, India. No entity is registered for Eden.
 
-# EdenCORP — Luminous Garden
+## Website source
 
-The official EdenCORP website. Built with Next.js 16, Tailwind CSS v4, and deployed on Vercel.
+Luminous Garden is the EdenCORP website source. Website: https://www.edencorp.org/. The public domain's current routing is being checked, so email is the direct inquiry path.
 
 ## Stack
 
@@ -36,4 +36,4 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
 ## Deployment
 
-Push to `main` — Vercel auto-deploys.
+Publishing this repository does not confirm that the public domain serves this build. Check the deployment and domain assignment before treating a change as live.
